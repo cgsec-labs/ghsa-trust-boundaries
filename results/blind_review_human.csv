@@ -1,0 +1,121 @@
+review_order,n,ecosystem,package_type,input_source,fix_type,fix_has_test,fix_link_used,notes
+1,18,npm,application,,,,,Self-hosted video platform.
+2,166,PyPI,library,not boundary,internal hardening,yes,,"OTel instrumentation routes tool/run spans through _record_exception, recording only exception type when include_content=False. Adds test_exception_events_honor_include_content in tests/test_logfire.py."
+3,37,npm,library,file or config,internal hardening,yes,,Empty network.allowedDomains: [] now sets needsNetworkRestriction=true and passes --unshare-net on Linux without proxy sockets. Adds Linux/macOS tests in test/sandbox/integration.test.ts and wrap-with-sandbox.test.ts.
+4,57,npm,library,end-user via caller,internal hardening,yes,,"Adds _sanitizeExtractorHtml() DOM pass and escapeHtml() around interpolated attributes in substack.ts, x-article.ts, youtube.ts. Adds tests/extractor-xss.test.ts."
+5,563,Maven,library,file or config,validation added,no,,Expand.extractFile checks f.getAbsolutePath().startsWith(dir.getAbsolutePath()) and throws IOException. Only Expand.java modified; no tests.
+6,250,PyPI,library,end-user via caller,internal hardening,no,,"Wraps class, figclass, figwidth, and block_error text in escape_text() across directives and HTML renderer. No test files touched."
+7,629,Go,application,,,,,Standalone OpenVPN OAuth2 authentication daemon/service.
+8,184,PyPI,library,end-user via caller,validation added,yes,,Tracks buffer end and clamps matchedLength to remainingLength in Conversion.cpp and MaxMatchSegmentation.cpp. Adds TruncatedUtf8Sequence tests in both test files.
+9,306,Maven,plugin,,,,,Jenkins plugin (azure-keyvault-plugin).
+10,389,Maven,application,,,,,XWiki Platform web application/distribution.
+11,36,npm,library,not boundary,other,no,,"Linked commit 137c6dae only bumps package.json to 1.4.44-liberty (protest release), not a fix; check other 2 fix links."
+12,635,Go,framework,network,validation added,yes,,Enforces ControlBufferThrottleLimit (default 100) on queued HTTP/2 control frames and rejects unsupported xDS RBAC NotRule/NotId fields. Adds tests in controlbuf_test.go and rbac_engine_test.go.
+13,11,npm,library,end-user via caller,internal hardening,yes,,Normalizes whitespace up front and introduces safeRe replacing \s*/\s+ with bounded quantifiers. Adds test/integration/whitespace.js and test/internal/re.js checks.
+14,447,Go,plugin,,,,,Mattermost plugin (mattermost-plugin-calls).
+15,307,Maven,plugin,,,,,Jenkins Active Choices plugin (active-choices-plugin).
+16,406,Go,application,,,,,Standalone C2 / remote administration web application (CHAOS).
+17,497,Go,framework,end-user via caller,internal hardening,no,,"Replaces md5 with sha256 in FileCache.getCacheFileName. file_test.go only calls getCacheFileName('key1') for non-nil error, not collision/hash regression."
+18,49,npm,tool,file or config,internal hardening,yes,,"OpenAPI spec servers[].url is project input read by the code generator, so file or config. The fix escapes server URLs (jsesc, backtick-safe) in getters/route.ts and object keys via jsStringLiteralEscape in keys.ts before they reach generated template literals. Added tests in route.test.ts and keys.test.ts inject backtick, ${ and quote payloads."
+19,711,Go,application,,,,,Standalone SFTP/FTP/WebDAV server application (SFTPGo).
+20,677,Go,library,file or config,internal hardening,yes,,Changes character-class negation in in_toto/match.go from ^ to ! to match in-toto-python. Adds negation test cases in match_test.go and verifylib_test.go.
+21,638,Go,application,,,,,Identity-aware reverse proxy server application (Pomerium).
+22,422,Go,library,network,validation added,yes,,Rejects non-GET HTTP methods with 405 Method Not Allowed in swagger.go. Adds POST/PUT 405 assertions in swagger_test.go.
+23,718,Go,application,,,,,Kubernetes cluster management platform/control plane (Gardener).
+24,243,PyPI,application,,,,,Workflow orchestration platform/server (Apache Airflow).
+25,319,Maven,application,,,,,Network monitoring platform/server (OpenNMS Horizon).
+26,466,Go,application,,,,,Standalone MCP database server (mcp-toolbox).
+27,254,PyPI,library,end-user via caller,feature removed,yes,,Disallows try/except* (visit_TryStar calls self.not_allowed(node)) and removes ExceptionGroup from safe_builtins. Updates tests/transformer/test_try.py to assert denial.
+28,187,PyPI,application,,,,,LLM inference engine / OpenAI-compatible API server (vLLM).
+29,615,Maven,library,network,internal hardening,no,,Calls ctx.reconnect(null) in DefaultTlsDirContextAuthenticationStrategy.applyAuthentication to force credential re-bind. No test files touched.
+30,607,Maven,library,file or config,validation added,no,,"Backports RubyGems 2.7.6 fixes: Gem::SafeYAML.load, mkdir_p_safe, duplicate-file check, strict_oct, and HTTP/HTTPS homepage URI checks. No test files touched."
+31,100,npm,tool,end-user via caller,feature removed,no,,Removes Criteria-based findAllBy/createSelect overloads from reactive SQL entity templates and switches to Condition. No test files touched.
+32,583,Maven,tool,network,validation added,yes,,Authenticates user via authenticateUser() in Shell.config(). Adds ShellAuthenticatorIT.java integration test.
+33,44,npm,library,network,internal hardening,yes,,Wraps targetRegex in ^(${targetRegex})$ in SafeRegexValueMatcher and PathSafeRegexValueMatcher so alternation does not partial-match. Adds alternation cases in test-matcher.ts.
+34,574,Maven,plugin,,,,,Jenkins plugin (fortify-on-demand-uploader-plugin).
+35,257,PyPI,library,file or config,validation added,no,,Adds state_.size() < sizeof(...) bounds checks in ThreadCommand.cpp and fixes FatBinary ownership in Parser.cpp. No test files touched.
+36,704,Go,library,end-user via caller,internal hardening,no,,"Forged ciphertexts reach Kyber decapsulation through the calling application; CIRCL does no network I/O itself. The fix replaces division by q in Poly.CompressTo with a multiply-and-shift approximation (kyberslash2, constant-time). poly_test.go only checks output equivalence with the old division, not timing."
+37,619,Maven,application,,,,,Identity and access management server (Keycloak).
+38,409,Go,application,,,,,System daemon/package manager (snapd).
+39,571,Maven,framework,network,validation added,yes,,Changes || to && in IdTokenClaimsValidator.validateIssuerAudienceAndAzp so aud must contain clientId. Adds AudienceClaimMatchesClientIdSpec.groovy.
+40,147,PyPI,framework,network,validation added,yes,,"Checks getattr(fn, '_is_server_fn', False) in gradio/routes.py component_server and returns 404 otherwise. Adds test_component_server_endpoints in test/test_routes.py."
+41,56,npm,library,end-user via caller,validation added,yes,,"Adds maxDepth option (default 1024) in filter-base.js, throwing RangeError when stack.length > maxDepth. Adds Node and web maxDepth tests in test-pick.js."
+42,355,Maven,library,network,internal hardening,yes,,Sets verifyHostName = true by default for clients in SslTransport.java and false for servers in NIOSSLTransport/TcpTransportServer. Updates SSL tests including verifyHostNameErrorClient.
+43,514,Go,tool,file or config,internal hardening,yes,,Wraps interpolated URLs/workflows in regexp.QuoteMeta in pkg/cmd/attestation/verify/policy.go. Adds metacharacter-escaping test in policy_test.go.
+44,95,npm,library,end-user via caller,internal hardening,yes,,Replaces HTML string concatenation with .text() and jQuery DOM builders in ui/widgets/datepicker.js. Adds Ticket #15284 escaping test in tests/unit/datepicker/options.js.
+45,339,Maven,application,,,,,Apache Hadoop YARN server component.
+46,720,Go,application,,,,,Kubernetes batch scheduling system/controller (Volcano).
+47,94,npm,framework,end-user via caller,internal hardening,no,,Wraps rootID in escapeTextForBrowser(rootID) in src/core/ReactTextComponent.js. No test files touched.
+48,218,PyPI,plugin,,,,,MkDocs plugin (mkdocs-include-markdown-plugin).
+49,689,Go,application,,,,,Standalone RAG HTTP server (pgedge-rag-server).
+50,504,Go,application,,,,,Self-hosted Git server (Gitea).
+51,158,PyPI,library,network,validation added,yes,,Disables auto-redirects in _crawl_with_httpx and validates each redirect target with _is_safe_crawl_url. Adds test_web_crawl_rejects_redirect_to_loopback in test_security_audit_fixes.py.
+52,538,PyPI,tool,file or config,validation added,yes,,Adds ALLOWED_MCP_COMMANDS allowlist in MCPHandler.parse_mcp_command. Adds allowlist/rejection tests in test_cli_features.py.
+53,198,PyPI,application,,,,,Self-hosted AI assistant web application (khoj).
+54,175,PyPI,application,,,,,Modular Discord bot application (Red-DiscordBot).
+55,52,npm,library,end-user via caller,validation added,no,,Validates \unicode{} argument against regex and wraps class/annotation/entity output in toMathMLquote(). No test files touched.
+56,106,npm,library,end-user via caller,internal hardening,yes,,"The replacement string reaches the wrapRegExp helper through the transpiled program's .replace call, so end-user via caller. The fix rewrites the $<name> substitution regex to /\$<([^>]+)(>|$)/ and returns unterminated groups unchanged in the helper and runtime builds. Added wrapRegExp.test.js times repeated '$<' payloads."
+57,38,npm,library,end-user via caller,internal hardening,no,,"Joins array input (d.join(',')) before HTML-escaping in __htmlEscapeEntities. Dist repo sync commit; no test files touched."
+58,171,PyPI,library,end-user via caller,internal hardening,yes,,"Filter values come from the application's ORM queries, so end-user via caller. The fix escapes MySQL LIKE values (escape_like) and string literals (StrWrapper) in filters.py and the MySQL executor, rather than rejecting input. Added tests/test_fuzz.py runs quote and control-character strings through create, filter and LIKE lookups."
+59,54,npm,framework,file or config,internal hardening,yes,,Trims whitespace/newlines from redaction strings in WinstonLogger.ts. Updates WinstonLogger.test.ts with 'hello\n'.
+60,308,Maven,library,file or config,internal hardening,no,,Sets XMLConstants.FEATURE_SECURE_PROCESSING to true on SchemaFactory in XMLUtils.java. No test files touched.
+61,146,PyPI,framework,network,validation added,yes,,Adds maxStanzaSize (10 MB) and maxElementCount (100000) caps to SuxElementStream and ExpatElementStream in domish.py. Adds limit tests in test_domish.py.
+62,238,PyPI,application,,,,,Django web application for running Python scripts (Wooey).
+63,30,npm,library,end-user via caller,validation added,no,,"Checks ifaceSanitized is a single path segment (no '.', '..', '/') before reading /sys/class/net/ in lib/network.js. No test files touched."
+64,734,Go,application,,,,,Kubernetes operator/controller (opentelemetry-operator).
+65,518,Go,application,,,,,Real-time HTTP intrusion detection tool/dashboard (teler).
+66,182,PyPI,library,file or config,internal hardening,yes,,Sets NoDefaultCurrentDirectoryInExePath=1 on Windows around Popen in git/cmd.py. Adds test_it_executes_git_not_from_cwd in test/test_git.py.
+67,231,PyPI,application,,,,,OGC API server application (pygeoapi).
+68,789,Maven,library,file or config,internal hardening,no,,Centralizes XML unmarshalling through UnmarshalHelper across project readers to disable XXE. No test files touched.
+69,152,PyPI,library,network,validation added,yes,,"Adds conversion-cost and text-scan budgets (_MAX_HTML_CONVERSION_COST, _MAX_HTML_TEXT_SCAN_COST) in web_fetch.py. Adds regression tests in tests/test_web_fetch.py."
+70,589,Maven,plugin,,,,,Jenkins plugin (yet-another-build-visualizer-plugin).
+71,592,Maven,library,network,other,no,,Bumps aws-crt dependency to 0.14.0 in pom.xml/build.gradle. No source code or test changes in this repo; check other 2 fix links.
+72,78,npm,plugin,,,,,ApostropheCMS plugin/module (@apostrophecms/import-export).
+73,370,Maven,plugin,,,,,Jenkins plugin (backlog-plugin).
+74,210,PyPI,library,end-user via caller,internal hardening,yes,,Rewrites constructed string/BitString/ANY decoding in decoder.py to linear-time bytearray assembly. Adds fragment/schemaless tests in tests/codec/.
+75,598,Maven,library,network,validation added,no,,Normalizes tar entry names with FilenameUtils.normalize and throws IOException if null in Copy.java. No test files touched.
+76,9,npm,tool,network,internal hardening,no,,Removes $mail interpolation from log.warn(...) in AccountResource.kt.ejs. No test files touched.
+77,285,Maven,plugin,,,,,Elasticsearch security plugin (x-pack-security).
+78,442,Go,application,,,,,CDN management server (Apache Traffic Control).
+79,338,Maven,plugin,,,,,Liferay Portal module/widget (flags-web).
+80,579,Maven,library,end-user via caller,validation added,no,,Checks 1 <= r <= curve.N - 1 and 1 <= s <= curve.N - 1 in verify(). Note: fix link points to starkbank/ecdsa-python repo; no test files touched.
+81,470,Go,library,not boundary,internal hardening,no,,Restores missing &UtlsPaddingExtension in Chrome 120 non-PQ ClientHello spec (u_parrots.go). No test files touched.
+82,248,PyPI,application,,,,,Event ticketing web application (pretix).
+83,519,Go,framework,network,internal hardening,yes,,Replaces path.Clean with filepath.Clean in echo.go and middleware/static.go to handle Windows backslashes. Expands TestEchoStatic in echo_test.go.
+84,58,npm,library,end-user via caller,internal hardening,no,,"Code to highlight is passed in by the calling page, so end-user via caller. PR #2584 rewrites backtracking-prone regexes across many components/prism-*.js grammars and their .min.js builds. No test files are touched."
+85,110,npm,library,end-user via caller,internal hardening,no,,"Replaces child_process.exec string concatenation with child_process.spawn('p4', args) in p4.js. No test files touched."
+86,72,npm,library,network,validation added,yes,,"Requires all values in array claims (jti, iss, sub, nonce) to match allowed list via values.every(...) in src/verifier.js. Adds tests in test/verifier.spec.js."
+87,449,Go,tool,network,validation added,yes,,"Requires session token on HUD /api/* endpoints, drops origin fallback on /ws/view, and restricts /debug to loopback. Adds token tests in server_test.go."
+88,92,npm,library,end-user via caller,internal hardening,no,,"Replaces html.replace(...) with html.slice(...) and wraps SSR payloads/assets in escape() in server.js. Test change only updates Comp3 fixture syntax, not a regression test."
+89,771,PyPI,framework,not boundary,feature removed,no,,"Removes echo ${{ github.event.workflow_run... }} step from .github/workflows/generate-changeset.yml (CI workflow injection, not runtime library code). No tests."
+90,380,Maven,framework,file or config,internal hardening,yes,,Applies per-client/service sensitiveElementNames and sensitiveProtocolHeaderNames before falling back to global config. Adds GlobalSensitiveTest and PerClientOrServiceSensitiveTest.
+91,610,Maven,plugin,,,,,Jenkins plugin (urltrigger-plugin).
+92,423,Go,application,,,,,Standalone image-processing HTTP server (imgproxy).
+93,193,PyPI,framework,network,validation added,yes,,Caps telnet subnegotiation buffer at _MAX_SUBNEGOTIATION_LENGTH = 4096 and drops connection on overflow in telnet.py. Adds tests in test_telnet.py.
+94,15,npm,framework,network,internal hardening,no,,Introduces per-request BootstrapContext to eliminate shared global platform injector across concurrent SSR requests. Test edits only update existing harness/schematic signatures.
+95,562,Maven,framework,caller code,other,yes,,"Adds accessDeniedHandler config method to ServerHttpSecurity.ExceptionHandlingSpec + ExceptionHandlingSpecTests.java (note: linked commit is in spring-security, not spring-core)."
+96,413,Go,application,,,,,Self-hosted file-list web server (OpenList).
+97,249,PyPI,application,,,,,Certificate management web application (Netflix Lemur).
+98,487,Go,application,,,,,Windows Kubernetes node daemon/proxy (csi-proxy).
+99,194,PyPI,library,network,validation added,yes,,"httplib2 reads compressed response bodies from the server itself, so network. The fix adds LimitDecoder hard, safe and ratio limits (configurable via Http() args or environment variables) to gzip/deflate decoding and raises DecodeLimitError or DecodeRatioError. tests/test_encoding.py adds ratio and limit tests."
+100,88,npm,library,end-user via caller,internal hardening,yes,,"Changes <raw>[^\x00]+/(""{{{{"") to non-greedy +? in src/handlebars.l. Adds raw-block tests in spec/helpers.js and spec/tokenizer.js."
+101,162,PyPI,application,,,,,OpenStack networking service (neutron).
+102,791,Maven,library,end-user via caller,internal hardening,yes,,Adds rescanSize backoff in AsyncParser.churn() to avoid quadratic rescanning on 1-byte chunks. Adds 1-byte chunk tests in AstCheck.scala and SyntaxCheck.scala.
+103,792,Maven,library,end-user via caller,validation added,yes,,Tightens DATA_ATTR regex to XML-compatible Name production and switches .find() to .matches() in SecureHTMLElementSanitizer.java. Adds parameterized dataAttributes test.
+104,176,PyPI,application,,,,,Standalone file server application (copyparty).
+105,246,PyPI,application,,,,,OpenStack orchestration service (Heat).
+106,425,Go,tool,file or config,validation added,yes,,Rejects '.' / '..' / path separators in chart names in metadata.go and util/expand.go (v2 & v3). Adds TestExpandError and TestValidate cases.
+107,190,PyPI,framework,network,validation added,yes,,Enforces max_field_size (8190) and max_headers (128) in MultipartReader and StreamReader.readline. Adds test_multipart_formdata_headers_too_many and header_too_long.
+108,662,Go,tool,file or config,validation added,yes,,Validates islo.workdir is relative under /workspace (rejects leading '/' and '..' escapes) before sandbox creation. Adds escape tests in backend_test.go.
+109,330,Maven,library,end-user via caller,validation added,no,,Adds 4 gadget class names to DEFAULT_NO_DESER_CLASS_NAMES denylist in SubTypeValidator.java. No test files touched.
+110,535,PyPI,library,not boundary,other,no,,Build/packaging migration removing setup.py/setup.cfg and bumping setuptools>=80.4 in pyproject.toml. No runtime security code or security test.
+111,81,npm,library,end-user via caller,internal hardening,yes,,"Tracks inner quoted strings, comments, and domain literals in Tokenizer so '>'/';' inside them do not close angle-addr/group early. Adds tests in addressparser-test.ts and mime-node-test.ts."
+112,63,npm,tool,network,validation added,yes,,Removes Access-Control-Allow-Origin: * and rejects non-matching Host headers with 403 in pkg/api/serve_other.go. Updates/adds serve tests in scripts/js-api-tests.js.
+113,75,npm,library,not boundary,feature removed,no,,Removes protestware block targeting .ru/.su/.by/.рф domains from src/SweetAlert.js and README.md. No test files touched.
+114,688,Go,application,,,,,P2P routing simulator/daemon (pineconesim web UI).
+115,35,npm,plugin,,,,,Volto/Plone CMS add-on/plugin (@eeacms/volto-chatbot).
+116,297,Maven,framework,end-user via caller,internal hardening,no,,"Replaces unbounded ConcurrentHashMap with ConcurrentLruCache(512) in PersistentPropertyPathFactory.java. Test edit only adapts reflection type, no eviction/DoS test."
+117,21,npm,library,end-user via caller,validation added,no,,Throws errors on 'gnu' and unknown S2K types in src/type/s2k.js. No test files touched.
+118,365,Maven,framework,network,internal hardening,yes,,Routes Atom parsing through StaxUtils.createXMLStreamReader(is) in AbstractAtomProvider.java. Adds DOCTYPE tests in AtomPojoProviderTest.java.
+119,499,Go,application,,,,,Standalone RFC 3161 timestamping server (timestamp-authority).
+120,14,npm,framework,network,validation added,yes,,Enforces BODY_SIZE_LIMIT on chunked requests (without content-length) returning 413 in packages/kit/src/exports/node/index.js. Adds index.spec.js.

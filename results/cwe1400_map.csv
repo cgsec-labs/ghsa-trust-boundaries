@@ -1,0 +1,959 @@
+cwe_id,cwe_name,status,category_id,category_name
+CWE-5,J2EE Misconfiguration: Data Transmission Without Encryption,Draft,CWE-1402,Encryption
+CWE-6,J2EE Misconfiguration: Insufficient Session-ID Length,Incomplete,CWE-1414,Randomness
+CWE-7,J2EE Misconfiguration: Missing Custom Error Page,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-8,J2EE Misconfiguration: Entity Bean Declared Remote,Incomplete,CWE-1403,Exposed Resource
+CWE-9,J2EE Misconfiguration: Weak Access Permissions for EJB Methods,Draft,CWE-1396,Access Control
+CWE-11,ASP.NET Misconfiguration: Creating Debug Binary,Draft,CWE-1412,Poor Coding Practices
+CWE-12,ASP.NET Misconfiguration: Missing Custom Error Page,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-13,ASP.NET Misconfiguration: Password in Configuration File,Draft,CWE-1396,Access Control
+CWE-14,Compiler Removal of Code to Clear Buffers,Draft,CWE-1398,Component Interaction
+CWE-15,External Control of System or Configuration Setting,Incomplete,CWE-1403,Exposed Resource
+CWE-20,Improper Input Validation,Stable,CWE-1406,Improper Input Validation
+CWE-22,Improper Limitation of a Pathname to a Restricted Directory,Stable,CWE-1404,File Handling
+CWE-23,Relative Path Traversal,Draft,CWE-1404,File Handling
+CWE-24,Path Traversal: '../filedir',Incomplete,CWE-1404,File Handling
+CWE-25,Path Traversal: '/../filedir',Incomplete,CWE-1404,File Handling
+CWE-26,Path Traversal: '/dir/../filename',Draft,CWE-1404,File Handling
+CWE-27,Path Traversal: 'dir/../../filename',Draft,CWE-1404,File Handling
+CWE-28,Path Traversal: '..\filedir',Incomplete,CWE-1404,File Handling
+CWE-29,Path Traversal: '\..\filename',Incomplete,CWE-1404,File Handling
+CWE-30,Path Traversal: '\dir\..\filename',Draft,CWE-1404,File Handling
+CWE-31,Path Traversal: 'dir\..\..\filename',Draft,CWE-1404,File Handling
+CWE-32,Path Traversal: '...' (Triple Dot),Incomplete,CWE-1404,File Handling
+CWE-33,Path Traversal: '....' (Multiple Dot),Incomplete,CWE-1404,File Handling
+CWE-34,Path Traversal: '....//',Incomplete,CWE-1404,File Handling
+CWE-35,Path Traversal: '.../...//',Incomplete,CWE-1404,File Handling
+CWE-36,Absolute Path Traversal,Draft,CWE-1404,File Handling
+CWE-37,Path Traversal: '/absolute/pathname/here',Draft,CWE-1404,File Handling
+CWE-38,Path Traversal: '\absolute\pathname\here',Draft,CWE-1404,File Handling
+CWE-39,Path Traversal: 'C:dirname',Draft,CWE-1404,File Handling
+CWE-40,Path Traversal: '\\UNC\share\name\' (Windows UNC Share),Draft,CWE-1404,File Handling
+CWE-41,Improper Resolution of Path Equivalence,Incomplete,CWE-1404,File Handling
+CWE-42,Path Equivalence: 'filename.' (Trailing Dot),Incomplete,CWE-1404,File Handling
+CWE-43,Path Equivalence: 'filename....' (Multiple Trailing Dot),Incomplete,CWE-1404,File Handling
+CWE-44,Path Equivalence: 'file.name' (Internal Dot),Incomplete,CWE-1404,File Handling
+CWE-45,Path Equivalence: 'file...name' (Multiple Internal Dot),Incomplete,CWE-1404,File Handling
+CWE-46,Path Equivalence: 'filename ' (Trailing Space),Incomplete,CWE-1404,File Handling
+CWE-47,Path Equivalence: ' filename' (Leading Space),Incomplete,CWE-1404,File Handling
+CWE-48,Path Equivalence: 'file name' (Internal Whitespace),Incomplete,CWE-1404,File Handling
+CWE-49,Path Equivalence: 'filename/' (Trailing Slash),Incomplete,CWE-1404,File Handling
+CWE-50,Path Equivalence: '//multiple/leading/slash',Incomplete,CWE-1404,File Handling
+CWE-51,Path Equivalence: '/multiple//internal/slash',Incomplete,CWE-1404,File Handling
+CWE-52,Path Equivalence: '/multiple/trailing/slash//',Incomplete,CWE-1404,File Handling
+CWE-53,Path Equivalence: '\multiple\\internal\backslash',Incomplete,CWE-1404,File Handling
+CWE-54,Path Equivalence: 'filedir\' (Trailing Backslash),Incomplete,CWE-1404,File Handling
+CWE-55,Path Equivalence: '/./' (Single Dot Directory),Incomplete,CWE-1404,File Handling
+CWE-56,Path Equivalence: 'filedir*' (Wildcard),Incomplete,CWE-1404,File Handling
+CWE-57,Path Equivalence: 'fakedir/../realdir/filename',Incomplete,CWE-1404,File Handling
+CWE-58,Path Equivalence: Windows 8.3 Filename,Incomplete,CWE-1404,File Handling
+CWE-59,Improper Link Resolution Before File Access,Draft,CWE-1404,File Handling
+CWE-61,UNIX Symbolic Link (Symlink) Following,Incomplete,CWE-1404,File Handling
+CWE-62,UNIX Hard Link,Incomplete,CWE-1404,File Handling
+CWE-64,Windows Shortcut Following (.LNK),Incomplete,CWE-1404,File Handling
+CWE-65,Windows Hard Link,Incomplete,CWE-1404,File Handling
+CWE-66,Improper Handling of File Names that Identify Virtual Resources,Draft,CWE-1404,File Handling
+CWE-67,Improper Handling of Windows Device Names,Incomplete,CWE-1404,File Handling
+CWE-69,Improper Handling of Windows ::DATA Alternate Data Stream,Incomplete,CWE-1404,File Handling
+CWE-72,Improper Handling of Apple HFS+ Alternate Data Stream Path,Incomplete,CWE-1404,File Handling
+CWE-73,External Control of File Name or Path,Draft,CWE-1403,Exposed Resource
+CWE-74,Improper Neutralization of Special Elements in Output Used by a Downstream Component,Incomplete,CWE-1409,Injection
+CWE-75,Failure to Sanitize Special Elements into a Different Plane,Draft,CWE-1409,Injection
+CWE-76,Improper Neutralization of Equivalent Special Elements,Draft,CWE-1409,Injection
+CWE-77,Improper Neutralization of Special Elements used in a Command,Draft,CWE-1409,Injection
+CWE-78,Improper Neutralization of Special Elements used in an OS Command,Stable,CWE-1409,Injection
+CWE-79,Improper Neutralization of Input During Web Page Generation,Stable,CWE-1409,Injection
+CWE-80,Improper Neutralization of Script-Related HTML Tags in a Web Page,Incomplete,CWE-1409,Injection
+CWE-81,Improper Neutralization of Script in an Error Message Web Page,Incomplete,CWE-1409,Injection
+CWE-82,Improper Neutralization of Script in Attributes of IMG Tags in a Web Page,Incomplete,CWE-1409,Injection
+CWE-83,Improper Neutralization of Script in Attributes in a Web Page,Draft,CWE-1409,Injection
+CWE-84,Improper Neutralization of Encoded URI Schemes in a Web Page,Draft,CWE-1409,Injection
+CWE-85,Doubled Character XSS Manipulations,Draft,CWE-1409,Injection
+CWE-86,Improper Neutralization of Invalid Characters in Identifiers in Web Pages,Draft,CWE-1409,Injection
+CWE-87,Improper Neutralization of Alternate XSS Syntax,Draft,CWE-1409,Injection
+CWE-88,Improper Neutralization of Argument Delimiters in a Command,Draft,CWE-1409,Injection
+CWE-89,Improper Neutralization of Special Elements used in an SQL Command,Stable,CWE-1409,Injection
+CWE-90,Improper Neutralization of Special Elements used in an LDAP Query,Draft,CWE-1409,Injection
+CWE-91,XML Injection,Draft,CWE-1409,Injection
+CWE-93,Improper Neutralization of CRLF Sequences,Draft,CWE-1409,Injection
+CWE-94,Improper Control of Generation of Code,Draft,CWE-1409,Injection
+CWE-95,Improper Neutralization of Directives in Dynamically Evaluated Code,Incomplete,CWE-1409,Injection
+CWE-96,Improper Neutralization of Directives in Statically Saved Code,Draft,CWE-1409,Injection
+CWE-97,Improper Neutralization of Server-Side Includes (SSI) Within a Web Page,Draft,CWE-1409,Injection
+CWE-98,Improper Control of Filename for Include/Require Statement in PHP Program,Draft,CWE-1416,Resource Lifecycle Management
+CWE-99,Improper Control of Resource Identifiers,Draft,CWE-1409,Injection
+CWE-102,Struts: Duplicate Validation Forms,Incomplete,CWE-1409,Injection
+CWE-103,Struts: Incomplete validate() Method Definition,Draft,CWE-1412,Poor Coding Practices
+CWE-104,Struts: Form Bean Does Not Extend Validation Class,Draft,CWE-1412,Poor Coding Practices
+CWE-105,Struts: Form Field Without Validator,Draft,CWE-1406,Improper Input Validation
+CWE-106,Struts: Plug-in Framework not in Use,Draft,CWE-1406,Improper Input Validation
+CWE-107,Struts: Unused Validation Form,Draft,CWE-1412,Poor Coding Practices
+CWE-108,Struts: Unvalidated Action Form,Incomplete,CWE-1406,Improper Input Validation
+CWE-109,Struts: Validator Turned Off,Draft,CWE-1406,Improper Input Validation
+CWE-110,Struts: Validator Without Form Field,Draft,CWE-1412,Poor Coding Practices
+CWE-111,Direct Use of Unsafe JNI,Draft,CWE-1412,Poor Coding Practices
+CWE-112,Missing XML Validation,Draft,CWE-1406,Improper Input Validation
+CWE-113,Improper Neutralization of CRLF Sequences in HTTP Headers,Incomplete,CWE-1409,Injection
+CWE-114,Process Control,Incomplete,CWE-1403,Exposed Resource
+CWE-115,Misinterpretation of Input,Incomplete,CWE-1398,Component Interaction
+CWE-116,Improper Encoding or Escaping of Output,Draft,CWE-1407,Improper Neutralization
+CWE-117,Improper Output Neutralization for Logs,Draft,CWE-1407,Improper Neutralization
+CWE-118,Incorrect Access of Indexable Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-119,Improper Restriction of Operations within the Bounds of a Memory Buffer,Stable,CWE-1399,Memory Safety
+CWE-120,Buffer Copy without Checking Size of Input,Incomplete,CWE-1399,Memory Safety
+CWE-121,Stack-based Buffer Overflow,Draft,CWE-1399,Memory Safety
+CWE-122,Heap-based Buffer Overflow,Draft,CWE-1399,Memory Safety
+CWE-123,Write-what-where Condition,Draft,CWE-1399,Memory Safety
+CWE-124,Buffer Underwrite,Incomplete,CWE-1399,Memory Safety
+CWE-125,Out-of-bounds Read,Draft,CWE-1399,Memory Safety
+CWE-126,Buffer Over-read,Draft,CWE-1399,Memory Safety
+CWE-127,Buffer Under-read,Draft,CWE-1399,Memory Safety
+CWE-128,Wrap-around Error,Incomplete,CWE-1408,Incorrect Calculation
+CWE-129,Improper Validation of Array Index,Draft,CWE-1399,Memory Safety
+CWE-130,Improper Handling of Length Parameter Inconsistency,Incomplete,CWE-1407,Improper Neutralization
+CWE-131,Incorrect Calculation of Buffer Size,Draft,CWE-1399,Memory Safety
+CWE-134,Use of Externally-Controlled Format String,Draft,CWE-1399,Memory Safety
+CWE-135,Incorrect Calculation of Multi-Byte String Length,Draft,CWE-1408,Incorrect Calculation
+CWE-138,Improper Neutralization of Special Elements,Draft,CWE-1407,Improper Neutralization
+CWE-140,Improper Neutralization of Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-141,Improper Neutralization of Parameter/Argument Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-142,Improper Neutralization of Value Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-143,Improper Neutralization of Record Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-144,Improper Neutralization of Line Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-145,Improper Neutralization of Section Delimiters,Incomplete,CWE-1407,Improper Neutralization
+CWE-146,Improper Neutralization of Expression/Command Delimiters,Incomplete,CWE-1407,Improper Neutralization
+CWE-147,Improper Neutralization of Input Terminators,Draft,CWE-1407,Improper Neutralization
+CWE-148,Improper Neutralization of Input Leaders,Draft,CWE-1407,Improper Neutralization
+CWE-149,Improper Neutralization of Quoting Syntax,Draft,CWE-1407,Improper Neutralization
+CWE-150,"Improper Neutralization of Escape, Meta, or Control Sequences",Incomplete,CWE-1407,Improper Neutralization
+CWE-151,Improper Neutralization of Comment Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-152,Improper Neutralization of Macro Symbols,Draft,CWE-1407,Improper Neutralization
+CWE-153,Improper Neutralization of Substitution Characters,Draft,CWE-1407,Improper Neutralization
+CWE-154,Improper Neutralization of Variable Name Delimiters,Incomplete,CWE-1407,Improper Neutralization
+CWE-155,Improper Neutralization of Wildcards or Matching Symbols,Draft,CWE-1407,Improper Neutralization
+CWE-156,Improper Neutralization of Whitespace,Draft,CWE-1407,Improper Neutralization
+CWE-157,Failure to Sanitize Paired Delimiters,Draft,CWE-1407,Improper Neutralization
+CWE-158,Improper Neutralization of Null Byte or NUL Character,Incomplete,CWE-1407,Improper Neutralization
+CWE-159,Improper Handling of Invalid Use of Special Elements,Draft,CWE-1407,Improper Neutralization
+CWE-160,Improper Neutralization of Leading Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-161,Improper Neutralization of Multiple Leading Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-162,Improper Neutralization of Trailing Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-163,Improper Neutralization of Multiple Trailing Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-164,Improper Neutralization of Internal Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-165,Improper Neutralization of Multiple Internal Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-166,Improper Handling of Missing Special Element,Draft,CWE-1407,Improper Neutralization
+CWE-167,Improper Handling of Additional Special Element,Draft,CWE-1407,Improper Neutralization
+CWE-168,Improper Handling of Inconsistent Special Elements,Draft,CWE-1407,Improper Neutralization
+CWE-170,Improper Null Termination,Incomplete,CWE-1407,Improper Neutralization
+CWE-172,Improper Encoding or Decoding of Data,Draft,CWE-1407,Improper Neutralization
+CWE-173,Improper Handling of Alternate Encoding,Draft,CWE-1407,Improper Neutralization
+CWE-174,Double Decoding of the Same Data,Draft,CWE-1407,Improper Neutralization
+CWE-175,Improper Handling of Mixed Encoding,Draft,CWE-1407,Improper Neutralization
+CWE-176,Improper Handling of Unicode Encoding,Draft,CWE-1407,Improper Neutralization
+CWE-177,Improper Handling of URL Encoding (Hex Encoding),Draft,CWE-1407,Improper Neutralization
+CWE-178,Improper Handling of Case Sensitivity,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-179,Incorrect Behavior Order: Early Validation,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-180,Incorrect Behavior Order: Validate Before Canonicalize,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-181,Incorrect Behavior Order: Validate Before Filter,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-182,Collapse of Data into Unsafe Value,Draft,CWE-1413,Protection Mechanism Failure
+CWE-183,Permissive List of Allowed Inputs,Draft,CWE-1397,Comparison
+CWE-184,Incomplete List of Disallowed Inputs,Draft,CWE-1413,Protection Mechanism Failure
+CWE-185,Incorrect Regular Expression,Draft,CWE-1397,Comparison
+CWE-186,Overly Restrictive Regular Expression,Draft,CWE-1397,Comparison
+CWE-187,Partial String Comparison,Incomplete,CWE-1397,Comparison
+CWE-188,Reliance on Data/Memory Layout,Draft,CWE-1399,Memory Safety
+CWE-190,Integer Overflow or Wraparound,Stable,CWE-1408,Incorrect Calculation
+CWE-191,Integer Underflow (Wrap or Wraparound),Draft,CWE-1408,Incorrect Calculation
+CWE-192,Integer Coercion Error,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-193,Off-by-one Error,Draft,CWE-1408,Incorrect Calculation
+CWE-194,Unexpected Sign Extension,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-195,Signed to Unsigned Conversion Error,Draft,CWE-1416,Resource Lifecycle Management
+CWE-196,Unsigned to Signed Conversion Error,Draft,CWE-1416,Resource Lifecycle Management
+CWE-197,Numeric Truncation Error,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-198,Use of Incorrect Byte Ordering,Draft,CWE-1399,Memory Safety
+CWE-200,Exposure of Sensitive Information to an Unauthorized Actor,Draft,CWE-1417,Sensitive Information Exposure
+CWE-201,Insertion of Sensitive Information Into Sent Data,Draft,CWE-1417,Sensitive Information Exposure
+CWE-202,Exposure of Sensitive Information Through Data Queries,Draft,CWE-1396,Access Control
+CWE-203,Observable Discrepancy,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-204,Observable Response Discrepancy,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-205,Observable Behavioral Discrepancy,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-206,Observable Internal Behavioral Discrepancy,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-207,Observable Behavioral Discrepancy With Equivalent Products,Draft,CWE-1417,Sensitive Information Exposure
+CWE-208,Observable Timing Discrepancy,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-209,Generation of Error Message Containing Sensitive Information,Draft,CWE-1417,Sensitive Information Exposure
+CWE-210,Self-generated Error Message Containing Sensitive Information,Draft,CWE-1417,Sensitive Information Exposure
+CWE-211,Externally-Generated Error Message Containing Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-212,Improper Removal of Sensitive Information Before Storage or Transfer,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-213,Exposure of Sensitive Information Due to Incompatible Policies,Draft,CWE-1417,Sensitive Information Exposure
+CWE-214,Invocation of Process Using Visible Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-215,Insertion of Sensitive Information Into Debugging Code,Draft,CWE-1417,Sensitive Information Exposure
+CWE-219,Storage of File with Sensitive Data Under Web Root,Draft,CWE-1403,Exposed Resource
+CWE-220,Storage of File With Sensitive Data Under FTP Root,Draft,CWE-1403,Exposed Resource
+CWE-221,Information Loss or Omission,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-222,Truncation of Security-relevant Information,Draft,CWE-1413,Protection Mechanism Failure
+CWE-223,Omission of Security-relevant Information,Draft,CWE-1413,Protection Mechanism Failure
+CWE-224,Obscured Security-relevant Information by Alternate Name,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-226,Sensitive Information in Resource Not Removed Before Reuse,Draft,CWE-1416,Resource Lifecycle Management
+CWE-228,Improper Handling of Syntactically Invalid Structure,Incomplete,CWE-1407,Improper Neutralization
+CWE-229,Improper Handling of Values,Incomplete,CWE-1407,Improper Neutralization
+CWE-230,Improper Handling of Missing Values,Draft,CWE-1407,Improper Neutralization
+CWE-231,Improper Handling of Extra Values,Draft,CWE-1407,Improper Neutralization
+CWE-232,Improper Handling of Undefined Values,Draft,CWE-1407,Improper Neutralization
+CWE-233,Improper Handling of Parameters,Incomplete,CWE-1407,Improper Neutralization
+CWE-234,Failure to Handle Missing Parameter,Incomplete,CWE-1407,Improper Neutralization
+CWE-235,Improper Handling of Extra Parameters,Draft,CWE-1407,Improper Neutralization
+CWE-236,Improper Handling of Undefined Parameters,Draft,CWE-1407,Improper Neutralization
+CWE-237,Improper Handling of Structural Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-238,Improper Handling of Incomplete Structural Elements,Draft,CWE-1407,Improper Neutralization
+CWE-239,Failure to Handle Incomplete Element,Draft,CWE-1407,Improper Neutralization
+CWE-240,Improper Handling of Inconsistent Structural Elements,Draft,CWE-1407,Improper Neutralization
+CWE-241,Improper Handling of Unexpected Data Type,Draft,CWE-1407,Improper Neutralization
+CWE-242,Use of Inherently Dangerous Function,Draft,CWE-1412,Poor Coding Practices
+CWE-243,Creation of chroot Jail Without Changing Working Directory,Draft,CWE-1416,Resource Lifecycle Management
+CWE-244,Improper Clearing of Heap Memory Before Release,Draft,CWE-1399,Memory Safety
+CWE-245,J2EE Bad Practices: Direct Management of Connections,Draft,CWE-1412,Poor Coding Practices
+CWE-246,J2EE Bad Practices: Direct Use of Sockets,Draft,CWE-1412,Poor Coding Practices
+CWE-248,Uncaught Exception,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-250,Execution with Unnecessary Privileges,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-252,Unchecked Return Value,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-253,Incorrect Check of Function Return Value,Incomplete,CWE-1412,Poor Coding Practices
+CWE-256,Plaintext Storage of a Password,Incomplete,CWE-1396,Access Control
+CWE-257,Storing Passwords in a Recoverable Format,Incomplete,CWE-1396,Access Control
+CWE-258,Empty Password in Configuration File,Incomplete,CWE-1396,Access Control
+CWE-259,Use of Hard-coded Password,Draft,CWE-1396,Access Control
+CWE-260,Password in Configuration File,Incomplete,CWE-1396,Access Control
+CWE-261,Weak Encoding for Password,Incomplete,CWE-1396,Access Control
+CWE-262,Not Using Password Aging,Draft,CWE-1396,Access Control
+CWE-263,Password Aging with Long Expiration,Draft,CWE-1396,Access Control
+CWE-266,Incorrect Privilege Assignment,Draft,CWE-1396,Access Control
+CWE-267,Privilege Defined With Unsafe Actions,Incomplete,CWE-1396,Access Control
+CWE-268,Privilege Chaining,Draft,CWE-1396,Access Control
+CWE-269,Improper Privilege Management,Draft,CWE-1396,Access Control
+CWE-270,Privilege Context Switching Error,Draft,CWE-1396,Access Control
+CWE-271,Privilege Dropping / Lowering Errors,Incomplete,CWE-1396,Access Control
+CWE-272,Least Privilege Violation,Incomplete,CWE-1396,Access Control
+CWE-273,Improper Check for Dropped Privileges,Incomplete,CWE-1396,Access Control
+CWE-274,Improper Handling of Insufficient Privileges,Draft,CWE-1396,Access Control
+CWE-276,Incorrect Default Permissions,Draft,CWE-1396,Access Control
+CWE-277,Insecure Inherited Permissions,Draft,CWE-1396,Access Control
+CWE-278,Insecure Preserved Inherited Permissions,Incomplete,CWE-1396,Access Control
+CWE-279,Incorrect Execution-Assigned Permissions,Draft,CWE-1396,Access Control
+CWE-280,Improper Handling of Insufficient Permissions or Privileges,Draft,CWE-1396,Access Control
+CWE-281,Improper Preservation of Permissions,Draft,CWE-1396,Access Control
+CWE-282,Improper Ownership Management,Draft,CWE-1396,Access Control
+CWE-283,Unverified Ownership,Draft,CWE-1396,Access Control
+CWE-284,Improper Access Control,Incomplete,CWE-1396,Access Control
+CWE-285,Improper Authorization,Draft,CWE-1396,Access Control
+CWE-286,Incorrect User Management,Incomplete,CWE-1396,Access Control
+CWE-287,Improper Authentication,Draft,CWE-1396,Access Control
+CWE-288,Authentication Bypass Using an Alternate Path or Channel,Incomplete,CWE-1396,Access Control
+CWE-289,Authentication Bypass by Alternate Name,Incomplete,CWE-1396,Access Control
+CWE-290,Authentication Bypass by Spoofing,Incomplete,CWE-1396,Access Control
+CWE-291,Reliance on IP Address for Authentication,Incomplete,CWE-1396,Access Control
+CWE-293,Using Referer Field for Authentication,Draft,CWE-1396,Access Control
+CWE-294,Authentication Bypass by Capture-replay,Incomplete,CWE-1396,Access Control
+CWE-295,Improper Certificate Validation,Draft,CWE-1396,Access Control
+CWE-296,Improper Following of a Certificate's Chain of Trust,Draft,CWE-1396,Access Control
+CWE-297,Improper Validation of Certificate with Host Mismatch,Incomplete,CWE-1396,Access Control
+CWE-298,Improper Validation of Certificate Expiration,Draft,CWE-1396,Access Control
+CWE-299,Improper Check for Certificate Revocation,Draft,CWE-1396,Access Control
+CWE-300,Channel Accessible by Non-Endpoint,Draft,CWE-1396,Access Control
+CWE-301,Reflection Attack in an Authentication Protocol,Draft,CWE-1396,Access Control
+CWE-302,Authentication Bypass by Assumed-Immutable Data,Incomplete,CWE-1396,Access Control
+CWE-303,Incorrect Implementation of Authentication Algorithm,Draft,CWE-1396,Access Control
+CWE-304,Missing Critical Step in Authentication,Draft,CWE-1396,Access Control
+CWE-305,Authentication Bypass by Primary Weakness,Draft,CWE-1396,Access Control
+CWE-306,Missing Authentication for Critical Functionality,Draft,CWE-1396,Access Control
+CWE-307,Improper Restriction of Excessive Authentication Attempts,Draft,CWE-1396,Access Control
+CWE-308,Use of Single-factor Authentication,Draft,CWE-1396,Access Control
+CWE-309,Use of Password System for Primary Authentication,Draft,CWE-1396,Access Control
+CWE-311,Missing Encryption of Sensitive Data,Draft,CWE-1402,Encryption
+CWE-312,Cleartext Storage of Sensitive Information,Draft,CWE-1402,Encryption
+CWE-313,Cleartext Storage in a File or on Disk,Draft,CWE-1402,Encryption
+CWE-314,Cleartext Storage in the Registry,Draft,CWE-1402,Encryption
+CWE-315,Cleartext Storage of Sensitive Information in a Cookie,Draft,CWE-1402,Encryption
+CWE-316,Cleartext Storage of Sensitive Information in Memory,Draft,CWE-1402,Encryption
+CWE-317,Cleartext Storage of Sensitive Information in GUI,Draft,CWE-1402,Encryption
+CWE-318,Cleartext Storage of Sensitive Information in Executable,Draft,CWE-1402,Encryption
+CWE-319,Cleartext Transmission of Sensitive Information,Draft,CWE-1402,Encryption
+CWE-321,Use of Hard-coded Cryptographic Key,Draft,CWE-1396,Access Control
+CWE-322,Key Exchange without Entity Authentication,Draft,CWE-1396,Access Control
+CWE-323,"Reusing a Nonce, Key Pair in Encryption",Incomplete,CWE-1414,Randomness
+CWE-324,Use of a Key Past its Expiration Date,Draft,CWE-1402,Encryption
+CWE-325,Missing Cryptographic Step,Draft,CWE-1402,Encryption
+CWE-326,Inadequate Encryption Strength,Draft,CWE-1402,Encryption
+CWE-327,Use of a Broken or Risky Cryptographic Algorithm,Draft,CWE-1402,Encryption
+CWE-328,Use of Weak Hash,Draft,CWE-1402,Encryption
+CWE-329,Generation of Predictable IV with CBC Mode,Draft,CWE-1414,Randomness
+CWE-330,Use of Insufficiently Random Values,Stable,CWE-1414,Randomness
+CWE-331,Insufficient Entropy,Draft,CWE-1414,Randomness
+CWE-332,Insufficient Entropy in PRNG,Draft,CWE-1414,Randomness
+CWE-333,Improper Handling of Insufficient Entropy in TRNG,Draft,CWE-1414,Randomness
+CWE-334,Small Space of Random Values,Draft,CWE-1414,Randomness
+CWE-335,Incorrect Usage of Seeds in Pseudo-Random Number Generator (PRNG),Draft,CWE-1414,Randomness
+CWE-336,Same Seed in Pseudo-Random Number Generator (PRNG),Draft,CWE-1414,Randomness
+CWE-337,Predictable Seed in Pseudo-Random Number Generator (PRNG),Draft,CWE-1414,Randomness
+CWE-338,Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG),Draft,CWE-1414,Randomness
+CWE-339,Small Seed Space in PRNG,Draft,CWE-1414,Randomness
+CWE-340,Generation of Predictable Numbers or Identifiers,Incomplete,CWE-1414,Randomness
+CWE-341,Predictable from Observable State,Draft,CWE-1414,Randomness
+CWE-342,Predictable Exact Value from Previous Values,Draft,CWE-1414,Randomness
+CWE-343,Predictable Value Range from Previous Values,Draft,CWE-1414,Randomness
+CWE-344,Use of Invariant Value in Dynamically Changing Context,Draft,CWE-1414,Randomness
+CWE-345,Insufficient Verification of Data Authenticity,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-346,Origin Validation Error,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-347,Improper Verification of Cryptographic Signature,Draft,CWE-1402,Encryption
+CWE-348,Use of Less Trusted Source,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-349,Acceptance of Extraneous Untrusted Data With Trusted Data,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-350,Reliance on Reverse DNS Resolution for a Security-Critical Action,Draft,CWE-1396,Access Control
+CWE-351,Insufficient Type Distinction,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-352,Cross-Site Request Forgery,Stable,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-353,Missing Support for Integrity Check,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-354,Improper Validation of Integrity Check Value,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-356,Missing User Interaction for Potentially Unsafe Action,Incomplete,CWE-1396,Access Control
+CWE-357,Insufficient UI Warning of Dangerous Operations,Draft,CWE-1413,Protection Mechanism Failure
+CWE-358,Improperly Implemented Security Check for Standard,Draft,CWE-1412,Poor Coding Practices
+CWE-359,Exposure of Private Personal Information to an Unauthorized Actor,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-360,Trust of System Event Data,Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-362,Concurrent Execution using Shared Resource with Improper Synchronization,Draft,CWE-1401,Concurrency
+CWE-363,Race Condition Enabling Link Following,Draft,CWE-1401,Concurrency
+CWE-364,Signal Handler Race Condition,Incomplete,CWE-1401,Concurrency
+CWE-366,Race Condition within a Thread,Draft,CWE-1401,Concurrency
+CWE-367,Time-of-check Time-of-use (TOCTOU) Race Condition,Incomplete,CWE-1401,Concurrency
+CWE-368,Context Switching Race Condition,Draft,CWE-1401,Concurrency
+CWE-369,Divide By Zero,Draft,CWE-1408,Incorrect Calculation
+CWE-370,Missing Check for Certificate Revocation after Initial Check,Draft,CWE-1396,Access Control
+CWE-372,Incomplete Internal State Distinction,Draft,CWE-1416,Resource Lifecycle Management
+CWE-374,Passing Mutable Objects to an Untrusted Method,Draft,CWE-1403,Exposed Resource
+CWE-375,Returning a Mutable Object to an Untrusted Caller,Draft,CWE-1403,Exposed Resource
+CWE-377,DEPRECATED: Insecure Temporary File,Deprecated,CWE-1403,Exposed Resource
+CWE-378,Creation of Temporary File With Insecure Permissions,Draft,CWE-1403,Exposed Resource
+CWE-379,Creation of Temporary File in Directory with Insecure Permissions,Incomplete,CWE-1403,Exposed Resource
+CWE-382,J2EE Bad Practices: Use of System.exit(),Draft,CWE-1410,Insufficient Control Flow Management
+CWE-383,J2EE Bad Practices: Direct Use of Threads,Draft,CWE-1412,Poor Coding Practices
+CWE-384,Session Fixation,Incomplete,CWE-1396,Access Control
+CWE-385,Covert Timing Channel,Incomplete,CWE-1415,Resource Control
+CWE-386,Symbolic Name not Mapping to Correct Object,Draft,CWE-1416,Resource Lifecycle Management
+CWE-390,Detection of Error Condition Without Action,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-391,DEPRECATED: Unchecked Error Condition,Deprecated,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-392,Missing Report of Error Condition,Draft,CWE-1412,Poor Coding Practices
+CWE-393,Return of Wrong Status Code,Draft,CWE-1412,Poor Coding Practices
+CWE-394,Unexpected Status Code or Return Value,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-395,Use of NullPointerException Catch to Detect NULL Pointer Dereference,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-396,Declaration of Catch for Generic Exception,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-397,Declaration of Throws for Generic Exception,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-400,Uncontrolled Resource Consumption,Draft,CWE-1416,Resource Lifecycle Management
+CWE-401,Missing Release of Memory after Effective Lifetime,Draft,CWE-1399,Memory Safety
+CWE-402,Transmission of Private Resources into a New Sphere,Draft,CWE-1403,Exposed Resource
+CWE-403,Exposure of File Descriptor to Unintended Control Sphere,Draft,CWE-1403,Exposed Resource
+CWE-404,Improper Resource Shutdown or Release,Draft,CWE-1416,Resource Lifecycle Management
+CWE-405,Asymmetric Resource Consumption (Amplification),Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-406,Insufficient Control of Network Message Volume (Network Amplification),Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-407,Inefficient Algorithmic Complexity,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-408,Incorrect Behavior Order: Early Amplification,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-409,Improper Handling of Highly Compressed Data (Data Amplification),Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-410,Insufficient Resource Pool,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-412,Unrestricted Externally Accessible Lock,Incomplete,CWE-1401,Concurrency
+CWE-413,Improper Resource Locking,Draft,CWE-1401,Concurrency
+CWE-414,Missing Lock Check,Draft,CWE-1401,Concurrency
+CWE-415,Double Free,Draft,CWE-1399,Memory Safety
+CWE-416,Use After Free,Stable,CWE-1399,Memory Safety
+CWE-419,Unprotected Primary Channel,Draft,CWE-1396,Access Control
+CWE-420,Unprotected Alternate Channel,Draft,CWE-1396,Access Control
+CWE-421,Race Condition During Access to Alternate Channel,Draft,CWE-1396,Access Control
+CWE-422,Unprotected Windows Messaging Channel,Draft,CWE-1396,Access Control
+CWE-424,Improper Protection of Alternate Path,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-425,Direct Request,Incomplete,CWE-1396,Access Control
+CWE-426,Untrusted Search Path,Stable,CWE-1403,Exposed Resource
+CWE-427,Uncontrolled Search Path Element,Draft,CWE-1403,Exposed Resource
+CWE-428,Unquoted Search Path or Element,Draft,CWE-1403,Exposed Resource
+CWE-430,Deployment of Wrong Handler,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-431,Missing Handler,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-432,Dangerous Signal Handler not Disabled During Sensitive Operations,Draft,CWE-1401,Concurrency
+CWE-433,Unparsed Raw Web Content Delivery,Incomplete,CWE-1403,Exposed Resource
+CWE-434,Unrestricted Upload of File with Dangerous Type,Draft,CWE-1416,Resource Lifecycle Management
+CWE-435,Improper Interaction Between Multiple Correctly-Behaving Entities,Draft,CWE-1398,Component Interaction
+CWE-436,Interpretation Conflict,Incomplete,CWE-1398,Component Interaction
+CWE-437,Incomplete Model of Endpoint Features,Incomplete,CWE-1398,Component Interaction
+CWE-439,Behavioral Change in New Version or Environment,Draft,CWE-1398,Component Interaction
+CWE-440,Expected Behavior Violation,Draft,CWE-1412,Poor Coding Practices
+CWE-441,Unintended Proxy or Intermediary,Draft,CWE-1396,Access Control
+CWE-444,Inconsistent Interpretation of HTTP Requests,Incomplete,CWE-1398,Component Interaction
+CWE-446,UI Discrepancy for Security Feature,Incomplete,CWE-1412,Poor Coding Practices
+CWE-447,Unimplemented or Unsupported Feature in UI,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-448,Obsolete Feature in UI,Draft,CWE-1412,Poor Coding Practices
+CWE-449,The UI Performs the Wrong Action,Incomplete,CWE-1412,Poor Coding Practices
+CWE-450,Multiple Interpretations of UI Input,Draft,CWE-1413,Protection Mechanism Failure
+CWE-451,User Interface (UI) Misrepresentation of Critical Information,Draft,CWE-1412,Poor Coding Practices
+CWE-453,Insecure Default Variable Initialization,Draft,CWE-1416,Resource Lifecycle Management
+CWE-454,External Initialization of Trusted Variables or Data Stores,Draft,CWE-1416,Resource Lifecycle Management
+CWE-455,Non-exit on Failed Initialization,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-456,Missing Initialization of a Variable,Draft,CWE-1416,Resource Lifecycle Management
+CWE-457,Use of Uninitialized Variable,Draft,CWE-1416,Resource Lifecycle Management
+CWE-459,Incomplete Cleanup,Draft,CWE-1416,Resource Lifecycle Management
+CWE-460,Improper Cleanup on Thrown Exception,Draft,CWE-1416,Resource Lifecycle Management
+CWE-462,Duplicate Key in Associative List (Alist),Incomplete,CWE-1412,Poor Coding Practices
+CWE-463,Deletion of Data Structure Sentinel,Incomplete,CWE-1407,Improper Neutralization
+CWE-464,Addition of Data Structure Sentinel,Incomplete,CWE-1407,Improper Neutralization
+CWE-466,Return of Pointer Value Outside of Expected Range,Draft,CWE-1399,Memory Safety
+CWE-467,Use of sizeof() on a Pointer Type,Draft,CWE-1408,Incorrect Calculation
+CWE-468,Incorrect Pointer Scaling,Incomplete,CWE-1408,Incorrect Calculation
+CWE-469,Use of Pointer Subtraction to Determine Size,Draft,CWE-1408,Incorrect Calculation
+CWE-470,Use of Externally-Controlled Input to Select Classes or Code,Draft,CWE-1415,Resource Control
+CWE-471,Modification of Assumed-Immutable Data (MAID),Draft,CWE-1416,Resource Lifecycle Management
+CWE-472,External Control of Assumed-Immutable Web Parameter,Draft,CWE-1403,Exposed Resource
+CWE-473,PHP External Variable Modification,Draft,CWE-1415,Resource Control
+CWE-474,Use of Function with Inconsistent Implementations,Draft,CWE-1412,Poor Coding Practices
+CWE-475,Undefined Behavior for Input to API,Incomplete,CWE-1412,Poor Coding Practices
+CWE-476,NULL Pointer Dereference,Stable,CWE-1412,Poor Coding Practices
+CWE-477,Use of Obsolete Function,Draft,CWE-1412,Poor Coding Practices
+CWE-478,Missing Default Case in Multiple Condition Expression,Draft,CWE-1397,Comparison
+CWE-479,Signal Handler Use of a Non-reentrant Function,Draft,CWE-1401,Concurrency
+CWE-480,Use of Incorrect Operator,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-481,Assigning instead of Comparing,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-482,Comparing instead of Assigning,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-483,Incorrect Block Delimitation,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-484,Omitted Break Statement in Switch,Draft,CWE-1412,Poor Coding Practices
+CWE-486,Comparison of Classes by Name,Draft,CWE-1397,Comparison
+CWE-487,Reliance on Package-level Scope,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-488,Exposure of Data Element to Wrong Session,Draft,CWE-1403,Exposed Resource
+CWE-489,Active Debug Code,Draft,CWE-1412,Poor Coding Practices
+CWE-491,Public cloneable() Method Without Final,Draft,CWE-1403,Exposed Resource
+CWE-492,Use of Inner Class Containing Sensitive Data,Draft,CWE-1403,Exposed Resource
+CWE-493,Critical Public Variable Without Final Modifier,Draft,CWE-1403,Exposed Resource
+CWE-494,Download of Code Without Integrity Check,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-495,Private Data Structure Returned From A Public Method,Draft,CWE-1416,Resource Lifecycle Management
+CWE-496,Public Data Assigned to Private Array-Typed Field,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-497,Exposure of Sensitive System Information to an Unauthorized Control Sphere,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-498,Cloneable Class Containing Sensitive Information,Draft,CWE-1403,Exposed Resource
+CWE-499,Serializable Class Containing Sensitive Data,Draft,CWE-1403,Exposed Resource
+CWE-500,Public Static Field Not Marked Final,Draft,CWE-1403,Exposed Resource
+CWE-501,Trust Boundary Violation,Draft,CWE-1416,Resource Lifecycle Management
+CWE-502,Deserialization of Untrusted Data,Draft,CWE-1415,Resource Control
+CWE-506,Embedded Malicious Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-507,Trojan Horse,Incomplete,CWE-1412,Poor Coding Practices
+CWE-508,Non-Replicating Malicious Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-509,Replicating Malicious Code (Virus or Worm),Incomplete,CWE-1412,Poor Coding Practices
+CWE-510,Trapdoor,Incomplete,CWE-1412,Poor Coding Practices
+CWE-511,Logic/Time Bomb,Incomplete,CWE-1412,Poor Coding Practices
+CWE-512,Spyware,Incomplete,CWE-1412,Poor Coding Practices
+CWE-514,Covert Channel,Incomplete,CWE-1415,Resource Control
+CWE-515,Covert Storage Channel,Incomplete,CWE-1415,Resource Control
+CWE-520,.NET Misconfiguration: Use of Impersonation,Incomplete,CWE-1396,Access Control
+CWE-521,Weak Password Requirements,Draft,CWE-1396,Access Control
+CWE-522,Insufficiently Protected Credentials,Incomplete,CWE-1396,Access Control
+CWE-523,Unprotected Transport of Credentials,Incomplete,CWE-1396,Access Control
+CWE-524,Use of Cache Containing Sensitive Information,Incomplete,CWE-1403,Exposed Resource
+CWE-525,Use of Web Browser Cache Containing Sensitive Information,Incomplete,CWE-1403,Exposed Resource
+CWE-526,Cleartext Storage of Sensitive Information in an Environment Variable,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-527,Exposure of Version-Control Repository to an Unauthorized Control Sphere,Incomplete,CWE-1403,Exposed Resource
+CWE-528,Exposure of Core Dump File to an Unauthorized Control Sphere,Draft,CWE-1403,Exposed Resource
+CWE-529,Exposure of Access Control List Files to an Unauthorized Control Sphere,Incomplete,CWE-1403,Exposed Resource
+CWE-530,Exposure of Backup File to an Unauthorized Control Sphere,Incomplete,CWE-1403,Exposed Resource
+CWE-531,Inclusion of Sensitive Information in Test Code,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-532,Insertion of Sensitive Information into Log File,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-535,Exposure of Information Through Shell Error Message,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-536,Servlet Runtime Error Message Containing Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-537,Java Runtime Error Message Containing Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-538,Insertion of Sensitive Information into Externally-Accessible File or Directory,Draft,CWE-1417,Sensitive Information Exposure
+CWE-539,Use of Persistent Cookies Containing Sensitive Information,Incomplete,CWE-1403,Exposed Resource
+CWE-540,Inclusion of Sensitive Information in Source Code,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-541,Inclusion of Sensitive Information in an Include File,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-543,Use of Singleton Pattern Without Synchronization in a Multithreaded Context,Incomplete,CWE-1401,Concurrency
+CWE-544,Missing Standardized Error Handling Mechanism,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-546,Suspicious Comment,Draft,CWE-1412,Poor Coding Practices
+CWE-547,"Use of Hard-coded, Security-relevant Constants",Draft,CWE-1412,Poor Coding Practices
+CWE-548,Exposure of Information Through Directory Listing,Draft,CWE-1417,Sensitive Information Exposure
+CWE-549,Missing Password Field Masking,Draft,CWE-1396,Access Control
+CWE-550,Server-generated Error Message Containing Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-551,Incorrect Behavior Order: Authorization Before Parsing and Canonicalization,Incomplete,CWE-1396,Access Control
+CWE-552,Files or Directories Accessible to External Parties,Draft,CWE-1403,Exposed Resource
+CWE-553,Command Shell in Externally Accessible Directory,Incomplete,CWE-1403,Exposed Resource
+CWE-554,ASP.NET Misconfiguration: Not Using Input Validation Framework,Draft,CWE-1406,Improper Input Validation
+CWE-555,J2EE Misconfiguration: Plaintext Password in Configuration File,Draft,CWE-1396,Access Control
+CWE-556,ASP.NET Misconfiguration: Use of Identity Impersonation,Incomplete,CWE-1396,Access Control
+CWE-558,Use of getlogin() in Multithreaded Application,Draft,CWE-1401,Concurrency
+CWE-560,Use of umask() with chmod-style Argument,Draft,CWE-1412,Poor Coding Practices
+CWE-561,Dead Code,Draft,CWE-1412,Poor Coding Practices
+CWE-562,Return of Stack Variable Address,Draft,CWE-1399,Memory Safety
+CWE-563,Assignment to Variable without Use,Draft,CWE-1412,Poor Coding Practices
+CWE-564,Use of Hibernate with HQL/SQL Query String Containing External Input,Incomplete,CWE-1409,Injection
+CWE-565,Reliance on Cookies without Validation and Integrity Checking,Incomplete,CWE-1403,Exposed Resource
+CWE-566,Authorization Bypass Through User-Controlled SQL Primary Key,Incomplete,CWE-1396,Access Control
+CWE-567,Unsynchronized Access to Shared Data in a Multithreaded Context,Draft,CWE-1401,Concurrency
+CWE-568,finalize() Method Without super.finalize(),Draft,CWE-1416,Resource Lifecycle Management
+CWE-570,Expression is Always False,Draft,CWE-1412,Poor Coding Practices
+CWE-571,Expression is Always True,Draft,CWE-1412,Poor Coding Practices
+CWE-572,Call to Thread run() instead of start(),Draft,CWE-1401,Concurrency
+CWE-573,Improper Following of Specification by Caller,Draft,CWE-1412,Poor Coding Practices
+CWE-574,EJB Bad Practices: Use of Synchronization Primitives,Draft,CWE-1401,Concurrency
+CWE-575,EJB Bad Practices: Use of AWT Swing,Draft,CWE-1412,Poor Coding Practices
+CWE-576,EJB Bad Practices: Use of Java I/O,Draft,CWE-1412,Poor Coding Practices
+CWE-577,EJB Bad Practices: Use of Sockets,Draft,CWE-1412,Poor Coding Practices
+CWE-578,EJB Bad Practices: Use of Class Loader,Draft,CWE-1412,Poor Coding Practices
+CWE-579,J2EE Bad Practices: Non-serializable Object Stored in Session,Draft,CWE-1412,Poor Coding Practices
+CWE-580,clone() Method Without super.clone(),Draft,CWE-1416,Resource Lifecycle Management
+CWE-581,Object Model Violation: Just One of Equals and Hashcode Defined,Draft,CWE-1412,Poor Coding Practices
+CWE-582,"Array Declared Public, Final, and Static",Draft,CWE-1403,Exposed Resource
+CWE-583,finalize() Method Declared Public,Incomplete,CWE-1403,Exposed Resource
+CWE-584,Return Inside Finally Block,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-585,Empty Synchronized Block,Draft,CWE-1412,Poor Coding Practices
+CWE-586,Explicit Call to Finalize(),Draft,CWE-1412,Poor Coding Practices
+CWE-587,Assignment of a Fixed Address to a Pointer,Draft,CWE-1399,Memory Safety
+CWE-588,Attempt to Access Child of a Non-structure Pointer,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-589,Call to Non-ubiquitous API,Incomplete,CWE-1412,Poor Coding Practices
+CWE-590,Free of Memory not on the Heap,Incomplete,CWE-1399,Memory Safety
+CWE-591,Sensitive Data Storage in Improperly Locked Memory,Draft,CWE-1401,Concurrency
+CWE-593,Authentication Bypass: OpenSSL CTX Object Modified after SSL Objects are Created,Draft,CWE-1396,Access Control
+CWE-594,J2EE Framework: Saving Unserializable Objects to Disk,Incomplete,CWE-1412,Poor Coding Practices
+CWE-595,Comparison of Object References Instead of Object Contents,Incomplete,CWE-1397,Comparison
+CWE-597,Use of Wrong Operator in String Comparison,Draft,CWE-1397,Comparison
+CWE-598,Use of HTTP Request With Sensitive Query String,Draft,CWE-1417,Sensitive Information Exposure
+CWE-599,Missing Validation of OpenSSL Certificate,Incomplete,CWE-1396,Access Control
+CWE-600,Uncaught Exception in Servlet,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-601,URL Redirection to Untrusted Site,Draft,CWE-1396,Access Control
+CWE-602,Client-Side Enforcement of Server-Side Security,Draft,CWE-1413,Protection Mechanism Failure
+CWE-603,Use of Client-Side Authentication,Draft,CWE-1396,Access Control
+CWE-605,Multiple Binds to the Same Port,Draft,CWE-1412,Poor Coding Practices
+CWE-606,Unchecked Input for Loop Condition,Draft,CWE-1406,Improper Input Validation
+CWE-607,Public Static Final Field References Mutable Object,Draft,CWE-1416,Resource Lifecycle Management
+CWE-608,Struts: Non-private Field in ActionForm Class,Draft,CWE-1403,Exposed Resource
+CWE-609,Double-Checked Locking,Draft,CWE-1401,Concurrency
+CWE-610,Externally Controlled Reference to a Resource in Another Sphere,Draft,CWE-1416,Resource Lifecycle Management
+CWE-611,Improper Restriction of XML External Entity Reference,Draft,CWE-1396,Access Control
+CWE-612,Improper Authorization of Index Containing Sensitive Information,Draft,CWE-1396,Access Control
+CWE-614,Sensitive Cookie in HTTPS Session Without 'Secure' Attribute,Draft,CWE-1402,Encryption
+CWE-615,Inclusion of Sensitive Information in Source Code Comments,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-616,Incomplete Identification of Uploaded File Variables (PHP),Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-617,Reachable Assertion,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-618,Exposed Unsafe ActiveX Method,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-619,Dangling Database Cursor,Incomplete,CWE-1403,Exposed Resource
+CWE-620,Unverified Password Change,Draft,CWE-1396,Access Control
+CWE-621,Variable Extraction Error,Incomplete,CWE-1409,Injection
+CWE-622,Improper Validation of Function Hook Arguments,Draft,CWE-1406,Improper Input Validation
+CWE-623,Unsafe ActiveX Control Marked Safe For Scripting,Draft,CWE-1396,Access Control
+CWE-624,Executable Regular Expression Error,Incomplete,CWE-1409,Injection
+CWE-625,Permissive Regular Expression,Draft,CWE-1397,Comparison
+CWE-626,Null Byte Interaction Error (Poison Null Byte),Draft,CWE-1407,Improper Neutralization
+CWE-627,Dynamic Variable Evaluation,Incomplete,CWE-1409,Injection
+CWE-628,Function Call with Incorrectly Specified Arguments,Draft,CWE-1412,Poor Coding Practices
+CWE-636,Not Failing Securely,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-637,Unnecessary Complexity in Protection Mechanism (Not Using 'Economy of Mechanism'),Draft,CWE-1418,Violation of Secure Design Principles
+CWE-638,Not Using Complete Mediation,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-639,Authorization Bypass Through User-Controlled Key,Incomplete,CWE-1396,Access Control
+CWE-640,Weak Password Recovery Mechanism for Forgotten Password,Incomplete,CWE-1396,Access Control
+CWE-641,Improper Restriction of Names for Files and Other Resources,Incomplete,CWE-1409,Injection
+CWE-642,External Control of Critical State Data,Draft,CWE-1403,Exposed Resource
+CWE-643,Improper Neutralization of Data within XPath Expressions,Incomplete,CWE-1409,Injection
+CWE-644,Improper Neutralization of HTTP Headers for Scripting Syntax,Incomplete,CWE-1407,Improper Neutralization
+CWE-645,Overly Restrictive Account Lockout Mechanism,Incomplete,CWE-1396,Access Control
+CWE-646,Reliance on File Name or Extension of Externally-Supplied File,Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-647,Use of Non-Canonical URL Paths for Authorization Decisions,Incomplete,CWE-1396,Access Control
+CWE-648,Incorrect Use of Privileged APIs,Incomplete,CWE-1396,Access Control
+CWE-649,Reliance on Obfuscation or Encryption of Security-Relevant Inputs without Integrity Checking,Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-650,Trusting HTTP Permission Methods on the Server Side,Incomplete,CWE-1398,Component Interaction
+CWE-651,Exposure of WSDL File Containing Sensitive Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-652,Improper Neutralization of Data within XQuery Expressions,Incomplete,CWE-1409,Injection
+CWE-653,Improper Isolation or Compartmentalization,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-654,Reliance on a Single Factor in a Security Decision,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-655,Insufficient Psychological Acceptability,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-656,Reliance on Security Through Obscurity,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-657,Violation of Secure Design Principles,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-662,Improper Synchronization,Draft,CWE-1416,Resource Lifecycle Management
+CWE-663,Use of a Non-reentrant Function in a Concurrent Context,Draft,CWE-1401,Concurrency
+CWE-664,Improper Control of a Resource Through its Lifetime,Draft,CWE-1416,Resource Lifecycle Management
+CWE-665,Improper Initialization,Draft,CWE-1416,Resource Lifecycle Management
+CWE-666,Operation on Resource in Wrong Phase of Lifetime,Draft,CWE-1416,Resource Lifecycle Management
+CWE-667,Improper Locking,Draft,CWE-1401,Concurrency
+CWE-668,Exposure of Resource to Wrong Sphere,Draft,CWE-1403,Exposed Resource
+CWE-669,Incorrect Resource Transfer Between Spheres,Draft,CWE-1416,Resource Lifecycle Management
+CWE-670,Always-Incorrect Control Flow Implementation,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-671,Lack of Administrator Control over Security,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-672,Operation on a Resource after Expiration or Release,Draft,CWE-1415,Resource Control
+CWE-673,External Influence of Sphere Definition,Draft,CWE-1416,Resource Lifecycle Management
+CWE-674,Uncontrolled Recursion,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-675,Multiple Operations on Resource in Single-Operation Context,Draft,CWE-1412,Poor Coding Practices
+CWE-676,Use of Potentially Dangerous Function,Draft,CWE-1412,Poor Coding Practices
+CWE-680,Integer Overflow to Buffer Overflow,Draft,CWE-1399,Memory Safety
+CWE-681,Incorrect Conversion between Numeric Types,Draft,CWE-1416,Resource Lifecycle Management
+CWE-682,Incorrect Calculation,Draft,CWE-1408,Incorrect Calculation
+CWE-683,Function Call With Incorrect Order of Arguments,Draft,CWE-1412,Poor Coding Practices
+CWE-684,Incorrect Provision of Specified Functionality,Draft,CWE-1412,Poor Coding Practices
+CWE-685,Function Call With Incorrect Number of Arguments,Draft,CWE-1412,Poor Coding Practices
+CWE-686,Function Call With Incorrect Argument Type,Draft,CWE-1412,Poor Coding Practices
+CWE-687,Function Call With Incorrectly Specified Argument Value,Draft,CWE-1412,Poor Coding Practices
+CWE-688,Function Call With Incorrect Variable or Reference as Argument,Draft,CWE-1412,Poor Coding Practices
+CWE-689,Permission Race Condition During Resource Copy,Draft,CWE-1401,Concurrency
+CWE-690,Unchecked Return Value to NULL Pointer Dereference,Draft,CWE-1399,Memory Safety
+CWE-691,Insufficient Control Flow Management,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-692,Incomplete Denylist to Cross-Site Scripting,Draft,CWE-1409,Injection
+CWE-693,Protection Mechanism Failure,Draft,CWE-1413,Protection Mechanism Failure
+CWE-694,Use of Multiple Resources with Duplicate Identifier,Incomplete,CWE-1409,Injection
+CWE-695,Use of Low-Level Functionality,Incomplete,CWE-1412,Poor Coding Practices
+CWE-696,Incorrect Behavior Order,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-697,Incorrect Comparison,Incomplete,CWE-1397,Comparison
+CWE-698,Execution After Redirect (EAR),Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-703,Improper Check or Handling of Exceptional Conditions,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-704,Incorrect Type Conversion or Cast,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-705,Incorrect Control Flow Scoping,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-706,Use of Incorrectly-Resolved Name or Reference,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-707,Improper Neutralization,Incomplete,CWE-1407,Improper Neutralization
+CWE-708,Incorrect Ownership Assignment,Incomplete,CWE-1396,Access Control
+CWE-710,Improper Adherence to Coding Standards,Incomplete,CWE-1412,Poor Coding Practices
+CWE-732,Incorrect Permission Assignment for Critical Resource,Draft,CWE-1396,Access Control
+CWE-733,Compiler Optimization Removal or Modification of Security-critical Code,Incomplete,CWE-1398,Component Interaction
+CWE-749,Exposed Dangerous Method or Function,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-754,Improper Check for Unusual or Exceptional Conditions,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-755,Improper Handling of Exceptional Conditions,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-756,Missing Custom Error Page,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-757,Selection of Less-Secure Algorithm During Negotiation,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-758,"Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",Incomplete,CWE-1412,Poor Coding Practices
+CWE-759,Use of a One-Way Hash without a Salt,Incomplete,CWE-1402,Encryption
+CWE-760,Use of a One-Way Hash with a Predictable Salt,Incomplete,CWE-1402,Encryption
+CWE-761,Free of Pointer not at Start of Buffer,Incomplete,CWE-1399,Memory Safety
+CWE-762,Mismatched Memory Management Routines,Incomplete,CWE-1399,Memory Safety
+CWE-763,Release of Invalid Pointer or Reference,Incomplete,CWE-1399,Memory Safety
+CWE-764,Multiple Locks of a Critical Resource,Incomplete,CWE-1401,Concurrency
+CWE-765,Multiple Unlocks of a Critical Resource,Incomplete,CWE-1401,Concurrency
+CWE-766,Critical Data Element Declared Public,Incomplete,CWE-1412,Poor Coding Practices
+CWE-767,Access to Critical Private Variable via Public Method,Incomplete,CWE-1403,Exposed Resource
+CWE-768,Incorrect Short Circuit Evaluation,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-770,Allocation of Resources Without Limits or Throttling,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-771,Missing Reference to Active Allocated Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-772,Missing Release of Resource after Effective Lifetime,Draft,CWE-1416,Resource Lifecycle Management
+CWE-773,Missing Reference to Active File Descriptor or Handle,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-774,Allocation of File Descriptors or Handles Without Limits or Throttling,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-775,Missing Release of File Descriptor or Handle after Effective Lifetime,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-776,Improper Restriction of Recursive Entity References in DTDs,Draft,CWE-1416,Resource Lifecycle Management
+CWE-777,Regular Expression without Anchors,Incomplete,CWE-1397,Comparison
+CWE-778,Insufficient Logging,Draft,CWE-1413,Protection Mechanism Failure
+CWE-779,Logging of Excessive Data,Draft,CWE-1416,Resource Lifecycle Management
+CWE-780,Use of RSA Algorithm without OAEP,Incomplete,CWE-1402,Encryption
+CWE-781,Improper Address Validation in IOCTL with METHOD_NEITHER I/O Control Code,Draft,CWE-1406,Improper Input Validation
+CWE-782,Exposed IOCTL with Insufficient Access Control,Draft,CWE-1416,Resource Lifecycle Management
+CWE-783,Operator Precedence Logic Error,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-784,Reliance on Cookies without Validation and Integrity Checking in a Security Decision,Draft,CWE-1403,Exposed Resource
+CWE-785,Use of Path Manipulation Function without Maximum-sized Buffer,Incomplete,CWE-1412,Poor Coding Practices
+CWE-786,Access of Memory Location Before Start of Buffer,Incomplete,CWE-1399,Memory Safety
+CWE-787,Out-of-bounds Write,Draft,CWE-1399,Memory Safety
+CWE-788,Access of Memory Location After End of Buffer,Incomplete,CWE-1399,Memory Safety
+CWE-789,Memory Allocation with Excessive Size Value,Draft,CWE-1399,Memory Safety
+CWE-790,Improper Filtering of Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-791,Incomplete Filtering of Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-792,Incomplete Filtering of One or More Instances of Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-793,Only Filtering One Instance of a Special Element,Incomplete,CWE-1407,Improper Neutralization
+CWE-794,Incomplete Filtering of Multiple Instances of Special Elements,Incomplete,CWE-1407,Improper Neutralization
+CWE-795,Only Filtering Special Elements at a Specified Location,Incomplete,CWE-1407,Improper Neutralization
+CWE-796,Only Filtering Special Elements Relative to a Marker,Incomplete,CWE-1407,Improper Neutralization
+CWE-797,Only Filtering Special Elements at an Absolute Position,Incomplete,CWE-1407,Improper Neutralization
+CWE-798,Use of Hard-coded Credentials,Draft,CWE-1396,Access Control
+CWE-799,Improper Control of Interaction Frequency,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-804,Guessable CAPTCHA,Incomplete,CWE-1396,Access Control
+CWE-805,Buffer Access with Incorrect Length Value,Incomplete,CWE-1399,Memory Safety
+CWE-806,Buffer Access Using Size of Source Buffer,Incomplete,CWE-1399,Memory Safety
+CWE-807,Reliance on Untrusted Inputs in a Security Decision,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-820,Missing Synchronization,Incomplete,CWE-1401,Concurrency
+CWE-821,Incorrect Synchronization,Incomplete,CWE-1401,Concurrency
+CWE-822,Untrusted Pointer Dereference,Incomplete,CWE-1399,Memory Safety
+CWE-823,Use of Out-of-range Pointer Offset,Incomplete,CWE-1399,Memory Safety
+CWE-824,Access of Uninitialized Pointer,Incomplete,CWE-1399,Memory Safety
+CWE-825,Expired Pointer Dereference,Incomplete,CWE-1399,Memory Safety
+CWE-826,Premature Release of Resource During Expected Lifetime,Incomplete,CWE-1415,Resource Control
+CWE-827,Improper Control of Document Type Definition,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-828,Signal Handler with Functionality that is not Asynchronous-Safe,Incomplete,CWE-1401,Concurrency
+CWE-829,Inclusion of Functionality from Untrusted Control Sphere,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-830,Inclusion of Web Functionality from an Untrusted Source,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-831,Signal Handler Function Associated with Multiple Signals,Incomplete,CWE-1401,Concurrency
+CWE-832,Unlock of a Resource that is not Locked,Incomplete,CWE-1401,Concurrency
+CWE-833,Deadlock,Incomplete,CWE-1401,Concurrency
+CWE-834,Excessive Iteration,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-835,Loop with Unreachable Exit Condition,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-836,Use of Password Hash Instead of Password for Authentication,Incomplete,CWE-1396,Access Control
+CWE-837,"Improper Enforcement of a Single, Unique Action",Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-838,Inappropriate Encoding for Output Context,Incomplete,CWE-1407,Improper Neutralization
+CWE-839,Numeric Range Comparison Without Minimum Check,Incomplete,CWE-1397,Comparison
+CWE-841,Improper Enforcement of Behavioral Workflow,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-842,Placement of User into Incorrect Group,Incomplete,CWE-1396,Access Control
+CWE-843,Access of Resource Using Incompatible Type,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-862,Missing Authorization,Incomplete,CWE-1396,Access Control
+CWE-863,Incorrect Authorization,Incomplete,CWE-1396,Access Control
+CWE-908,Use of Uninitialized Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-909,Missing Initialization of Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-910,Use of Expired File Descriptor,Incomplete,CWE-1415,Resource Control
+CWE-911,Improper Update of Reference Count,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-912,Hidden Functionality,Incomplete,CWE-1412,Poor Coding Practices
+CWE-913,Improper Control of Dynamically-Managed Code Resources,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-914,Improper Control of Dynamically-Identified Variables,Incomplete,CWE-1409,Injection
+CWE-915,Improperly Controlled Modification of Dynamically-Determined Object Attributes,Incomplete,CWE-1415,Resource Control
+CWE-916,Use of Password Hash With Insufficient Computational Effort,Incomplete,CWE-1402,Encryption
+CWE-917,Improper Neutralization of Special Elements used in an Expression Language Statement,Incomplete,CWE-1409,Injection
+CWE-918,Server-Side Request Forgery,Incomplete,CWE-1396,Access Control
+CWE-920,Improper Restriction of Power Consumption,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-921,Storage of Sensitive Data in a Mechanism without Access Control,Incomplete,CWE-1396,Access Control
+CWE-922,Insecure Storage of Sensitive Information,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-923,Improper Restriction of Communication Channel to Intended Endpoints,Incomplete,CWE-1396,Access Control
+CWE-924,Improper Enforcement of Message Integrity During Transmission in a Communication Channel,Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-925,Improper Verification of Intent by Broadcast Receiver,Incomplete,CWE-1396,Access Control
+CWE-926,Improper Export of Android Application Components,Incomplete,CWE-1396,Access Control
+CWE-927,Use of Implicit Intent for Sensitive Communication,Incomplete,CWE-1396,Access Control
+CWE-939,Improper Authorization in Handler for Custom URL Scheme,Incomplete,CWE-1396,Access Control
+CWE-940,Improper Verification of Source of a Communication Channel,Incomplete,CWE-1396,Access Control
+CWE-941,Incorrectly Specified Destination in a Communication Channel,Incomplete,CWE-1396,Access Control
+CWE-942,Permissive Cross-domain Security Policy with Untrusted Domains,Incomplete,CWE-1396,Access Control
+CWE-943,Improper Neutralization of Special Elements in Data Query Logic,Incomplete,CWE-1409,Injection
+CWE-1004,Sensitive Cookie Without 'HttpOnly' Flag,Incomplete,CWE-1396,Access Control
+CWE-1007,Insufficient Visual Distinction of Homoglyphs Presented to User,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1021,Improper Restriction of Rendered UI Layers or Frames,Incomplete,CWE-1396,Access Control
+CWE-1022,Use of Web Link to Untrusted Target with window.opener Access,Incomplete,CWE-1396,Access Control
+CWE-1023,Incomplete Comparison with Missing Factors,Incomplete,CWE-1397,Comparison
+CWE-1024,Comparison of Incompatible Types,Incomplete,CWE-1397,Comparison
+CWE-1025,Comparison Using Wrong Factors,Incomplete,CWE-1397,Comparison
+CWE-1037,Processor Optimization Removal or Modification of Security-critical Code,Incomplete,CWE-1398,Component Interaction
+CWE-1038,Insecure Automated Optimizations,Draft,CWE-1398,Component Interaction
+CWE-1039,Inadequate Detection or Handling of Adversarial Input Perturbations in Automated Recognition Mechanism,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1041,Use of Redundant Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1042,Static Member Data Element outside of a Singleton Class Element,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1043,Data Element Aggregating an Excessively Large Number of Non-Primitive Elements,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1044,Architecture with Number of Horizontal Layers Outside of Expected Range,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1045,Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1046,Creation of Immutable Text Using String Concatenation,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1047,Modules with Circular Dependencies,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1048,Invokable Control Element with Large Number of Outward Calls,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1049,Excessive Data Query Operations in a Large Data Table,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1050,Excessive Platform Resource Consumption within a Loop,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1051,Initialization with Hard-Coded Network Resource Configuration Data,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1052,Excessive Use of Hard-Coded Literals in Initialization,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1053,Missing Documentation for Design,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1054,Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1055,Multiple Inheritance from Concrete Classes,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1056,Invokable Control Element with Variadic Parameters,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1057,Data Access Operations Outside of Expected Data Manager Component,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1058,Invokable Control Element in Multi-Thread Context with non-Final Static Storable or Member Element,Incomplete,CWE-1401,Concurrency
+CWE-1059,Insufficient Technical Documentation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1060,Excessive Number of Inefficient Server-Side Data Accesses,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1061,Insufficient Encapsulation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1062,Parent Class with References to Child Class,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1063,Creation of Class Instance within a Static Code Block,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1064,Invokable Control Element with Signature Containing an Excessive Number of Parameters,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1065,Runtime Resource Management Control Element in a Component Built to Run on Application Servers,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1066,Missing Serialization Control Element,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1067,Excessive Execution of Sequential Searches of Data Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1068,Inconsistency Between Implementation and Documented Design,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1069,Empty Exception Block,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1070,Serializable Data Element Containing non-Serializable Item Elements,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1071,Empty Code Block,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1072,Data Resource Access without Use of Connection Pooling,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1073,Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1074,Class with Excessively Deep Inheritance,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1075,Unconditional Control Flow Transfer outside of Switch Block,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1076,Insufficient Adherence to Expected Conventions,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1077,Floating Point Comparison with Incorrect Operator,Incomplete,CWE-1397,Comparison
+CWE-1078,Inappropriate Source Code Style or Formatting,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1079,Parent Class without Virtual Destructor Method,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1080,Source Code File with Excessive Number of Lines of Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1082,Class Instance Self Destruction Control Element,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1083,Data Access from Outside Expected Data Manager Component,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1084,Invokable Control Element with Excessive File or Data Access Operations,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1085,Invokable Control Element with Excessive Volume of Commented-out Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1086,Class with Excessive Number of Child Classes,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1087,Class with Virtual Method without a Virtual Destructor,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1088,Synchronous Access of Remote Resource without Timeout,Incomplete,CWE-1401,Concurrency
+CWE-1089,Large Data Table with Excessive Number of Indices,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1090,Method Containing Access of a Member Element from Another Class,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1091,Use of Object without Invoking Destructor Method,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1092,Use of Same Invokable Control Element in Multiple Architectural Layers,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1093,Excessively Complex Data Representation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1094,Excessive Index Range Scan for a Data Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1095,Loop Condition Value Update within the Loop,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1096,Singleton Class Instance Creation without Proper Locking or Synchronization,Incomplete,CWE-1401,Concurrency
+CWE-1097,Persistent Storable Data Element without Associated Comparison Control Element,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1098,Data Element containing Pointer Item without Proper Copy Control Element,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1099,Inconsistent Naming Conventions for Identifiers,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1100,Insufficient Isolation of System-Dependent Functions,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1101,Reliance on Runtime Component in Generated Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1102,Reliance on Machine-Dependent Data Representation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1103,Use of Platform-Dependent Third Party Components,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1104,Use of Unmaintained Third Party Components,Incomplete,CWE-1415,Resource Control
+CWE-1105,Insufficient Encapsulation of Machine-Dependent Functionality,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1106,Insufficient Use of Symbolic Constants,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1107,Insufficient Isolation of Symbolic Constant Definitions,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1108,Excessive Reliance on Global Variables,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1109,Use of Same Variable for Multiple Purposes,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1110,Incomplete Design Documentation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1111,Incomplete I/O Documentation,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1112,Incomplete Documentation of Program Execution,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1113,Inappropriate Comment Style,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1114,Inappropriate Whitespace Style,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1115,Source Code Element without Standard Prologue,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1116,Inaccurate Source Code Comments,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1117,Callable with Insufficient Behavioral Summary,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1118,Insufficient Documentation of Error Handling Techniques,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1119,Excessive Use of Unconditional Branching,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1120,Excessive Code Complexity,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1121,Excessive McCabe Cyclomatic Complexity,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1122,Excessive Halstead Complexity,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1123,Excessive Use of Self-Modifying Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1124,Excessively Deep Nesting,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1125,Excessive Attack Surface,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1126,Declaration of Variable with Unnecessarily Wide Scope,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1127,Compilation with Insufficient Warnings or Errors,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1164,Irrelevant Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1173,Improper Use of Validation Framework,Draft,CWE-1406,Improper Input Validation
+CWE-1174,ASP.NET Misconfiguration: Improper Model Validation,Draft,CWE-1406,Improper Input Validation
+CWE-1176,Inefficient CPU Computation,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1177,Use of Prohibited Code,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1188,Initialization of a Resource with an Insecure Default,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1189,Improper Isolation of Shared Resources on System-on-a-Chip (SoC),Stable,CWE-1418,Violation of Secure Design Principles
+CWE-1190,DMA Device Enabled Too Early in Boot Phase,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-1191,On-Chip Debug and Test Interface With Improper Access Control,Stable,CWE-1396,Access Control
+CWE-1192,Improper Identifier for IP Block used in System-On-Chip (SOC),Draft,CWE-1418,Violation of Secure Design Principles
+CWE-1193,Power-On of Untrusted Execution Core Before Enabling Fabric Access Control,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-1204,Generation of Weak Initialization Vector (IV),Incomplete,CWE-1414,Randomness
+CWE-1209,Failure to Disable Reserved Bits,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1220,Insufficient Granularity of Access Control,Incomplete,CWE-1396,Access Control
+CWE-1221,Incorrect Register Defaults or Module Parameters,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1222,Insufficient Granularity of Address Regions Protected by Register Locks,Incomplete,CWE-1396,Access Control
+CWE-1223,Race Condition for Write-Once Attributes,Incomplete,CWE-1401,Concurrency
+CWE-1224,Improper Restriction of Write-Once Bit Fields,Incomplete,CWE-1396,Access Control
+CWE-1229,Creation of Emergent Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1230,Exposure of Sensitive Information Through Metadata,Incomplete,CWE-1396,Access Control
+CWE-1231,Improper Prevention of Lock Bit Modification,Stable,CWE-1396,Access Control
+CWE-1232,Improper Lock Behavior After Power State Transition,Incomplete,CWE-1401,Concurrency
+CWE-1233,Security-Sensitive Hardware Controls with Missing Lock Bit Protection,Stable,CWE-1396,Access Control
+CWE-1234,Hardware Internal or Debug Modes Allow Override of Locks,Incomplete,CWE-1401,Concurrency
+CWE-1235,Incorrect Use of Autoboxing and Unboxing for Performance Critical Operations,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1236,Improper Neutralization of Formula Elements in a CSV File,Incomplete,CWE-1409,Injection
+CWE-1239,Improper Zeroization of Hardware Register,Draft,CWE-1416,Resource Lifecycle Management
+CWE-1240,Use of a Cryptographic Primitive with a Risky Implementation,Draft,CWE-1402,Encryption
+CWE-1241,Use of Predictable Algorithm in Random Number Generator,Draft,CWE-1414,Randomness
+CWE-1242,Inclusion of Undocumented Features or Chicken Bits,Incomplete,CWE-1396,Access Control
+CWE-1243,Sensitive Non-Volatile Information Not Protected During Debug,Incomplete,CWE-1396,Access Control
+CWE-1244,Internal Asset Exposed to Unsafe Debug Access Level or State,Stable,CWE-1396,Access Control
+CWE-1245,Improper Finite State Machines (FSMs) in Hardware Logic,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1246,Improper Write Handling in Limited-write Non-Volatile Memories,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1247,Improper Protection Against Voltage and Clock Glitches,Stable,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-1248,Semiconductor Defects in Hardware Logic with Security-Sensitive Implications,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1249,Application-Level Admin Tool with Inconsistent View of Underlying Operating System,Incomplete,CWE-1415,Resource Control
+CWE-1250,Improper Preservation of Consistency Between Independent Representations of Shared State,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1251,Mirrored Regions with Different Values,Incomplete,CWE-1415,Resource Control
+CWE-1252,CPU Hardware Not Configured to Support Exclusivity of Write and Execute Operations,Incomplete,CWE-1396,Access Control
+CWE-1253,Incorrect Selection of Fuse Values,Draft,CWE-1413,Protection Mechanism Failure
+CWE-1254,Incorrect Comparison Logic Granularity,Draft,CWE-1417,Sensitive Information Exposure
+CWE-1255,Comparison Logic is Vulnerable to Power Side-Channel Attacks,Draft,CWE-1417,Sensitive Information Exposure
+CWE-1256,Improper Restriction of Software Interfaces to Hardware Features,Stable,CWE-1396,Access Control
+CWE-1257,Improper Access Control Applied to Mirrored or Aliased Memory Regions,Incomplete,CWE-1396,Access Control
+CWE-1258,Exposure of Sensitive System Information Due to Uncleared Debug Information,Draft,CWE-1416,Resource Lifecycle Management
+CWE-1259,Improper Restriction of Security Token Assignment,Incomplete,CWE-1396,Access Control
+CWE-1260,Improper Handling of Overlap Between Protected Memory Ranges,Stable,CWE-1396,Access Control
+CWE-1261,Improper Handling of Single Event Upsets,Draft,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-1262,Improper Access Control for Register Interface,Stable,CWE-1396,Access Control
+CWE-1263,Improper Physical Access Control,Incomplete,CWE-1396,Access Control
+CWE-1264,Hardware Logic with Insecure De-Synchronization between Control and Data Channels,Incomplete,CWE-1401,Concurrency
+CWE-1265,Unintended Reentrant Invocation of Non-reentrant Code Via Nested Calls,Draft,CWE-1410,Insufficient Control Flow Management
+CWE-1266,Improper Scrubbing of Sensitive Data from Decommissioned Device,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1267,Policy Uses Obsolete Encoding,Draft,CWE-1396,Access Control
+CWE-1268,Policy Privileges are not Assigned Consistently Between Control and Data Agents,Draft,CWE-1396,Access Control
+CWE-1269,Product Released in Non-Release Configuration,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1270,Generation of Incorrect Security Tokens,Incomplete,CWE-1396,Access Control
+CWE-1271,Uninitialized Value on Reset for Registers Holding Security Settings,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1272,Sensitive Information Uncleared Before Debug/Power State Transition,Stable,CWE-1416,Resource Lifecycle Management
+CWE-1273,Device Unlock Credential Sharing,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-1274,Improper Access Control for Volatile Memory Containing Boot Code,Stable,CWE-1396,Access Control
+CWE-1275,Sensitive Cookie with Improper SameSite Attribute,Incomplete,CWE-1396,Access Control
+CWE-1276,Hardware Child Block Incorrectly Connected to Parent System,Incomplete,CWE-1396,Access Control
+CWE-1277,Firmware Not Updateable,Draft,CWE-1415,Resource Control
+CWE-1278,Missing Protection Against Hardware Reverse Engineering Using Integrated Circuit (IC) Imaging Techniques,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1279,Cryptographic Operations are Run Before Supporting Units are Ready,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1280,Access Control Check Implemented After Asset is Accessed,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-1281,Sequence of Processor Instructions Leads to Unexpected Behavior,Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-1282,Assumed-Immutable Data is Stored in Writable Memory,Incomplete,CWE-1403,Exposed Resource
+CWE-1283,Mutable Attestation or Measurement Reporting Data,Incomplete,CWE-1396,Access Control
+CWE-1284,Improper Validation of Specified Quantity in Input,Incomplete,CWE-1406,Improper Input Validation
+CWE-1285,"Improper Validation of Specified Index, Position, or Offset in Input",Incomplete,CWE-1406,Improper Input Validation
+CWE-1286,Improper Validation of Syntactic Correctness of Input,Incomplete,CWE-1406,Improper Input Validation
+CWE-1287,Improper Validation of Specified Type of Input,Incomplete,CWE-1406,Improper Input Validation
+CWE-1288,Improper Validation of Consistency within Input,Incomplete,CWE-1406,Improper Input Validation
+CWE-1289,Improper Validation of Unsafe Equivalence in Input,Incomplete,CWE-1406,Improper Input Validation
+CWE-1290,Incorrect Decoding of Security Identifiers,Incomplete,CWE-1396,Access Control
+CWE-1291,Public Key Re-Use for Signing both Debug and Production Code,Draft,CWE-1413,Protection Mechanism Failure
+CWE-1292,Incorrect Conversion of Security Identifiers,Draft,CWE-1396,Access Control
+CWE-1293,Missing Source Correlation of Multiple Independent Data,Draft,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-1294,Insecure Security Identifier Mechanism,Incomplete,CWE-1396,Access Control
+CWE-1295,Debug Messages Revealing Unnecessary Information,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-1296,Incorrect Chaining or Granularity of Debug Components,Incomplete,CWE-1396,Access Control
+CWE-1297,Unprotected Confidential Information on Device is Accessible by OSAT Vendors,Incomplete,CWE-1396,Access Control
+CWE-1298,Hardware Logic Contains Race Conditions,Draft,CWE-1401,Concurrency
+CWE-1299,Missing Protection Mechanism for Alternate Hardware Interface,Draft,CWE-1396,Access Control
+CWE-1300,Improper Protection of Physical Side Channels,Stable,CWE-1417,Sensitive Information Exposure
+CWE-1301,Insufficient or Incomplete Data Removal within Hardware Component,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1302,Missing Source Identifier in Entity Transactions on a System-On-Chip (SOC),Incomplete,CWE-1396,Access Control
+CWE-1303,Non-Transparent Sharing of Microarchitectural Resources,Draft,CWE-1418,Violation of Secure Design Principles
+CWE-1304,Improperly Preserved Integrity of Hardware Configuration State During a Power Save/Restore Operation,Draft,CWE-1396,Access Control
+CWE-1310,Missing Ability to Patch ROM Code,Draft,CWE-1415,Resource Control
+CWE-1311,Improper Translation of Security Attributes by Fabric Bridge,Draft,CWE-1396,Access Control
+CWE-1312,Missing Protection for Mirrored Regions in On-Chip Fabric Firewall,Draft,CWE-1396,Access Control
+CWE-1313,Hardware Allows Activation of Test or Debug Logic at Runtime,Draft,CWE-1396,Access Control
+CWE-1314,Missing Write Protection for Parametric Data Values,Draft,CWE-1396,Access Control
+CWE-1315,Improper Setting of Bus Controlling Capability in Fabric End-point,Incomplete,CWE-1396,Access Control
+CWE-1316,Fabric-Address Map Allows Programming of Unwarranted Overlaps of Protected and Unprotected Ranges,Draft,CWE-1396,Access Control
+CWE-1317,Improper Access Control in Fabric Bridge,Draft,CWE-1396,Access Control
+CWE-1318,Missing Support for Security Features in On-chip Fabrics or Buses,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1319,Improper Protection against Electromagnetic Fault Injection (EM-FI),Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1320,Improper Protection for Outbound Error Messages and Alert Signals,Draft,CWE-1396,Access Control
+CWE-1321,Improperly Controlled Modification of Object Prototype Attributes,Incomplete,CWE-1415,Resource Control
+CWE-1322,"Use of Blocking Code in Single-threaded, Non-blocking Context",Incomplete,CWE-1410,Insufficient Control Flow Management
+CWE-1323,Improper Management of Sensitive Trace Data,Draft,CWE-1396,Access Control
+CWE-1325,Improperly Controlled Sequential Memory Allocation,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1326,Missing Immutable Root of Trust in Hardware,Draft,CWE-1413,Protection Mechanism Failure
+CWE-1327,Binding to an Unrestricted IP Address,Incomplete,CWE-1403,Exposed Resource
+CWE-1328,Security Version Number Mutable to Older Versions,Draft,CWE-1396,Access Control
+CWE-1329,Reliance on Component That is Not Updateable,Incomplete,CWE-1415,Resource Control
+CWE-1330,Remanent Data Readable after Memory Erase,Draft,CWE-1416,Resource Lifecycle Management
+CWE-1331,Improper Isolation of Shared Resources in Network On Chip (NoC),Stable,CWE-1418,Violation of Secure Design Principles
+CWE-1332,Improper Handling of Faults that Lead to Instruction Skips,Stable,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-1333,Inefficient Regular Expression Complexity,Draft,CWE-1416,Resource Lifecycle Management
+CWE-1334,Unauthorized Error Injection Can Degrade Hardware Redundancy,Draft,CWE-1396,Access Control
+CWE-1335,Incorrect Bitwise Shift of Integer,Draft,CWE-1408,Incorrect Calculation
+CWE-1336,Improper Neutralization of Special Elements Used in a Template Engine,Incomplete,CWE-1409,Injection
+CWE-1338,Improper Protections Against Hardware Overheating,Draft,CWE-1413,Protection Mechanism Failure
+CWE-1339,Insufficient Precision or Accuracy of a Real Number,Draft,CWE-1408,Incorrect Calculation
+CWE-1341,Multiple Releases of Same Resource or Handle,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1342,Information Exposure through Microarchitectural State after Transient Execution,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1351,Improper Handling of Hardware Behavior in Exceptionally Cold Environments,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-1357,Reliance on Insufficiently Trustworthy Component,Incomplete,CWE-1412,Poor Coding Practices
+CWE-1384,Improper Handling of Physical or Environmental Conditions,Incomplete,CWE-1405,Improper Check or Handling of Exceptional Conditions
+CWE-1385,Missing Origin Validation in WebSockets,Incomplete,CWE-1411,Insufficient Verification of Data Authenticity
+CWE-1386,Insecure Operation on Windows Junction / Mount Point,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1389,Incorrect Parsing of Numbers with Different Radices,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1390,Weak Authentication,Incomplete,CWE-1396,Access Control
+CWE-1391,Use of Weak Credentials,Incomplete,CWE-1396,Access Control
+CWE-1392,Use of Default Credentials,Incomplete,CWE-1396,Access Control
+CWE-1393,Use of Default Password,Incomplete,CWE-1396,Access Control
+CWE-1394,Use of Default Cryptographic Key,Incomplete,CWE-1396,Access Control
+CWE-1395,Dependency on Vulnerable Third-Party Component,Incomplete,CWE-1418,Violation of Secure Design Principles
+CWE-1419,Incorrect Initialization of Resource,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1420,Exposure of Sensitive Information during Transient Execution,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1421,Exposure of Sensitive Information in Shared Microarchitectural Structures during Transient Execution,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1422,Exposure of Sensitive Information caused by Incorrect Data Forwarding during Transient Execution,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1423,Exposure of Sensitive Information caused by Shared Microarchitectural Predictor State that Influences Transient Execution,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1426,Improper Validation of Generative AI Output,Incomplete,CWE-1409,Injection
+CWE-1427,Improper Neutralization of Input Used for LLM Prompting,Incomplete,CWE-1409,Injection
+CWE-1428,Reliance on HTTP instead of HTTPS,Incomplete,CWE-1402,Encryption
+CWE-1429,Missing Security-Relevant Feedback for Unexecuted Operations in Hardware Interface,Incomplete,CWE-1413,Protection Mechanism Failure
+CWE-1431,Driving Intermediate Cryptographic State/Results to Hardware Module Outputs,Incomplete,CWE-1417,Sensitive Information Exposure
+CWE-1434,Insecure Setting of Generative AI/ML Model Inference Parameters,Draft,CWE-1412,Poor Coding Practices
+CWE-1461,Hardware Simulation / Synthesis Mismatch,Incomplete,CWE-1398,Component Interaction
+CWE-1462,Improper Session Management,Incomplete,CWE-1396,Access Control
+CWE-1463,Insufficient Session Timeout Value,Incomplete,CWE-1396,Access Control
+CWE-1464,Improper Session Invalidation,Incomplete,CWE-1396,Access Control
+CWE-1465,Improper Session Invalidation after User Logout,Incomplete,CWE-1396,Access Control
+CWE-1466,Improper Session Invalidation after Authentication Credential Change,Incomplete,CWE-1396,Access Control
+CWE-1467,Use of Singular Authentication Artifact for Multiple User Sessions,Incomplete,CWE-1396,Access Control
+CWE-1469,Improper Check for Credential Expiration,Incomplete,CWE-1396,Access Control
+CWE-1470,Improper External Identity Verification,Incomplete,CWE-1396,Access Control
+CWE-1471,Insufficiently Controlled Parser Differential,Incomplete,CWE-1398,Component Interaction
+CWE-1472,Generation of Credential with Long Expiration,Incomplete,CWE-1396,Access Control
+CWE-1473,Improper Expiration of Cached Data,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1474,Non-Equivalent Data Transformation,Incomplete,CWE-1407,Improper Neutralization
+CWE-1475,Incomplete Data/State Propagation,Incomplete,CWE-1416,Resource Lifecycle Management
+CWE-1476,Improper Request Propagation before Data Reception in Write Transactions in a Bus Architecture,Incomplete,CWE-1410,Insufficient Control Flow Management

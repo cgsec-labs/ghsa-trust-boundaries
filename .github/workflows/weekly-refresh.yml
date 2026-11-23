@@ -1,0 +1,82 @@
+name: Weekly refresh
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: weekly-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Fetch GitHub-reviewed advisories
+        run: |
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/github/advisory-database data/advisory-database
+          git -C data/advisory-database sparse-checkout set advisories/github-reviewed
+          echo "ADV_SHA=$(git -C data/advisory-database rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "ADV_DATE=$(git -C data/advisory-database log -1 --format=%cs)" >> "$GITHUB_ENV"
+
+      - name: Fetch MITRE CWE-1400 view
+        run: |
+          page="https://cwe.mitre.org/data/definitions/1400.html"
+          link=$(curl -fsSL "$page" | grep -oE 'href="[^"]*1400\.xml\.zip"' | head -1 | sed -E 's/^href="//; s/"$//')
+          if [ -z "$link" ]; then echo "Could not find the CWE-1400 XML link on $page"; exit 1; fi
+          case "$link" in
+            http*) url="$link" ;;
+            /*) url="https://cwe.mitre.org$link" ;;
+            *) url="https://cwe.mitre.org/data/definitions/$link" ;;
+          esac
+          echo "Downloading $url"
+          curl -fsSL "$url" -o data/1400.xml.zip
+          mkdir -p data/cwe1400 && unzip -o -q data/1400.xml.zip -d data/cwe1400
+          echo "CWE_XML=$(ls data/cwe1400/*.xml | head -1)" >> "$GITHUB_ENV"
+          echo "CWE_URL=$url" >> "$GITHUB_ENV"
+          sha256sum data/1400.xml.zip
+
+      - name: Rebuild tables
+        run: |
+          python3 -I scripts/cwe1400_map.py "$CWE_XML" results/cwe1400_map.csv data/1400.xml.zip "$CWE_URL"
+          python3 -I scripts/ghsa_overview.py data/advisory-database/advisories/github-reviewed "$ADV_SHA" . "$ADV_DATE"
+          before=$(wc -l < results/history.csv)
+          python3 -I scripts/history.py . "$(date -u +%F)"
+          after=$(wc -l < results/history.csv)
+          if [ "$after" -gt "$before" ]; then python3 -I scripts/delta.py . data/delta.md; fi
+
+      - name: Commit if anything changed
+        run: |
+          git add README.md docs results
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          cwe=$(python3 -I -c "import json; print(json.load(open('results/cwe1400_meta.json'))['cwe_version'])")
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Weekly refresh: advisory-database ${ADV_SHA:0:7}, CWE ${cwe}"
+          git push
+
+      - name: Post weekly delta
+        if: hashFiles('data/delta.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          num=$(gh issue list --state open --search "Weekly delta in:title" --json number,title --jq '[.[] | select(.title == "Weekly delta")][0].number // empty')
+          if [ -z "$num" ]; then
+            url=$(gh issue create --title "Weekly delta" --body "Each weekly refresh posts what changed here as a comment. Subscribe to this issue to get the summary by email. @r-bedekar")
+            num=${url##*/}
+          fi
+          gh issue comment "$num" --body-file data/delta.md

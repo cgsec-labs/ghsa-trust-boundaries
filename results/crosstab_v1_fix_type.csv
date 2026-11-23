@@ -1,0 +1,145 @@
+source,ecosystem,package_type,field_value,count
+ai,npm,library,docs only,0
+ai,npm,library,feature removed,4
+ai,npm,library,internal hardening,34
+ai,npm,library,other,1
+ai,npm,library,validation added,24
+ai,npm,library,fix not readable,0
+ai,npm,framework,docs only,1
+ai,npm,framework,feature removed,2
+ai,npm,framework,internal hardening,8
+ai,npm,framework,other,1
+ai,npm,framework,validation added,4
+ai,npm,framework,fix not readable,0
+ai,npm,tool,docs only,0
+ai,npm,tool,feature removed,3
+ai,npm,tool,internal hardening,10
+ai,npm,tool,other,0
+ai,npm,tool,validation added,2
+ai,npm,tool,fix not readable,0
+ai,PyPI,library,docs only,0
+ai,PyPI,library,feature removed,7
+ai,PyPI,library,internal hardening,19
+ai,PyPI,library,other,2
+ai,PyPI,library,validation added,29
+ai,PyPI,library,fix not readable,1
+ai,PyPI,framework,docs only,0
+ai,PyPI,framework,feature removed,1
+ai,PyPI,framework,internal hardening,2
+ai,PyPI,framework,other,0
+ai,PyPI,framework,validation added,16
+ai,PyPI,framework,fix not readable,0
+ai,PyPI,tool,docs only,0
+ai,PyPI,tool,feature removed,1
+ai,PyPI,tool,internal hardening,8
+ai,PyPI,tool,other,2
+ai,PyPI,tool,validation added,6
+ai,PyPI,tool,fix not readable,0
+ai,Maven,library,docs only,1
+ai,Maven,library,feature removed,3
+ai,Maven,library,internal hardening,27
+ai,Maven,library,other,2
+ai,Maven,library,validation added,18
+ai,Maven,library,fix not readable,4
+ai,Maven,framework,docs only,1
+ai,Maven,framework,feature removed,0
+ai,Maven,framework,internal hardening,15
+ai,Maven,framework,other,2
+ai,Maven,framework,validation added,20
+ai,Maven,framework,fix not readable,1
+ai,Maven,tool,docs only,0
+ai,Maven,tool,feature removed,0
+ai,Maven,tool,internal hardening,0
+ai,Maven,tool,other,1
+ai,Maven,tool,validation added,0
+ai,Maven,tool,fix not readable,0
+ai,Go,library,docs only,1
+ai,Go,library,feature removed,1
+ai,Go,library,internal hardening,18
+ai,Go,library,other,1
+ai,Go,library,validation added,26
+ai,Go,library,fix not readable,2
+ai,Go,framework,docs only,0
+ai,Go,framework,feature removed,0
+ai,Go,framework,internal hardening,11
+ai,Go,framework,other,0
+ai,Go,framework,validation added,9
+ai,Go,framework,fix not readable,1
+ai,Go,tool,docs only,0
+ai,Go,tool,feature removed,1
+ai,Go,tool,internal hardening,9
+ai,Go,tool,other,1
+ai,Go,tool,validation added,14
+ai,Go,tool,fix not readable,2
+pilot,npm,library,docs only,0
+pilot,npm,library,feature removed,1
+pilot,npm,library,internal hardening,1
+pilot,npm,library,other,1
+pilot,npm,library,validation added,1
+pilot,npm,library,fix not readable,0
+pilot,npm,framework,docs only,0
+pilot,npm,framework,feature removed,1
+pilot,npm,framework,internal hardening,0
+pilot,npm,framework,other,0
+pilot,npm,framework,validation added,0
+pilot,npm,framework,fix not readable,0
+pilot,npm,tool,docs only,0
+pilot,npm,tool,feature removed,0
+pilot,npm,tool,internal hardening,0
+pilot,npm,tool,other,0
+pilot,npm,tool,validation added,1
+pilot,npm,tool,fix not readable,0
+pilot,PyPI,library,docs only,0
+pilot,PyPI,library,feature removed,0
+pilot,PyPI,library,internal hardening,1
+pilot,PyPI,library,other,0
+pilot,PyPI,library,validation added,2
+pilot,PyPI,library,fix not readable,0
+pilot,PyPI,framework,docs only,0
+pilot,PyPI,framework,feature removed,0
+pilot,PyPI,framework,internal hardening,0
+pilot,PyPI,framework,other,0
+pilot,PyPI,framework,validation added,3
+pilot,PyPI,framework,fix not readable,0
+pilot,PyPI,tool,docs only,0
+pilot,PyPI,tool,feature removed,0
+pilot,PyPI,tool,internal hardening,0
+pilot,PyPI,tool,other,0
+pilot,PyPI,tool,validation added,0
+pilot,PyPI,tool,fix not readable,0
+pilot,Maven,library,docs only,0
+pilot,Maven,library,feature removed,0
+pilot,Maven,library,internal hardening,1
+pilot,Maven,library,other,0
+pilot,Maven,library,validation added,1
+pilot,Maven,library,fix not readable,0
+pilot,Maven,framework,docs only,0
+pilot,Maven,framework,feature removed,1
+pilot,Maven,framework,internal hardening,0
+pilot,Maven,framework,other,0
+pilot,Maven,framework,validation added,2
+pilot,Maven,framework,fix not readable,0
+pilot,Maven,tool,docs only,0
+pilot,Maven,tool,feature removed,0
+pilot,Maven,tool,internal hardening,0
+pilot,Maven,tool,other,0
+pilot,Maven,tool,validation added,0
+pilot,Maven,tool,fix not readable,0
+pilot,Go,library,docs only,0
+pilot,Go,library,feature removed,0
+pilot,Go,library,internal hardening,1
+pilot,Go,library,other,0
+pilot,Go,library,validation added,1
+pilot,Go,library,fix not readable,0
+pilot,Go,framework,docs only,0
+pilot,Go,framework,feature removed,0
+pilot,Go,framework,internal hardening,0
+pilot,Go,framework,other,0
+pilot,Go,framework,validation added,0
+pilot,Go,framework,fix not readable,0
+pilot,Go,tool,docs only,0
+pilot,Go,tool,feature removed,0
+pilot,Go,tool,internal hardening,0
+pilot,Go,tool,other,0
+pilot,Go,tool,validation added,1
+pilot,Go,tool,fix not readable,0

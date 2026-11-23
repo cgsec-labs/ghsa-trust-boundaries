@@ -1,0 +1,9 @@
+review_order,n,ecosystem,input_source,notes,review_basis
+1,13,npm,caller code,pretty is a compiler option; RCE requires caller to spread untrusted input (e.g. req.query) into template options/locals (borderline end-user via caller).,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+2,24,npm,end-user via caller,Incomplete fix for CVE-2024-45296; normal caller-defined route generates backtracking regex triggered by end-user URL path.,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+3,34,npm,end-user via caller,Documented-job property path utility (setter); prototype pollution when caller passes untrusted path string.,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+4,51,npm,end-user via caller,AST type confusion when a helper overwrites @partial-block with a crafted AST object (borderline caller code if helper is treated as source).,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+5,61,npm,end-user via caller,Documented-job nested object setter utility; prototype pollution when caller passes untrusted key path.,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+6,65,npm,end-user via caller,Documented-job nested object path utility (setPath); prototype pollution when caller passes untrusted key path.,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+7,85,npm,caller code,Unescaped interpolation of ssrContext.nonce into HTML attributes; requires caller to populate nonce with unsafe or attacker-derived data instead of a generated base64 nonce.,"AI-assisted, author-confirmed; reviewer knew the AI label was caller code"
+8,287,Maven,not boundary,"Ambiguous requestMatchers(String) silently defaults to MvcRequestMatcher across multiple servlets, misapplying authz rules on non-MVC endpoints.","AI-assisted, author-confirmed; reviewer knew the AI label was caller code"

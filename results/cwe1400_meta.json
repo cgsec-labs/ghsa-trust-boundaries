@@ -1,0 +1,7 @@
+{
+  "cwe_version": "5.0",
+  "cwe_date": "2026-10-28",
+  "weaknesses": 958,
+  "zip_sha256": "1993fbd9c85e6155d431ee9945ca2d998d9b0bc4b9b4383ea47e42057ed7b5ec",
+  "zip_url": "https://cwe.mitre.org/data/xml/views/1400.xml.zip"
+}

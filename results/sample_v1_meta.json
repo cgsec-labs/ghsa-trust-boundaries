@@ -1,0 +1,43 @@
+{
+  "cap_per_package": 2,
+  "ecosystems": {
+    "Go": {
+      "base": 130,
+      "drawn": 280,
+      "pool": 2224
+    },
+    "Maven": {
+      "base": 130,
+      "drawn": 235,
+      "pool": 3173
+    },
+    "PyPI": {
+      "base": 130,
+      "drawn": 150,
+      "pool": 3940
+    },
+    "npm": {
+      "base": 130,
+      "drawn": 140,
+      "pool": 3837
+    }
+  },
+  "extension_targets": [
+    {
+      "Go": 280,
+      "Maven": 210,
+      "PyPI": 140,
+      "npm": 140
+    },
+    {
+      "PyPI": 150
+    },
+    {
+      "Maven": 235
+    }
+  ],
+  "per_ecosystem": 130,
+  "pilot_per_ecosystem": 8,
+  "seed": 20261116,
+  "snapshot": "3d089691861074f29c73f30805dea0c1d2ac4e83"
+}

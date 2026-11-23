@@ -1,0 +1,153 @@
+n,ecosystem,ghsa_id,package_type,input_source,fix_type,fix_has_test,maintainer_pushback,notes,labeled_by,rules_version,v1_1_note
+1,npm,GHSA-hh27-hf48-9f5q,library,end-user via caller,validation added,yes,unknown,"Context-provided date formats reach strftime.
+The final diff checks the memory budget before
+padding; it does not retain the proposed hard
+width cap. Added tests exercise huge widths and
+non-string formats. PR #895 has no visible
+human discussion.
+Secondary:
+https://github.com/harttle/liquidjs/pull/895","AI assistant, reviewed by project author",1.0,
+2,npm,GHSA-6prh-2h8m-c8cw,library,network,feature removed,yes,no,"Client-side role of the SDK. Redirect responses
+can send credentials to another origin.
+Cross-origin redirect following is off by
+default; explicit follow restores it. Tests
+exercise credential-bearing redirects. The
+linked v1 backport confirms the same change.
+Secondary:
+https://github.com/modelcontextprotocol/typescript-sdk/pull/2902","AI assistant, reviewed by project author",1.0,
+3,npm,GHSA-5fh8-x9xc-hxmc,library,unclear,other,no,no,"Unclear input contract: the changed branch
+handles function-valued object properties, but
+the advisory does not establish an
+untrusted-data route. eval is replaced with
+Function, so remediation is not established.
+Test changes only alter chain/sequence
+constants. Maintainer accepted the report.
+Secondary:
+https://github.com/irisnet/irisnet-crypto/issues/60","AI assistant, reviewed by project author",1.0,
+4,npm,GHSA-wpg7-2c88-r8xv,library,network,internal hardening,no,no,"A redirect response controls the destination.
+The linked backport keeps following redirects
+but removes Cookie/Authorization when the
+hostname changes. No regression test is added
+in this PR. Reviewers approved the backport.","AI assistant, reviewed by project author",1.0,
+5,npm,GHSA-3vfr-4gwf-qxfp,application,,,,,,"AI assistant, reviewed by project author",1.0,
+6,npm,GHSA-qxrj-hx23-xp82,framework,network,feature removed,yes,unknown,"HTTP request-handling middleware: framework
+under the criteria's network-input definition.
+Default Origin reflection is replaced by '*';
+reflection can be explicitly restored. Tests
+cover the changed request/response behavior. No
+visible maintainer discussion.","AI assistant, reviewed by project author",1.0,
+7,npm,GHSA-277h-px4m-62q8,application,,,,,,"AI assistant, reviewed by project author",1.0,
+8,npm,GHSA-gwvm-vrp4-4pp5,tool,file or config,validation added,no,unknown,"Build-time scanner reads project TypeScript
+files and environment-variable references. The
+diff limits scanning to sourceRoot and excludes
+server-named files. Changed tests check normal
+builds/variable aggregation, not exclusion of
+backend secrets. No visible discussion.
+Secondary:
+https://github.com/kyubisation/angular-server-side-configuration/pull/75","AI assistant, reviewed by project author",1.0,
+131,PyPI,GHSA-3633-r77q-h3v3,library,end-user via caller,internal hardening,no,no,"Tracing instrumentation passes request query
+strings to the obfuscator. The regex is
+rewritten. Changed tests exercise redaction
+correctness and Unicode offsets, not the
+excessive-CPU input described by this advisory.
+Review discussion accepts the fix; trade-offs
+concern new redaction behavior.","AI assistant, reviewed by project author",1.0,
+132,PyPI,GHSA-vxv8-r8q2-63xw,library,end-user via caller,validation added,yes,unknown,"Tensor arguments reach FractionalMaxPoolGrad
+through its API. Fatal/debug assertions become
+InvalidArgument checks. A new invalid
+pooling-sequence test exercises the crash case.
+No visible maintainer discussion.","AI assistant, reviewed by project author",1.0,
+133,PyPI,GHSA-5w3j-gwgh-4rfv,application,,,,,,"AI assistant, reviewed by project author",1.0,
+134,PyPI,GHSA-g4rf-pc26-6hmr,application,,,,,,"AI assistant, reviewed by project author",1.0,
+135,PyPI,GHSA-hpr9-3m2g-3j9p,framework,caller code,validation added,yes,unknown,"Affected values are developer-supplied ORM
+column aliases via **kwargs, not ordinary query
+values. The alias validation rejects '#'. Tests
+add the ali#as case and update injection
+assertions. No visible maintainer discussion.","AI assistant, reviewed by project author",1.0,
+136,PyPI,GHSA-2g68-c3qc-8985,framework,network,validation added,no,unknown,"Werkzeug's debugger receives HTTP requests. The
+fix checks trusted Host values before
+console/PIN/debug operations. The linked commit
+adds no tests. No visible maintainer
+discussion.","AI assistant, reviewed by project author",1.0,
+137,PyPI,GHSA-h9j7-5xvc-qhg5,library,network,validation added,yes,no,"Crawler reads links from fetched HTML itself.
+Parsed URL origins replace the vulnerable
+string-prefix check; outside links are skipped.
+Tests cover deceptive hosts and ports.
+Maintainer review accepts the fix.","AI assistant, reviewed by project author",1.0,
+138,PyPI,GHSA-2894-qcqf-g23g,framework,network,validation added,no,no,"Affected role is the OPC-UA server library.
+Requests could read/write before session
+activation. The fix rejects unauthorized
+requests; no tests are added. Linked issue
+#1014 acknowledges the bug as fixed by this PR.
+Secondary:
+https://github.com/FreeOpcUa/opcua-asyncio/issues/1014","AI assistant, reviewed by project author",1.0,
+261,Maven,GHSA-f256-j965-7f32,framework,network,validation added,yes,unknown,"HTTP/2 headers arrive directly. The decoder now
+applies Content-Length validation to a single
+endStream headers frame. Added tests cover
+conflicting/signed lengths with endStream. The
+advisory's caller-side workaround is not a
+maintainer dispute.","AI assistant, reviewed by project author",1.0,
+262,Maven,GHSA-92cc-952p-v8rh,library,unclear,internal hardening,no,no,"The advisory does not identify how attacker
+data reaches native URI composition. Despite
+the licensing title, PR #7481 sets ampersandLen
+after the first query item, correcting
+buffer-length accounting. No tests are added.
+The second fix link is the same merged change;
+review is approved.","AI assistant, reviewed by project author",1.0,
+263,Maven,GHSA-9cqm-5wf7-wcj7,plugin,,,,,,"AI assistant, reviewed by project author",1.0,
+264,Maven,GHSA-36xr-4x2f-cfj9,library,network,validation added,yes,no,"The linked reproducer places serialized payload
+bytes in a MySQL database;
+JdbcAggregationRepository reads them through
+JDBC. A default ObjectInputFilter rejects
+unapproved classes. Added test verifies
+InvalidClassException for a disallowed class.
+Maintainer submitted/tested the fix.
+Secondary:
+https://github.com/oscerd/CVE-2024-22369","AI assistant, reviewed by project author",1.0,Under v1.1 rules input_source would be stored data (bytes read from a database).
+265,Maven,GHSA-67f6-c8mx-4q2m,framework,network,feature removed,yes,no,"Reusable JPA server implementation, not a
+packaged server deployment. Concurrent FHIR
+history requests trigger expensive counts.
+Fresh exact counting is no longer the default,
+and dated counts are omitted by default;
+caching also hardens execution. A
+concurrent-history regression test is added.
+Review approved.","AI assistant, reviewed by project author",1.0,
+266,Maven,GHSA-cx95-q6gx-w4qp,application,,,,,,"AI assistant, reviewed by project author",1.0,
+267,Maven,GHSA-2qq7-fch2-phqf,plugin,,,,,,"AI assistant, reviewed by project author",1.0,
+268,Maven,GHSA-2w4p-2hf7-gh8x,framework,network,validation added,no,unknown,"Affected servlet filters process incoming URLs.
+The fix normalizes paths and rejects malformed
+or remaining '..' paths. No test is added. The
+disclosure timeline records report/fix dates
+but contains no visible maintainer discussion.
+Secondary:
+https://securitylab.github.com/advisories/GHSL-2021-1009-Alpine/","AI assistant, reviewed by project author",1.0,
+391,Go,GHSA-rwp9-5g7q-73q3,application,,,,,,"AI assistant, reviewed by project author",1.0,
+392,Go,GHSA-p9f8-wvj8-2fg8,library,end-user via caller,internal hardening,no,no,"Application-recorded span attributes carry
+attacker strings. PR #5997 rewrites the
+truncation algorithm. New tests cover
+Unicode/invalid UTF-8 but do not exercise the
+advisory's valid U+FFFD bypass. Linked issue
+#5996 is about byte-vs-character limits; this
+link alone does not establish a complete fix
+for the advisory.
+Secondary:
+https://github.com/open-telemetry/opentelemetry-go/issues/5996","AI assistant, reviewed by project author",1.0,
+393,Go,GHSA-mj4v-hp69-27x5,tool,network,validation added,no,unknown,"Affected role is Plenti's development server
+(cmd/serve.go). POST /postlocal supplies a
+filename later embedded in JavaScript. The fix
+validates action/encoding/path and returns 400
+on failure. No tests are added; no visible
+maintainer discussion.","AI assistant, reviewed by project author",1.0,
+394,Go,GHSA-6g38-8j4p-j3pr,application,,,,,,"AI assistant, reviewed by project author",1.0,
+395,Go,GHSA-fw8g-cg8f-9j28,application,,,,,,"AI assistant, reviewed by project author",1.0,
+396,Go,GHSA-58pf-pcwv-qg85,library,file or config,validation added,no,no,"The advisory targets the reusable pkg/uzip
+archive API. Linked PR #1817 sanitizes archive
+paths but was not merged and adds no tests:
+labels here describe that link. Its thread
+points to merged PR #2344, which rejects unsafe
+paths and adds regression tests. The quoted
+upstream Go dispute is not u-root pushback.
+Secondary:
+https://github.com/u-root/u-root/pull/2344","AI assistant, reviewed by project author",1.0,Under v1.1 rules the merged fix (PR #2344) should be labeled; it adds regression tests.
+397,Go,GHSA-q78v-cv36-8fxj,application,,,,,,"AI assistant, reviewed by project author",1.0,
+398,Go,GHSA-4ppj-6chv-5pgc,plugin,,,,,,"AI assistant, reviewed by project author",1.0,

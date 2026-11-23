@@ -1,0 +1,12 @@
+{
+  "fix_type": {
+    "kappa": 0.622,
+    "raw": 0.778,
+    "rows": 36
+  },
+  "input_source": {
+    "kappa": 0.928,
+    "raw": 0.95,
+    "rows": 40
+  }
+}

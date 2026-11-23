@@ -1,0 +1,41 @@
+review_order,n,ecosystem,input_source,fix_type,fix_link_used,notes
+1,342,Maven,network,validation added,,PreauthHandler.verify now returns boolean and KdcRequest.preauth throws KdcRecoverableException when preauth is required and no valid preauth entry succeeded.
+2,46,npm,end-user via caller,internal hardening,,Replaces child_process.exec string formatting with execa argument arrays in index.js.
+3,294,Maven,end-user via caller,internal hardening,,Improves constant-time handling in OAEPEncoding.decodeBlock and RSACoreEngine.convertOutput (uniform array copy and zero-fill).
+4,400,Go,file or config,validation added,,"Adds defaultLimitNumTags (5000) and defaultLimitTagSize (10000) in imagemeta.go, stopping/skipping oversized EXIF/IPTC tags."
+5,550,Maven,network,internal hardening,,Bounds RootNode match cache to CACHE_SIZE=2048 (configurable) and avoids caching MediaTypes with parameters.
+6,539,PyPI,network,feature removed,,"Disables web data uploads by default (enable_web_uploads=False) across backend config, views, and frontend Upload UI."
+7,22,npm,end-user via caller,internal hardening,,"Replaces child_process.exec with child_process.execFile across lib/linux.js, lib/unix.js, lib/windows.js."
+8,627,Go,file or config,validation added,,"Disallows shadowing of called functions in Rego comprehension heads, returning a CompileErr instead of panicking."
+9,163,PyPI,end-user via caller,internal hardening,,Simplifies string-literal regexes in sqlparse/keywords.py by removing redundant backslash alternation causing ReDoS.
+10,68,npm,end-user via caller,internal hardening,,Isolates sandbox Buffer allocations from Node's shared pool via depoolBuffer in lib/setup-sandbox.js.
+11,17,npm,end-user via caller,internal hardening,,Escapes SVG attributes/text via buildXMLString/escapeXMLText and validates XML element/attribute names (throws on invalid names/internal '_' style props).
+12,220,PyPI,not boundary,internal hardening,,Forwards host parameter from LocalCluster to worker_kwargs in distributed/deploy/local.py so workers honor configured host.
+13,47,npm,network,internal hardening,,Passes RenderFrameHost and requesting frame origin to CanRequestDevicePermission and keys HidService/WebUsbServiceImpl on requesting frame origin.
+14,735,Go,not boundary,feature removed,,Removes getBuildInfoFromEnvironment() and Repo/Branch/Hash/Build/PR fields from build.Info so CI/git metadata is no longer embedded in plugin binaries.
+15,89,npm,file or config,validation added,,"Checks getOrCreateArchive(packagePath) when appSearchPathsOnlyLoadASAR fuse is enabled, skipping non-ASAR paths."
+16,540,PyPI,network,,,[NEEDS DIFF] Chainlit PR #2857 returned empty response during fetch.
+17,29,npm,file or config,internal hardening,,Unlinks destination symlink before copying in lib/grunt/file.js file.copy to avoid following symlinks.
+18,633,Go,network,internal hardening,,"Skips ValidateUpdateMsg in pkg/server/fsm.go when parsing already flagged an error (handling != ERROR_HANDLING_NONE), preventing crash on malformed NEXT_HOP."
+19,293,Maven,network,internal hardening,,Defers Meteor.build() in PushHandlerFilter.doFilter until after pushSessionId/session lookup.
+20,179,PyPI,end-user via caller,validation added,,Calls finalize_keccak after verify_eth_signature_uint256 in src/openzeppelin/account/library.cairo so sequencers cannot spoof validation.
+21,229,PyPI,file or config,validation added,,Rejects JPEG streams whose output_width or scanline byte size exceeds tile buffer in src/libImaging/JpegDecode.c (IMAGING_CODEC_BROKEN).
+22,458,Go,network,internal hardening,,Switches HTTP request body accumulation in src/server.go from O(n^2) string concatenation to strings.Builder.
+23,340,Maven,end-user via caller,internal hardening,,Shares DocumentContext in XMLSecurityInputProcessor sub-chain (clone=false) and copies processors back to main chain for signature verification.
+24,223,PyPI,file or config,validation added,,Makes Lambda.from_config and TorchModuleWrapper.from_config fail closed (raise ValueError) when safe_mode is unset outside SafeModeScope.
+25,405,Go,file or config,feature removed,,Disallows text/html content files by default via security.allowContent = ['! ^text/html$'] in config/security/securityConfig.go.
+26,295,Maven,end-user via caller,internal hardening,,Clones all fragment.childNodes() (including comments/non-Element nodes) instead of only Element children in SafeHtmlValidator.java.
+27,772,PyPI,file or config,internal hardening,,Replaces yaml.load() with yaml.safe_load() when reading model_opt_path in model_chat_blueprint.py.
+28,71,npm,file or config,internal hardening,,Rewrites leading '.' in wildcard glob segments to '[.]' via disk_glob_pattern() so '.*' does not match '..' outside project root.
+29,10,npm,end-user via caller,internal hardening,,"Bounds quantifiers in matchWord regex to {0,256}/{1,256} in src/lib/parse/regex.js to prevent ReDoS."
+30,692,Go,network,internal hardening,,Adds defer/recover in internal/schema/decoder.go Decode() to catch reflect slice-index panics and return them as errors.
+31,723,Go,file or config,validation added,,Adds ValidateLayerId regex check and dependency-loop detection in getAncestry() to reject malformed Docker images.
+32,465,Go,network,validation added,,Rejects negative parameter lengths (msgSize < 0) in pgproto3/bind.go Bind.Decode.
+33,567,Maven,network,validation added,,Applies AccountStatusUserDetailsChecker in X509AuthenticationProvider.authenticate so disabled/locked/expired accounts are rejected.
+34,368,Maven,network,validation added,,"Rejects decoded path segments containing '/' or '\\' with BadTraversal (400) in FileService, ResourceService, and WebjarService."
+35,329,Maven,end-user via caller,internal hardening,,Disables external DTD and external general/parameter entities on SAXParserFactory in XSSAPIImpl.java.
+36,661,Go,end-user via caller,validation added,,"Adds nil check on unverifiedAssertion.Parent() in decode_response.go, returning an error instead of panicking."
+37,316,Maven,network,validation added,,Adds IggyHeaderFilterStrategy / VertxWebsocketHeaderFilterStrategy to filter inbound Camel-prefixed external headers.
+38,533,PyPI,end-user via caller,internal hardening,,Scans existing HTML id attributes in src/mistune/toc.py and appends suffixes via _unique_id() to avoid generated toc_N collisions.
+39,80,npm,end-user via caller,internal hardening,,Caches nextGt and switches to lenient scan in OrderedObjParser.js readStopNodeData() to avoid quadratic rescanning on unterminated stop nodes.
+40,178,PyPI,network,validation added,,"Adds validate_cache_salt() across public request models to reject forbidden chars (@, /, \, NUL) and lengths > 128 with VLLMValidationError."

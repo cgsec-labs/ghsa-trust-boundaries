@@ -1,0 +1,707 @@
+ecosystem,rank,package,tag,review_verdict,applied_change
+npm,1,openclaw,application,"Agree; application (high confidence).
+Personal assistant with a running gateway, onboarding and user interfaces.
+Source: https://github.com/openclaw/openclaw/blob/main/README.md",
+npm,2,parse-server,application,"Resolved; application (medium confidence).
+Secondary check: Deployable backend server with its own API. Express embedding is supported, but it
+remains a complete backend service.
+Source: https://github.com/parse-community/parse-server/blob/alpha/README.md",
+npm,3,vm2,library,"Agree; library (high confidence).
+Imported VM/NodeVM sandbox API called by a host application. A CLI does not change its main role.
+Source: https://github.com/patriksimek/vm2/blob/main/README.md",
+npm,4,ghost,application,"Resolved; application (high confidence).
+Secondary check: Publishing CMS installed and operated as a complete website/server. npm
+installation does not make it a library.
+Source: https://github.com/TryGhost/Ghost/blob/main/README.md",
+npm,5,hono,framework,"Agree; framework (high confidence).
+Web framework in which developers define routes and middleware.
+Source: https://github.com/honojs/hono/blob/main/README.md",
+npm,6,n8n,application,"Agree; application (high confidence).
+Deployable workflow automation platform with a visual editor and execution service.
+Source: https://github.com/n8n-io/n8n/blob/master/README.md",
+npm,7,next,framework,"Revise; framework (high confidence).
+Secondary check: Next.js supplies routing, rendering and the application lifecycle for full-stack
+React applications.
+Source: https://github.com/vercel/next.js/blob/canary/readme.md",
+npm,8,undici,library,"Agree; library (high confidence).
+HTTP client APIs imported into Node.js applications.
+Source: https://github.com/nodejs/undici/blob/main/README.md",
+npm,9,flowise,application,"Agree; application (high confidence).
+Runnable visual AI workflow builder and backend service.
+Source: https://github.com/FlowiseAI/Flowise/blob/main/README.md",
+npm,10,electron,framework,"Resolved; framework (high confidence).
+Secondary check: Desktop application framework that supplies the runtime and lifecycle for
+developer-written applications.
+Source: https://github.com/electron/electron/blob/main/README.md",
+npm,11,directus,application,"Agree; application (high confidence).
+Operated backend platform with generated APIs and a management Studio.
+Source: https://github.com/directus/directus/blob/main/readme.md",
+npm,12,axios,library,"Agree; library (high confidence).
+Reusable HTTP client called from browser or Node.js application code.
+Source: https://github.com/axios/axios/blob/v1.x/README.md",
+npm,13,node-forge,library,"Agree; library (high confidence).
+Imported cryptography and TLS implementation with reusable APIs.
+Source: https://github.com/digitalbazaar/forge/blob/main/README.md",
+npm,14,apostrophe,framework,"Revise; framework (medium confidence).
+Secondary check: Code-first CMS framework used to build sites with custom modules. Includes a CMS
+UI, so application is plausible at deployment level.
+Source: https://github.com/apostrophecms/apostrophe/blob/main/README.md",
+npm,15,astro,framework,"Revise; framework (high confidence).
+Secondary check: Web framework with routing, rendering and site-building conventions. The existing
+library tag should change.
+Source: https://astro.build/",
+npm,16,vite,tool,"Revise; application (medium confidence).
+Secondary check: Development server and build CLI. Application is the closest existing tag because
+there is no tool category. A programmatic API is also available.
+Source: https://github.com/vitejs/vite/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+npm,17,nodemailer,library,"Resolved; library (high confidence).
+Secondary check: Email-sending module imported by applications. The self-host reference concerns the
+separate EmailEngine product.
+Source: https://github.com/nodemailer/nodemailer/blob/master/README.md",
+npm,18,@xmldom/xmldom,library,"Agree; library (high confidence).
+Reusable XML DOM parser/serializer implementation.
+Source: https://github.com/xmldom/xmldom/blob/master/readme.md",
+npm,19,nuxt,framework,"Resolved; framework (high confidence).
+Secondary check: Vue application framework providing routing, rendering and full-stack project
+structure.
+Source: https://github.com/nuxt/nuxt/blob/main/README.md",
+npm,20,@budibase/server,application,"Agree; application (high confidence).
+Backend server component of the deployed Budibase platform, not its client SDK.
+Source: https://github.com/Budibase/budibase/blob/master/README.md",
+npm,21,better-auth,framework,"Revise; framework (high confidence).
+Secondary check: Authentication framework embedded in a TypeScript application. Repository
+Dockerfiles do not establish a standalone application.
+Source: https://github.com/better-auth/better-auth/blob/main/README.md",
+npm,22,payload,framework,"Revise; framework (high confidence).
+Secondary check: Official documentation defines Payload as a code-first CMS and application
+framework integrated into the developer's application.
+Source: https://payloadcms.com/docs/configuration/overview",
+npm,23,@sveltejs/kit,framework,"Revise; framework (high confidence).
+Secondary check: Official documentation identifies SvelteKit as a framework for building Svelte web
+applications.
+Source: https://svelte.dev/docs/kit/introduction",
+npm,24,@openzeppelin/contracts,library,"Agree; library (high confidence).
+Reusable Solidity contracts imported or inherited by developer-written contracts.
+Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/README.md",
+npm,25,@openzeppelin/contracts-upgradeable,library,"Resolved; library (high confidence).
+Secondary check: Upgradeable variant of the Solidity contract library. Lack of a JavaScript entry
+point is expected for Solidity sources.
+Source: https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/blob/master/README.md",
+npm,26,liquidjs,library,"Agree; library (high confidence).
+Template engine called through its Liquid API. The optional CLI is a secondary interface.
+Source: https://github.com/harttle/liquidjs/blob/master/README.md",
+npm,27,tar,library,"Agree; library (high confidence).
+Archive creation and extraction APIs used by other Node.js programs.
+Source: https://github.com/isaacs/node-tar/blob/main/README.md",
+npm,28,dompurify,library,"Agree; library (high confidence).
+HTML/MathML/SVG sanitization API imported into a host application.
+Source: https://github.com/cure53/DOMPurify/blob/main/README.md",
+npm,29,fastify,framework,"Agree; framework (high confidence).
+Web framework providing routing, plugins and request lifecycle management.
+Source: https://github.com/fastify/fastify/blob/main/README.md",
+npm,30,handlebars,library,"Agree; library (high confidence).
+Secondary check: Template compilation and rendering API. A precompiler CLI does not make the main
+package an application.
+Source: https://github.com/handlebars-lang/handlebars.js/blob/master/README.md",
+npm,31,sanitize-html,library,"Agree; library (high confidence).
+Secondary check: HTML sanitization API. Checked the package-specific README inside the Apostrophe
+monorepo, not the CMS README.
+Source: https://github.com/apostrophecms/apostrophe/blob/main/packages/sanitize-html/README.md",
+npm,32,xmldom,library,"Agree; library (high confidence).
+Secondary check: Legacy unscoped XML DOM library. The current README explicitly distinguishes it
+from the newer scoped package.
+Source: https://github.com/xmldom/xmldom/blob/master/readme.md",
+npm,33,pnpm,tool,"Agree; application (high confidence).
+Secondary check: Package-manager CLI operated by users and automation. Application includes
+command-line tools in this taxonomy.
+Source: https://github.com/pnpm/pnpm/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+npm,34,sequelize,library,"Agree; library (high confidence).
+Secondary check: ORM imported into application code. Its separate CLI is not the package being
+classified.
+Source: https://github.com/sequelize/sequelize/blob/main/README.md",
+npm,35,systeminformation,library,"Agree; library (high confidence).
+Reusable system-information APIs for Node.js. CLI availability is secondary.
+Source: https://github.com/sebhildebrandt/systeminformation/blob/master/README.md",
+npm,36,@backstage/plugin-scaffolder-backend,plugin,"Revise; plugin (high confidence).
+Secondary check: Scaffolder backend plugin installed inside a Backstage backend. The monorepo's
+deployability is not this package's role.
+Source: https://github.com/backstage/backstage/blob/master/plugins/scaffolder-backend/README.md",
+npm,37,devalue,library,"Agree; library (high confidence).
+Serialization and deserialization functions called by other JavaScript code.
+Source: https://github.com/sveltejs/devalue/blob/main/README.md",
+npm,38,fast-uri,library,"Agree; library (high confidence).
+URI parsing, normalization and serialization utility APIs.
+Source: https://github.com/fastify/fast-uri/blob/main/README.md",
+npm,39,jspdf,library,"Agree; library (high confidence).
+PDF generation library instantiated and called from JavaScript.
+Source: https://github.com/parallax/jsPDF/blob/master/README.md",
+npm,40,mermaid,library,"Revise; library (high confidence).
+Secondary check: Diagram parsing/rendering engine integrated into other applications. Mermaid Live
+Editor and CLI are separate deliverables.
+Source: https://github.com/mermaid-js/mermaid/blob/develop/README.md",
+npm,41,flowise-components,plugin,"Revise; plugin (medium confidence).
+Secondary check: Flowise-specific integration nodes and credentials loaded by the Flowise host. It
+is an extension bundle, not the runnable server.
+Source: https://github.com/FlowiseAI/Flowise/blob/main/packages/components/README.md",
+npm,42,multer,library,"Agree; library (medium confidence).
+Multipart upload middleware imported and called by Express applications. Treated as a middleware
+library rather than a host-managed plugin.
+Source: https://github.com/expressjs/multer/blob/main/README.md",
+npm,43,react-router,framework,"Unresolved; keep unsure.
+Secondary check: Officially supports both library and framework modes. A single package-wide library
+tag would hide version/mode differences; classify the affected advisory's usage.
+Source: https://github.com/remix-run/react-router/blob/main/README.md",Framework mode handles requests itself; library and framework are both in the sample.
+npm,44,shescape,library,"Agree; library (high confidence).
+Shell escaping API that callers use to prepare arguments.
+Source: https://github.com/ericcornelissen/shescape/blob/main/README.md",
+npm,45,@directus/api,application,"Agree; application (high confidence).
+API/server component of the deployed Directus backend. It is not the Directus client SDK.
+Source: https://github.com/directus/directus/blob/main/readme.md",
+npm,46,fast-xml-parser,library,"Agree; library (high confidence).
+XML parser, builder and validator APIs. The optional CLI is secondary.
+Source: https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/README.md",
+npm,47,joplin,application,"Agree; application (high confidence).
+Joplin terminal note-taking application, installed as an executable tool.
+Source: https://github.com/laurent22/joplin/blob/dev/README.md",
+npm,48,mongoose,library,"Resolved; library (high confidence).
+Secondary check: MongoDB object-modeling API imported into application code. Deployment language in
+the README is not a package-role signal.
+Source: https://github.com/Automattic/mongoose/blob/master/README.md",
+npm,49,nocodb,application,"Agree; application (high confidence).
+Self-hosted database interface and API platform with its own service/UI.
+Source: https://github.com/nocodb/nocodb/blob/develop/README.md",
+npm,50,nodebb,application,"Agree; application (high confidence).
+Runnable forum server with its own users, configuration and plugin host.
+Source: https://github.com/NodeBB/NodeBB/blob/master/README.md",
+PyPI,1,tensorflow,library,"Revise; framework (medium confidence).
+Secondary check: Machine-learning framework supplying tensor execution, model construction and
+training. A stricter imported-API taxonomy could call it a library.
+Source: https://github.com/tensorflow/tensorflow/blob/master/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,2,tensorflow-gpu,library,"Revise; framework (medium confidence).
+Secondary check: Historical GPU distribution of the TensorFlow ML framework. Classify the affected
+historical version, not the later retired distribution stub.
+Source: https://github.com/tensorflow/tensorflow/blob/master/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,3,tensorflow-cpu,library,"Revise; framework (medium confidence).
+Secondary check: CPU distribution of the TensorFlow ML framework; hardware packaging does not change
+its role.
+Source: https://github.com/tensorflow/tensorflow/blob/master/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,4,apache-airflow,application,"Resolved; application (high confidence).
+Secondary check: Operated workflow-orchestration system with scheduler, services and UI. Python DAG
+APIs do not make the full distribution a utility library.
+Source: https://github.com/apache/airflow/blob/main/README.md",
+PyPI,5,Django,framework,"Agree; framework (high confidence).
+Web application framework controlling routing, middleware and application structure.
+Source: https://github.com/django/django/blob/main/README.rst",
+PyPI,6,vllm,library,"Agree; library (medium confidence).
+Officially an LLM inference/serving library. It also ships a server; server-endpoint advisories need
+an application-context caveat.
+Source: https://github.com/vllm-project/vllm/blob/main/README.md",
+PyPI,7,open-webui,application,"Resolved; application (high confidence).
+Secondary check: Self-hosted AI web application started with open-webui serve.
+Source: https://github.com/open-webui/open-webui/blob/main/README.md",
+PyPI,8,pillow,library,"Resolved; library (high confidence).
+Secondary check: Python Imaging Library fork providing imported image-processing APIs. Same
+normalized PyPI project as Pillow below.
+Source: https://github.com/python-pillow/Pillow/blob/main/README.md",
+PyPI,9,pypdf,library,"Agree; library (high confidence).
+PDF processing library; the project explicitly points to a separate pdfly CLI application.
+Source: https://github.com/py-pdf/pypdf/blob/main/README.md",
+PyPI,10,mlflow,unsure,"Unresolved; keep unsure.
+Secondary check: One distribution supplies both imported tracking/model APIs and an operated MLflow
+server/UI. Use the advisory's affected component to choose library or application.
+Source: https://github.com/mlflow/mlflow/blob/master/README.md",
+PyPI,11,ansible,tool,"Agree; application (high confidence).
+IT automation command suite executed by operators and automation systems. Application includes CLI
+tools here.
+Source: https://github.com/ansible/ansible/blob/devel/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+PyPI,12,picklescan,tool,"Revise; application (medium confidence).
+Secondary check: Security scanner documented primarily as a command-line tool. It also exposes a
+scanning API, so library use remains possible.
+Source: https://github.com/mmaitre314/picklescan/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+PyPI,13,nltk,library,"Agree; library (high confidence).
+Secondary check: Suite of Python NLP modules and reusable processing APIs.
+Source: https://github.com/nltk/nltk/blob/develop/README.md",
+PyPI,14,aiohttp,framework,"Revise; framework (medium confidence).
+Secondary check: Officially an async HTTP client/server framework with routing and middleware.
+Client-only use is library-like; preserve that caveat per advisory.
+Source: https://github.com/aio-libs/aiohttp/blob/master/README.rst",
+PyPI,15,Pillow,library,"Resolved; library (high confidence).
+Secondary check: Python image-processing library. This is the same case-normalized PyPI project as
+pillow above; both rows are retained.
+Source: https://github.com/python-pillow/Pillow/blob/main/README.md",
+PyPI,16,rdiffweb,application,"Resolved; application (high confidence).
+Secondary check: Web application for browsing and restoring backup repositories.
+Source: https://github.com/ikus060/rdiffweb/blob/master/README.md",
+PyPI,17,vyper,tool,"Agree; application (medium confidence).
+Smart-contract compiler primarily invoked as a command-line tool. Python compiler APIs also exist;
+application is the closest available tool tag.
+Source: https://github.com/vyperlang/vyper/blob/master/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+PyPI,18,pyload-ng,application,"Resolved; application (high confidence).
+Secondary check: Download manager with a running service, web UI and plugins.
+Source: https://github.com/pyload/pyload/blob/develop/README.md",
+PyPI,19,matrix-synapse,application,"Agree; application (high confidence).
+Secondary check: Matrix homeserver operated as a network service. The README also identifies the
+newer element-hq repository.
+Source: https://github.com/matrix-org/synapse/blob/develop/README.rst",
+PyPI,20,nova,application,"Agree; application (high confidence).
+OpenStack compute service/controller, not the separate Nova client library.
+Source: https://github.com/openstack/nova/blob/master/README.rst",
+PyPI,21,GitPython,library,"Agree; library (high confidence).
+Python API for interacting with Git repositories from application code.
+Source: https://github.com/gitpython-developers/GitPython/blob/main/README.md",
+PyPI,22,mcp-atlassian,application,"Agree; application (high confidence).
+MCP server process exposing Jira/Confluence tools to clients.
+Source: https://github.com/sooperset/mcp-atlassian/blob/main/README.md",
+PyPI,23,langflow,application,"Resolved; application (high confidence).
+Secondary check: Visual workflow builder operated with langflow run and exposed as a web/API
+service.
+Source: https://github.com/langflow-ai/langflow/blob/main/README.md",
+PyPI,24,litellm,unsure,"Unresolved; keep unsure.
+Secondary check: The same distribution supports both a Python SDK and a deployed proxy/gateway.
+Classify the affected SDK function or proxy endpoint per advisory.
+Source: https://github.com/BerriAI/litellm/blob/main/README.md",
+PyPI,25,gradio,framework,"Revise; framework (medium confidence).
+Secondary check: Developers declare interfaces/blocks and callbacks; Gradio runs the resulting web
+application. More specific than a generic library tag.
+Source: https://github.com/gradio-app/gradio/blob/main/README.md",
+PyPI,26,opencv-contrib-python,library,"Agree; library (high confidence).
+Secondary check: Python bindings to OpenCV plus contributed modules, imported as cv2. Verified the
+Python-distribution README.
+Source: https://github.com/opencv/opencv-python/blob/4.x/README.md",
+PyPI,27,opencv-python,library,"Agree; library (high confidence).
+Secondary check: Python bindings to OpenCV's main modules, imported as cv2.
+Source: https://github.com/opencv/opencv-python/blob/4.x/README.md",
+PyPI,28,transformers,library,"Agree; library (medium confidence).
+Reusable model, tokenizer and pipeline APIs imported into ML applications. Upstream also uses
+model-definition framework terminology.
+Source: https://github.com/huggingface/transformers/blob/main/README.md",
+PyPI,29,virtualenv,tool,"Revise; application (medium confidence).
+Secondary check: Virtual-environment creation tool whose normal entry point is a CLI. It also
+exposes a programmatic API.
+Source: https://github.com/pypa/virtualenv/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+PyPI,30,keystone,application,"Revise; application (high confidence).
+Secondary check: OpenStack identity service deployed over HTTP. The README identifies
+python-keystoneclient as the separate client library.
+Source: https://github.com/openstack/keystone/blob/master/README.rst",
+PyPI,31,openbabel,library,"Agree; library (high confidence).
+Secondary check: This PyPI package is specifically the Python bindings to the Open Babel chemistry
+library, not the obabel command-line application.
+Source: https://pypi.org/project/openbabel/",
+PyPI,32,pgadmin4,application,"Agree; application (high confidence).
+Database administration web/desktop application with a server and user interface.
+Source: https://github.com/pgadmin-org/pgadmin4/blob/master/README.md",
+PyPI,33,salt,application,"Agree; application (medium confidence).
+Operated infrastructure-automation system with CLI, master/minion services and plugins. Framework is
+upstream terminology, but the distribution is operational software.
+Source: https://github.com/saltstack/salt/blob/master/README.rst",
+PyPI,34,tornado,framework,"Agree; framework (high confidence).
+Web framework and asynchronous networking stack used to implement applications.
+Source: https://github.com/tornadoweb/tornado/blob/master/README.rst",
+PyPI,35,ethyca-fides,application,"Resolved; application (high confidence).
+Secondary check: Privacy-management platform with CLI and deployed services. The library classifier
+alone was misleading.
+Source: https://github.com/ethyca/fides/blob/main/README.md",
+PyPI,36,filelock,library,"Resolved; library (high confidence).
+Secondary check: Imported inter-process file-locking APIs. Docker or compose files in its repository
+are not evidence of an application.
+Source: https://py-filelock.readthedocs.io/en/stable/",
+PyPI,37,langchain,library,"Resolved; framework (high confidence).
+Secondary check: Framework for composing agents and LLM application workflows.
+Packaging/importability does not override that role.
+Source: https://github.com/langchain-ai/langchain/blob/master/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,38,mobsf,application,"Agree; application (high confidence).
+Mobile security analysis platform with a deployed service and UI. Framework in the product name does
+not make it an application-building framework.
+Source: https://github.com/MobSF/Mobile-Security-Framework-MobSF/blob/master/README.md",
+PyPI,39,OctoPrint,application,"Agree; application (high confidence).
+Operated web interface and service controlling 3D printers.
+Source: https://github.com/OctoPrint/OctoPrint/blob/dev/README.md",
+PyPI,40,cryptography,library,"Agree; library (high confidence).
+Cryptographic recipes and primitives imported by Python callers.
+Source: https://github.com/pyca/cryptography/blob/main/README.rst",
+PyPI,41,nautobot,application,"Agree; application (high confidence).
+Network source-of-truth and automation platform with a deployed service/UI.
+Source: https://github.com/nautobot/nautobot/blob/develop/README.md",
+PyPI,42,urllib3,library,"Agree; library (high confidence).
+HTTP client and connection-pooling APIs imported by other Python software.
+Source: https://github.com/urllib3/urllib3/blob/main/README.md",
+PyPI,43,keras,library,"Revise; framework (medium confidence).
+Secondary check: Upstream defines Keras as a deep-learning framework with model/training lifecycle
+APIs. Library is possible under a broader imported-API convention.
+Source: https://github.com/keras-team/keras/blob/master/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,44,weblate,application,"Agree; application (high confidence).
+Self-hosted localization platform. Same normalized PyPI project as Weblate below; both rows are
+retained.
+Source: https://github.com/WeblateOrg/weblate/blob/main/README.rst",
+PyPI,45,Weblate,application,"Agree; application (high confidence).
+Self-hosted localization platform. Case variant of weblate above, not a separate project.
+Source: https://github.com/WeblateOrg/weblate/blob/main/README.rst",
+PyPI,46,PaddlePaddle,library,"Resolved; framework (high confidence).
+Secondary check: Deep-learning framework providing model execution, training and inference. Docker
+packaging is incidental.
+Source: https://github.com/PaddlePaddle/Paddle/blob/develop/README.md","Framework here means a library that receives network input itself. This package does not, so library."
+PyPI,47,Twisted,framework,"Revise; framework (high confidence).
+Secondary check: Upstream explicitly defines Twisted as an event-based framework for internet
+applications.
+Source: https://github.com/twisted/twisted/blob/trunk/README.rst",
+PyPI,48,authlib,library,"Agree; library (high confidence).
+Secondary check: OAuth/OIDC and JOSE implementation APIs used by client/server applications.
+Source: https://github.com/authlib/authlib/blob/main/README.md",
+PyPI,49,lollms,application,"Resolved; application (medium confidence).
+Secondary check: PyPI describes a runnable text-generation server with settings and REST/WebSocket
+APIs. It also embeds reusable helpers; this is not solely a library.
+Source: https://pypi.org/project/lollms/",
+PyPI,50,mistune,library,"Agree; library (high confidence).
+Markdown parsing/rendering API imported by Python callers.
+Source: https://github.com/lepture/mistune/blob/main/README.md",
+Maven,1,org.jenkins-ci.main:jenkins-core,application,"Resolved; application (medium confidence).
+Secondary check: Core implementation of the Jenkins automation server. This tag denotes an
+application component, not a standalone executable JAR.
+Source: https://github.com/jenkinsci/jenkins/blob/master/README.md",
+Maven,2,org.apache.tomcat:tomcat,application,"Resolved; application (high confidence).
+Secondary check: The exact Maven POM describes a binary Tomcat distribution, unlike the separate
+embedding and connector artifacts.
+Source: https://github.com/apache/tomcat/blob/main/res/maven/tomcat.pom",
+Maven,3,com.fasterxml.jackson.core:jackson-databind,library,"Agree; library (high confidence).
+Reusable object/data-binding APIs used as a dependency in Java programs.
+Source: https://github.com/FasterXML/jackson-databind/blob/3.x/README.md",
+Maven,4,org.keycloak:keycloak-services,application,"Agree; application (medium confidence).
+Secondary check: Keycloak REST service implementation. Application component rather than an
+independently runnable artifact.
+Source: https://github.com/keycloak/keycloak/blob/main/services/pom.xml",
+Maven,5,org.apache.tomcat.embed:tomcat-embed-core,library,"Resolved; library (high confidence).
+Secondary check: Explicit embedded Tomcat core artifact consumed by host applications.
+Source: https://github.com/apache/tomcat/blob/main/res/maven/tomcat-embed-core.pom",
+Maven,6,com.liferay.portal:release.dxp.bom,application,"Unresolved; keep unsure.
+Secondary check: BOM contains dependency/version-management metadata, not runnable code. None of the
+four role tags fits cleanly; underlying product is the Liferay DXP application.
+Source: https://learn.liferay.com/documents/d/guest/developing-liferay-dxp-72?download=true",Advisories filed against this package concern the deployed product.
+Maven,7,com.liferay.portal:release.portal.bom,application,"Unresolved; keep unsure.
+Secondary check: BOM contains dependency/version-management metadata, not runnable code. Keep
+unclassified unless the study explicitly labels the underlying Liferay Portal product.
+Source: https://learn.liferay.com/documents/d/guest/developing-liferay-dxp-72?download=true",Advisories filed against this package concern the deployed product.
+Maven,8,org.xwiki.platform:xwiki-platform-oldcore,application,"Resolved; application (medium confidence).
+Secondary check: Legacy implementation core of the XWiki server. Application component under the
+chosen role convention, despite JAR packaging.
+Source: https://github.com/xwiki/xwiki-platform/blob/master/xwiki-platform-core/xwiki-platform-oldcore/pom.xml",
+Maven,9,org.apache.struts:struts2-core,framework,"Agree; framework (high confidence).
+MVC framework core used to build Java web applications.
+Source: https://github.com/apache/struts/blob/main/README.md",
+Maven,10,org.apache.tomcat:tomcat-catalina,library,"Resolved; library (medium confidence).
+Secondary check: Servlet-engine classes published for composition/embedding. At whole-product level
+Tomcat is an application, but this row names a component artifact.
+Source: https://github.com/apache/tomcat/blob/main/res/maven/tomcat-catalina.pom",
+Maven,11,org.apache.tomcat:tomcat-coyote,library,"Resolved; library (high confidence).
+Secondary check: Reusable connector/protocol and HTTP-parser implementation, not the Tomcat
+distribution.
+Source: https://github.com/apache/tomcat/blob/main/res/maven/tomcat-coyote.pom",
+Maven,12,io.undertow:undertow-core,library,"Resolved; library (high confidence).
+Secondary check: Embeddable HTTP server implementation used inside caller applications and server
+products.
+Source: https://github.com/undertow-io/undertow/blob/main/README.md",
+Maven,13,org.jenkins-ci.plugins:script-security,plugin,"Agree; plugin (high confidence).
+Jenkins-hosted plugin providing script approval and sandbox integration.
+Source: https://github.com/jenkinsci/script-security-plugin/blob/master/README.md",
+Maven,14,org.bouncycastle:bcprov-jdk14,library,"Resolved; library (high confidence).
+Secondary check: Cryptographic provider/API library; the JDK suffix is a compatibility variant.
+Source: https://github.com/bcgit/bc-java/blob/main/README.md",
+Maven,15,org.cloudfoundry.identity:cloudfoundry-identity-server,application,"Agree; application (high confidence).
+Standalone OAuth2/identity server implemented as a deployable Spring web application.
+Source: https://github.com/cloudfoundry/uaa/blob/develop/README.md",
+Maven,16,org.apache.solr:solr-core,application,"Resolved; application (medium confidence).
+Secondary check: Core implementation of the Solr search server. Application component; historical
+EmbeddedSolrServer usage requires a library-context caveat.
+Source: https://github.com/apache/solr/blob/main/README.md",
+Maven,17,org.bouncycastle:bcprov-jdk15on,library,"Resolved; library (high confidence).
+Secondary check: Cryptographic provider/API library for the indicated JDK compatibility range.
+Source: https://github.com/bcgit/bc-java/blob/main/README.md",
+Maven,18,org.xwiki.platform:xwiki-platform-web-templates,application,"Resolved; application (medium confidence).
+Secondary check: Templates/resources used by the XWiki web application. A resource component, not a
+general-purpose template-engine library.
+Source: https://github.com/xwiki/xwiki-platform/blob/master/xwiki-platform-core/xwiki-platform-web/xwiki-platform-web-templates/pom.xml",
+Maven,19,org.apache.activemq:activemq-client,library,"Revise; library (high confidence).
+Secondary check: Exact artifact is the ActiveMQ client implementation. Broker deployment files in
+the shared repository do not make the client an application.
+Source: https://github.com/apache/activemq/blob/main/activemq-client/pom.xml",
+Maven,20,org.apache.inlong:manager-pojo,library,"Revise; library (medium confidence).
+Secondary check: Manager data/model objects published as a dependency. It is not the runnable InLong
+manager service.
+Source: https://github.com/apache/inlong/blob/master/inlong-manager/manager-pojo/pom.xml",
+Maven,21,org.asynchttpclient:async-http-client,library,"Agree; library (high confidence).
+Asynchronous HTTP client API embedded in Java applications.
+Source: https://github.com/AsyncHttpClient/async-http-client/blob/main/README.md",
+Maven,22,org.opencms:opencms-core,application,"Resolved; application (medium confidence).
+Secondary check: Implementation core of the OpenCms CMS web application. Application component
+rather than a generic reusable utility.
+Source: https://github.com/alkacon/opencms-core/blob/main/README.md",
+Maven,23,org.springframework.security:spring-security-core,library,"Resolved; framework (medium confidence).
+Secondary check: Core of the Spring authentication/authorization framework. Distinguish its embedded
+security contracts from a standalone identity server.
+Source: https://github.com/spring-projects/spring-security/blob/main/README.adoc","Framework here means a library that receives network input itself. This package does not, so library."
+Maven,24,org.springframework:spring-webmvc,framework,"Resolved; framework (high confidence).
+Secondary check: Spring MVC web framework providing controller dispatch and request lifecycle
+integration.
+Source: https://github.com/spring-projects/spring-framework/blob/main/README.md",
+Maven,25,org.apache.struts.xwork:xwork-core,framework,"Agree; framework (high confidence).
+XWork action/interceptor framework underpinning Struts, used to build applications.
+Source: https://github.com/apache/struts/blob/main/README.md",
+Maven,26,tools.jackson.core:jackson-databind,library,"Agree; library (high confidence).
+Jackson 3 data-binding APIs under the newer tools.jackson group. Same reusable role as the older
+group.
+Source: https://github.com/FasterXML/jackson-databind/blob/3.x/README.md",
+Maven,27,org.bouncycastle:bcprov-jdk15,library,"Resolved; library (high confidence).
+Secondary check: Historical JDK-compatible Bouncy Castle cryptographic provider library.
+Source: https://github.com/bcgit/bc-java/blob/main/README.md",
+Maven,28,org.graylog2:graylog2-server,application,"Resolved; application (high confidence).
+Secondary check: Graylog log-management server operated as a service.
+Source: https://github.com/Graylog2/graylog2-server/blob/master/README.markdown",
+Maven,29,org.keycloak:keycloak-core,library,"Revise; library (medium confidence).
+Secondary check: Shared Keycloak core types and utilities packaged as a dependency. The service
+implementation is the separate keycloak-services artifact.
+Source: https://github.com/keycloak/keycloak/blob/main/core/pom.xml",
+Maven,30,org.springframework:spring-core,library,"Resolved; library (medium confidence).
+Secondary check: Low-level Spring core utilities and infrastructure. Classifies this component
+artifact rather than all of Spring as a framework.
+Source: https://github.com/spring-projects/spring-framework/blob/main/spring-core/spring-core.gradle",
+Maven,31,com.liferay.portal:com.liferay.portal.impl,application,"Resolved; application (medium confidence).
+Secondary check: Liferay Portal implementation component. The role is the portal application, not a
+general-purpose library inferred from JAR packaging.
+Source: https://github.com/liferay/liferay-portal/blob/master/README.md",
+Maven,32,org.bouncycastle:bcprov-jdk15to18,library,"Resolved; library (high confidence).
+Secondary check: Bouncy Castle cryptographic provider library for the indicated JDK compatibility
+range.
+Source: https://github.com/bcgit/bc-java/blob/main/README.md",
+Maven,33,io.netty:netty-codec-http,library,"Revise; library (high confidence).
+Secondary check: Netty HTTP codec component providing reusable protocol processing. The broader
+Netty project is a framework, not a standalone application.
+Source: https://github.com/netty/netty/blob/4.2/codec-http/pom.xml",
+Maven,34,com.rabbitmq:amqp-client,library,"Resolved; library (high confidence).
+Secondary check: RabbitMQ Java client library. Docker instructions concern a test/server dependency,
+not this artifact's role.
+Source: https://github.com/rabbitmq/rabbitmq-java-client/blob/main/README.adoc",
+Maven,35,org.apache.activemq:apache-activemq,application,"Agree; application (high confidence).
+ActiveMQ broker distribution, distinct from activemq-client.
+Source: https://github.com/apache/activemq/blob/main/README.md",
+Maven,36,org.apache.kylin:kylin,application,"Agree; application (high confidence).
+Deployed OLAP/query and analytics system with its own services.
+Source: https://github.com/apache/kylin/blob/kylin5/README.md",
+Maven,37,org.bouncycastle:bcprov-jdk18on,library,"Agree; library (high confidence).
+Cryptographic provider/API library for newer JDKs.
+Source: https://github.com/bcgit/bc-java/blob/main/README.md",
+Maven,38,org.geoserver.web:gs-web-app,application,"Resolved; application (high confidence).
+Secondary check: GeoServer web application delivering geospatial services.
+Source: https://github.com/geoserver/geoserver/blob/main/README.md",
+Maven,39,org.http4s:http4s-ember-core_2.12,library,"Resolved; library (high confidence).
+Secondary check: Shared Ember HTTP transport/protocol component used by http4s clients and servers.
+Scala suffix is a binary-compatibility variant.
+Source: https://github.com/http4s/http4s/blob/series/0.23/README.md",
+Maven,40,org.http4s:http4s-ember-core_2.13,library,"Resolved; library (high confidence).
+Secondary check: Shared Ember HTTP transport/protocol component. Scala 2.13 suffix does not change
+the role.
+Source: https://github.com/http4s/http4s/blob/series/0.23/README.md",
+Maven,41,org.http4s:http4s-ember-core_3,library,"Resolved; library (high confidence).
+Secondary check: Shared Ember HTTP transport/protocol component. Scala 3 suffix does not change the
+role.
+Source: https://github.com/http4s/http4s/blob/series/0.23/README.md",
+Maven,42,org.jenkins-ci.plugins:git,plugin,"Agree; plugin (high confidence).
+Git integration installed and run inside Jenkins.
+Source: https://github.com/jenkinsci/git-plugin/blob/master/README.adoc",
+Maven,43,org.xwiki.platform:xwiki-platform-administration-ui,application,"Resolved; plugin (medium confidence).
+Secondary check: Host-dependent XWiki administration extension distributed as an XAR. Here plugin
+includes installable platform extensions.
+Source: https://github.com/xwiki/xwiki-platform/blob/master/xwiki-platform-core/xwiki-platform-administration/xwiki-platform-administration-ui/pom.xml","All XWiki platform modules are parts of the XWiki application, tagged the same way."
+Maven,44,org.xwiki.platform:xwiki-platform-rest-server,application,"Resolved; application (medium confidence).
+Secondary check: REST endpoint/service implementation for the XWiki application, not its REST client
+API.
+Source: https://github.com/xwiki/xwiki-platform/blob/master/xwiki-platform-core/xwiki-platform-rest/xwiki-platform-rest-server/pom.xml",
+Maven,45,org.xwiki.platform:xwiki-platform-web,application,"Unresolved; keep unsure.
+Secondary check: Exact artifact is a parent POM aggregating XWiki web resources/templates/WAR
+modules. Packaging metadata does not fit the four runtime role tags.
+Source: https://github.com/xwiki/xwiki-platform/blob/master/xwiki-platform-core/xwiki-platform-web/pom.xml","All XWiki platform modules are parts of the XWiki application, tagged the same way."
+Maven,46,com.vaadin:flow-server,framework,"Resolved; framework (high confidence).
+Secondary check: Vaadin Flow server-side UI framework used to implement Java web applications.
+Source: https://github.com/vaadin/flow/blob/main/README.md",
+Maven,47,io.netty:netty,framework,"Revise; framework (high confidence).
+Secondary check: Asynchronous event-driven network application framework used to build protocol
+clients/servers. It is not itself a deployed application.
+Source: https://github.com/netty/netty/blob/4.2/README.md",
+Maven,48,org.apache.cxf:cxf-core,framework,"Agree; framework (high confidence).
+Services framework used to implement SOAP/REST endpoints and clients.
+Source: https://github.com/apache/cxf/blob/main/README.md",
+Maven,49,org.apache.inlong:manager-service,application,"Agree; application (medium confidence).
+Secondary check: Business-service layer of the operated InLong manager. Application component, not a
+standalone service executable by itself.
+Source: https://github.com/apache/inlong/blob/master/inlong-manager/manager-service/pom.xml",
+Maven,50,org.eclipse.jetty:jetty-server,library,"Resolved; library (high confidence).
+Secondary check: Embeddable Jetty HTTP server API. Distinct from the separately assembled standalone
+Jetty distribution.
+Source: https://github.com/jetty/jetty.project/blob/jetty-12.1.x/README.md",
+Go,1,github.com/mattermost/mattermost-server,application,"Agree; application (high confidence).
+Mattermost collaboration server. Version/import-path differences do not change the deployed role.
+Source: https://github.com/mattermost/mattermost/blob/master/README.md",
+Go,2,github.com/mattermost/mattermost/server/v8,application,"Agree; application (high confidence).
+Mattermost v8 server module, operated as the collaboration application.
+Source: https://github.com/mattermost/mattermost/blob/master/README.md",
+Go,3,code.gitea.io/gitea,application,"Agree; application (high confidence).
+Self-hosted Git software-development service with a runnable web server.
+Source: https://github.com/go-gitea/gitea/blob/main/README.md",
+Go,4,github.com/siyuan-note/siyuan/kernel,application,"Agree; application (high confidence).
+Backend/kernel of the SiYuan note-taking application, not a general-purpose SDK.
+Source: https://github.com/siyuan-note/siyuan/blob/master/README.md",
+Go,5,github.com/usememos/memos,application,"Agree; application (high confidence).
+Self-hosted note-taking web application.
+Source: https://github.com/usememos/memos/blob/main/README.md",
+Go,6,gogs.io/gogs,application,"Agree; application (high confidence).
+Self-hosted Git service with a standalone server binary.
+Source: https://github.com/gogs/gogs/blob/main/README.md",
+Go,7,code.vikunja.io/api,application,"Agree; application (high confidence).
+Secondary check: Vikunja task-management API/server, deployed as part of the task-management
+application.
+Source: https://github.com/go-vikunja/vikunja/blob/main/README.md",
+Go,8,github.com/grafana/grafana,application,"Agree; application (high confidence).
+Secondary check: Monitoring/dashboard web application with a deployed backend and UI.
+Source: https://github.com/grafana/grafana/blob/main/README.md",
+Go,9,github.com/zitadel/zitadel,application,"Agree; application (high confidence).
+Deployed identity and access-management service.
+Source: https://github.com/zitadel/zitadel/blob/main/README.md",
+Go,10,github.com/answerdev/answer,application,"Agree; application (high confidence).
+Secondary check: Q&A web platform. The repository has moved to apache/answer; checked the current
+upstream README.
+Source: https://github.com/apache/answer/blob/main/README.md",
+Go,11,github.com/argoproj/argo-cd/v2,application,"Agree; application (high confidence).
+Kubernetes GitOps delivery controller/service, not a general-purpose Go library.
+Source: https://github.com/argoproj/argo-cd/blob/master/README.md",
+Go,12,github.com/openbao/openbao,application,"Agree; application (high confidence).
+Secondary check: Secrets-management server operated as infrastructure software.
+Source: https://github.com/openbao/openbao/blob/main/README.md",
+Go,13,k8s.io/kubernetes,application,"Agree; application (high confidence).
+Secondary check: Container-orchestration control plane and node software. Upstream explicitly does
+not support k8s.io/kubernetes as a library module.
+Source: https://github.com/kubernetes/kubernetes/blob/master/README.md",
+Go,14,github.com/traefik/traefik/v3,application,"Agree; application (high confidence).
+Runnable reverse proxy/load balancer. This is the v3 application module.
+Source: https://github.com/traefik/traefik/blob/master/README.md",
+Go,15,github.com/0xJacky/Nginx-UI,application,"Agree; application (high confidence).
+Web-based Nginx administration application and service.
+Source: https://github.com/0xJacky/nginx-ui/blob/dev/README.md",
+Go,16,github.com/filebrowser/filebrowser/v2,application,"Agree; application (high confidence).
+Web file-management application installed on a server.
+Source: https://github.com/filebrowser/filebrowser/blob/master/README.md",
+Go,17,github.com/coder/coder/v2,application,"Agree; application (high confidence).
+Self-hosted development-environment control-plane service.
+Source: https://github.com/coder/coder/blob/main/README.md",
+Go,18,github.com/traefik/traefik/v2,application,"Agree; application (high confidence).
+Runnable reverse proxy/load balancer. This is the v2 application module.
+Source: https://github.com/traefik/traefik/blob/master/README.md",
+Go,19,github.com/rclone/rclone,tool,"Agree; application (high confidence).
+Secondary check: Command-line file synchronization tool. Application includes CLI tools in this
+taxonomy.
+Source: https://github.com/rclone/rclone/blob/master/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+Go,20,github.com/cilium/cilium,application,"Agree; application (medium confidence).
+Secondary check: Deployed networking/security agents and controllers. Although it integrates as a
+Kubernetes CNI, this module contains the operated system.
+Source: https://github.com/cilium/cilium/blob/main/README.rst",
+Go,21,github.com/docker/docker,application,"Unresolved; keep unsure.
+Historical Docker/Moby module includes daemon code and reusable client/toolkit packages. A blanket
+library label is too broad; choose by affected package path.
+Source: https://github.com/moby/moby/blob/master/README.md",Advisories filed against this package concern the deployed product.
+Go,22,github.com/argoproj/argo-cd,application,"Agree; application (high confidence).
+Argo CD delivery controller/service under its older module path.
+Source: https://github.com/argoproj/argo-cd/blob/master/README.md",
+Go,23,helm.sh/helm/v3,tool,"Agree; application (medium confidence).
+Helm package-manager CLI is the primary product. It also exposes an SDK, so SDK-function advisories
+need that caveat.
+Source: https://github.com/helm/helm/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+Go,24,github.com/hashicorp/consul,application,"Agree; application (high confidence).
+Secondary check: Operated service-discovery/service-mesh agents and servers, not the separate API
+client module.
+Source: https://github.com/hashicorp/consul/blob/main/README.md",
+Go,25,github.com/canonical/lxd,application,"Resolved; application (high confidence).
+Secondary check: System-container/VM manager with a Linux daemon and client CLI.
+Source: https://github.com/canonical/lxd/blob/main/README.md",
+Go,26,github.com/containerd/containerd,application,"Agree; application (medium confidence).
+Secondary check: Container runtime primarily delivered as a daemon. Embedded/client APIs do not
+change the normal operational role.
+Source: https://github.com/containerd/containerd/blob/main/README.md",
+Go,27,github.com/fission/fission,application,"Agree; application (medium confidence).
+Installed Kubernetes serverless control plane and services. Framework is product terminology;
+developers deploy functions rather than import this Go module.
+Source: https://github.com/fission/fission/blob/main/README.md",
+Go,28,github.com/go-gitea/gitea,application,"Agree; application (high confidence).
+Self-hosted Gitea server under an alternative historical module path.
+Source: https://github.com/go-gitea/gitea/blob/main/README.md",
+Go,29,github.com/openfga/openfga,application,"Agree; application (medium confidence).
+Authorization service with HTTP/gRPC APIs. Embedded Go use also exists and should be noted for
+relevant advisories.
+Source: https://github.com/openfga/openfga/blob/main/README.md",
+Go,30,github.com/OliveTin/OliveTin,application,"Agree; application (high confidence).
+Web application that runs configured shell commands through a user interface.
+Source: https://github.com/OliveTin/OliveTin/blob/main/README.md",
+Go,31,github.com/hashicorp/vault,application,"Agree; application (high confidence).
+Secondary check: Operated secrets-management server. The main module is not the separate Vault API
+client package.
+Source: https://github.com/hashicorp/vault/blob/main/README.md",
+Go,32,github.com/juju/juju,application,"Agree; application (high confidence).
+Secondary check: Infrastructure/application orchestration engine with controller and CLI operations.
+Source: https://github.com/juju/juju/blob/main/README.md",
+Go,33,github.com/labstack/echo/v4,framework,"Agree; framework (high confidence).
+Echo web framework used by callers to define routes, middleware and handlers.
+Source: https://github.com/labstack/echo/blob/master/README.md",
+Go,34,github.com/xuri/excelize/v2,library,"Agree; library (high confidence).
+Imported Go APIs for reading and writing spreadsheet files.
+Source: https://github.com/qax-os/excelize/blob/master/README.md",
+Go,35,github.com/ethereum/go-ethereum,application,"Agree; application (medium confidence).
+Primary product is the Geth Ethereum node. The same repository also exposes reusable Go APIs, so
+some advisories need a library-context qualifier.
+Source: https://github.com/ethereum/go-ethereum/blob/master/README.md",
+Go,36,github.com/hashicorp/nomad,application,"Agree; application (high confidence).
+Secondary check: Operated workload scheduler/orchestrator with server, agent and CLI roles.
+Source: https://github.com/hashicorp/nomad/blob/main/README.md",
+Go,37,github.com/labstack/echo/v5,framework,"Agree; framework (high confidence).
+Echo v5 web application framework; major version does not change the role.
+Source: https://github.com/labstack/echo/blob/master/README.md",
+Go,38,github.com/traefik/traefik,application,"Agree; application (high confidence).
+Traefik reverse-proxy application under the legacy unversioned module path.
+Source: https://github.com/traefik/traefik/blob/master/README.md",
+Go,39,github.com/opencontainers/runc,tool,"Revise; application (medium confidence).
+Secondary check: Upstream defines runc as a container-execution CLI. Its libcontainer API is a
+secondary embeddable interface.
+Source: https://github.com/opencontainers/runc/blob/main/README.md","New tool value: run by a developer or operator on project files and config, not a deployed service."
+Go,40,github.com/authzed/spicedb,application,"Agree; application (high confidence).
+Authorization database/service that clients query through APIs.
+Source: https://github.com/authzed/spicedb/blob/main/README.md",
+Go,41,github.com/corazawaf/coraza/v3,library,"Revise; library (high confidence).
+Secondary check: Upstream explicitly calls Coraza a library at its core. WAF connectors embed the
+engine; Docker files are not evidence of a standalone application.
+Source: https://github.com/corazawaf/coraza/blob/main/README.md",
+Go,42,github.com/getkin/kin-openapi,library,"Revise; library (high confidence).
+Secondary check: OpenAPI document loading, parsing and validation APIs used by other Go software. A
+command directory does not change the package's main role.
+Source: https://github.com/getkin/kin-openapi/blob/master/README.md",
+Go,43,github.com/pterodactyl/wings,application,"Agree; application (high confidence).
+Pterodactyl daemon/control plane with HTTP and SFTP services.
+Source: https://github.com/pterodactyl/wings/blob/develop/README.md",
+Go,44,github.com/rancher/rancher,application,"Agree; application (high confidence).
+Deployed Kubernetes/container management platform.
+Source: https://github.com/rancher/rancher/blob/main/README.md",
+Go,45,github.com/containers/podman/v4,application,"Agree; application (medium confidence).
+Secondary check: Container-management CLI/API service. libpod is reusable, but the main module's
+primary product is the Podman application.
+Source: https://github.com/podman-container-tools/podman/blob/main/README.md",
+Go,46,github.com/kyverno/kyverno,application,"Agree; application (medium confidence).
+Kubernetes policy-engine controllers/services operated in a cluster. Integration with Kubernetes
+does not make the whole project a library.
+Source: https://github.com/kyverno/kyverno/blob/main/README.md",
+Go,47,github.com/nats-io/nats-server/v2,application,"Resolved; application (high confidence).
+Secondary check: NATS messaging server process; client implementations are separate projects.
+Source: https://github.com/nats-io/nats-server/blob/main/README.md",
+Go,48,github.com/argoproj/argo-workflows/v3,application,"Agree; application (high confidence).
+Secondary check: Kubernetes workflow controller and service. The client SDKs are separate
+deliverables.
+Source: https://github.com/argoproj/argo-workflows/blob/main/README.md",
+Go,49,github.com/cloudreve/Cloudreve/v4,application,"Agree; application (high confidence).
+Self-hosted file-management/cloud-drive application.
+Source: https://github.com/cloudreve/cloudreve/blob/master/README.md",
+Go,50,github.com/gofiber/fiber/v2,framework,"Agree; framework (high confidence).
+Fiber web framework used to build Go applications through routing and middleware.
+Source: https://github.com/gofiber/fiber/blob/main/README.md",

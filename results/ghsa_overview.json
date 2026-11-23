@@ -1,0 +1,5346 @@
+{
+  "cwe_date": "2026-10-28",
+  "cwe_version": "5.0",
+  "ecosystems": {
+    "GitHub Actions": {
+      "av_v3_else_v4": {
+        "A": 1,
+        "L": 4,
+        "N": 57
+      },
+      "av_v3_v4_differ": 1,
+      "cve_alias": 47,
+      "cvss_v3": 41,
+      "cvss_v4": 28,
+      "cwe_not_in_1400": [],
+      "cwe_top": [
+        [
+          "CWE-78",
+          13
+        ],
+        [
+          "CWE-77",
+          11
+        ],
+        [
+          "CWE-532",
+          9
+        ],
+        [
+          "CWE-20",
+          6
+        ],
+        [
+          "CWE-200",
+          5
+        ],
+        [
+          "CWE-94",
+          5
+        ],
+        [
+          "CWE-506",
+          4
+        ],
+        [
+          "CWE-59",
+          3
+        ],
+        [
+          "CWE-863",
+          3
+        ],
+        [
+          "CWE-117",
+          2
+        ],
+        [
+          "CWE-150",
+          2
+        ],
+        [
+          "CWE-209",
+          2
+        ],
+        [
+          "CWE-22",
+          2
+        ],
+        [
+          "CWE-693",
+          2
+        ],
+        [
+          "CWE-74",
+          2
+        ],
+        [
+          "CWE-1116",
+          1
+        ],
+        [
+          "CWE-120",
+          1
+        ],
+        [
+          "CWE-1236",
+          1
+        ],
+        [
+          "CWE-140",
+          1
+        ],
+        [
+          "CWE-201",
+          1
+        ],
+        [
+          "CWE-212",
+          1
+        ],
+        [
+          "CWE-215",
+          1
+        ],
+        [
+          "CWE-221",
+          1
+        ],
+        [
+          "CWE-250",
+          1
+        ],
+        [
+          "CWE-268",
+          1
+        ],
+        [
+          "CWE-272",
+          1
+        ],
+        [
+          "CWE-295",
+          1
+        ],
+        [
+          "CWE-312",
+          1
+        ],
+        [
+          "CWE-349",
+          1
+        ],
+        [
+          "CWE-522",
+          1
+        ]
+      ],
+      "distinct_packages": 49,
+      "fix_link": 48,
+      "group": {
+        "Access Control (CWE-1396)": 7,
+        "Encryption (CWE-1402)": 1,
+        "Exposed Resource (CWE-1403)": 1,
+        "File Handling (CWE-1404)": 4,
+        "Improper Input Validation (CWE-1406)": 6,
+        "Improper Neutralization (CWE-1407)": 3,
+        "Injection (CWE-1409)": 28,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 1,
+        "Memory Safety (CWE-1399)": 1,
+        "No CWE": 3,
+        "Poor Coding Practices (CWE-1412)": 5,
+        "Protection Mechanism Failure (CWE-1413)": 3,
+        "Resource Lifecycle Management (CWE-1416)": 2,
+        "Sensitive Information Exposure (CWE-1417)": 15,
+        "Violation of Secure Design Principles (CWE-1418)": 1
+      },
+      "no_cvss": 2,
+      "no_cwe": 3,
+      "packages_top": [
+        [
+          "tmatens/compose-lint",
+          7
+        ],
+        [
+          "step-security/harden-runner",
+          5
+        ],
+        [
+          "SonarSource/sonarqube-scan-action",
+          2
+        ],
+        [
+          "aquasecurity/trivy-action",
+          2
+        ],
+        [
+          "google-github-actions/run-gemini-cli",
+          2
+        ],
+        [
+          "pypa/gh-action-pypi-publish",
+          2
+        ],
+        [
+          "rlespinasse/github-slug-action",
+          2
+        ],
+        [
+          "shivammathur/setup-php",
+          2
+        ],
+        [
+          "tj-actions/branch-names",
+          2
+        ],
+        [
+          "tj-actions/changed-files",
+          2
+        ],
+        [
+          "Azure/setup-kubectl",
+          1
+        ],
+        [
+          "BoldestDungeon/steam-workshop-deploy",
+          1
+        ],
+        [
+          "OZI-Project/publish",
+          1
+        ],
+        [
+          "RageAgainstThePixel/setup-steamcmd",
+          1
+        ],
+        [
+          "SHAdd0WTAka/Zen-Ai-Pentest",
+          1
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 16,
+        "HIGH": 22,
+        "LOW": 9,
+        "MODERATE": 17
+      },
+      "total": 64,
+      "v3_A": {
+        "H": 15,
+        "L": 4,
+        "N": 22
+      },
+      "v3_AC": {
+        "H": 9,
+        "L": 32
+      },
+      "v3_AV": {
+        "A": 1,
+        "L": 4,
+        "N": 36
+      },
+      "v3_C": {
+        "H": 29,
+        "L": 7,
+        "N": 5
+      },
+      "v3_I": {
+        "H": 25,
+        "L": 9,
+        "N": 7
+      },
+      "v3_PR": {
+        "H": 2,
+        "L": 15,
+        "N": 24
+      },
+      "v3_S": {
+        "C": 15,
+        "U": 26
+      },
+      "v3_UI": {
+        "N": 33,
+        "R": 8
+      },
+      "v3_and_v4": 7,
+      "v3_only": 34,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          5
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          3
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:H/A:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          2
+        ],
+        [
+          "AV:A/AC:H/PR:L/UI:N/S:C/C:N/I:L/A:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:L/A:L",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:L/UI:N/S:C/C:N/I:H/A:H",
+          1
+        ]
+      ],
+      "v4_AC": {
+        "H": 1,
+        "L": 27
+      },
+      "v4_AT": {
+        "N": 17,
+        "P": 11
+      },
+      "v4_AV": {
+        "N": 28
+      },
+      "v4_PR": {
+        "H": 2,
+        "L": 9,
+        "N": 17
+      },
+      "v4_SA": {
+        "H": 2,
+        "N": 26
+      },
+      "v4_SC": {
+        "H": 5,
+        "L": 1,
+        "N": 22
+      },
+      "v4_SI": {
+        "H": 4,
+        "L": 2,
+        "N": 22
+      },
+      "v4_UI": {
+        "N": 21,
+        "P": 7
+      },
+      "v4_VA": {
+        "H": 6,
+        "L": 1,
+        "N": 21
+      },
+      "v4_VC": {
+        "H": 13,
+        "L": 9,
+        "N": 6
+      },
+      "v4_VI": {
+        "H": 11,
+        "L": 6,
+        "N": 11
+      },
+      "v4_only": 21,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:H/UI:N/VC:N/VI:N/VA:N/SC:H/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ]
+      ],
+      "withdrawn": 1,
+      "year": {
+        "2022": 6,
+        "2023": 7,
+        "2024": 8,
+        "2025": 17,
+        "2026": 26
+      }
+    },
+    "Go": {
+      "av_v3_else_v4": {
+        "A": 113,
+        "L": 434,
+        "N": 4417,
+        "P": 15
+      },
+      "av_v3_v4_differ": 32,
+      "cve_alias": 4553,
+      "cvss_v3": 4231,
+      "cvss_v4": 1335,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          45
+        ],
+        [
+          "CWE-365",
+          1
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-863",
+          389
+        ],
+        [
+          "CWE-22",
+          379
+        ],
+        [
+          "CWE-400",
+          281
+        ],
+        [
+          "CWE-79",
+          267
+        ],
+        [
+          "CWE-200",
+          266
+        ],
+        [
+          "CWE-862",
+          239
+        ],
+        [
+          "CWE-20",
+          234
+        ],
+        [
+          "CWE-770",
+          234
+        ],
+        [
+          "CWE-284",
+          200
+        ],
+        [
+          "CWE-287",
+          165
+        ],
+        [
+          "CWE-918",
+          164
+        ],
+        [
+          "CWE-269",
+          120
+        ],
+        [
+          "CWE-285",
+          118
+        ],
+        [
+          "CWE-639",
+          107
+        ],
+        [
+          "CWE-306",
+          94
+        ],
+        [
+          "CWE-78",
+          92
+        ],
+        [
+          "CWE-89",
+          88
+        ],
+        [
+          "CWE-476",
+          83
+        ],
+        [
+          "CWE-295",
+          76
+        ],
+        [
+          "CWE-532",
+          76
+        ],
+        [
+          "CWE-59",
+          72
+        ],
+        [
+          "CWE-601",
+          72
+        ],
+        [
+          "CWE-352",
+          63
+        ],
+        [
+          "CWE-362",
+          63
+        ],
+        [
+          "CWE-522",
+          63
+        ],
+        [
+          "CWE-345",
+          62
+        ],
+        [
+          "CWE-347",
+          60
+        ],
+        [
+          "CWE-732",
+          56
+        ],
+        [
+          "CWE-290",
+          55
+        ],
+        [
+          "CWE-129",
+          51
+        ]
+      ],
+      "distinct_packages": 1532,
+      "fix_link": 3385,
+      "group": {
+        "Access Control (CWE-1396)": 1957,
+        "Comparison (CWE-1397)": 21,
+        "Component Interaction (CWE-1398)": 42,
+        "Concurrency (CWE-1401)": 96,
+        "Encryption (CWE-1402)": 165,
+        "Exposed Resource (CWE-1403)": 127,
+        "File Handling (CWE-1404)": 464,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 79,
+        "Improper Input Validation (CWE-1406)": 270,
+        "Improper Neutralization (CWE-1407)": 72,
+        "Incorrect Calculation (CWE-1408)": 67,
+        "Injection (CWE-1409)": 618,
+        "Insufficient Control Flow Management (CWE-1410)": 111,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 181,
+        "Memory Safety (CWE-1399)": 183,
+        "No CWE": 164,
+        "Not a CWE-1400 weakness": 46,
+        "Poor Coding Practices (CWE-1412)": 99,
+        "Protection Mechanism Failure (CWE-1413)": 46,
+        "Randomness (CWE-1414)": 33,
+        "Resource Control (CWE-1415)": 22,
+        "Resource Lifecycle Management (CWE-1416)": 675,
+        "Sensitive Information Exposure (CWE-1417)": 426,
+        "Violation of Secure Design Principles (CWE-1418)": 53
+      },
+      "no_cvss": 167,
+      "no_cwe": 164,
+      "packages_top": [
+        [
+          "github.com/mattermost/mattermost/server/v8",
+          207
+        ],
+        [
+          "github.com/mattermost/mattermost-server",
+          191
+        ],
+        [
+          "github.com/siyuan-note/siyuan/kernel",
+          155
+        ],
+        [
+          "code.gitea.io/gitea",
+          109
+        ],
+        [
+          "code.vikunja.io/api",
+          81
+        ],
+        [
+          "gogs.io/gogs",
+          77
+        ],
+        [
+          "github.com/usememos/memos",
+          75
+        ],
+        [
+          "github.com/grafana/grafana",
+          69
+        ],
+        [
+          "github.com/traefik/traefik/v3",
+          62
+        ],
+        [
+          "github.com/rancher/rancher",
+          61
+        ],
+        [
+          "github.com/traefik/traefik/v2",
+          60
+        ],
+        [
+          "github.com/hashicorp/vault",
+          55
+        ],
+        [
+          "github.com/mattermost/mattermost-server/v6",
+          47
+        ],
+        [
+          "github.com/zitadel/zitadel",
+          47
+        ],
+        [
+          "github.com/filebrowser/filebrowser/v2",
+          44
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 584,
+        "HIGH": 1923,
+        "LOW": 388,
+        "MODERATE": 2251
+      },
+      "total": 5146,
+      "v3_A": {
+        "H": 1536,
+        "L": 521,
+        "N": 2174
+      },
+      "v3_AC": {
+        "H": 787,
+        "L": 3444
+      },
+      "v3_AV": {
+        "A": 105,
+        "L": 374,
+        "N": 3739,
+        "P": 13
+      },
+      "v3_C": {
+        "H": 1813,
+        "L": 994,
+        "N": 1424
+      },
+      "v3_I": {
+        "H": 1534,
+        "L": 919,
+        "N": 1778
+      },
+      "v3_PR": {
+        "H": 404,
+        "L": 1636,
+        "N": 2191
+      },
+      "v3_S": {
+        "C": 1132,
+        "U": 3099
+      },
+      "v3_UI": {
+        "N": 3389,
+        "R": 842
+      },
+      "v3_and_v4": 587,
+      "v3_only": 3644,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          341
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          174
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          140
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          137
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          106
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          103
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          99
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          92
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          87
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          82
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+          78
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          69
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
+          66
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          59
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          58
+        ]
+      ],
+      "v4_AC": {
+        "H": 125,
+        "L": 1210
+      },
+      "v4_AT": {
+        "N": 1030,
+        "P": 305
+      },
+      "v4_AV": {
+        "A": 18,
+        "L": 99,
+        "N": 1216,
+        "P": 2
+      },
+      "v4_PR": {
+        "H": 121,
+        "L": 459,
+        "N": 755
+      },
+      "v4_SA": {
+        "H": 113,
+        "L": 47,
+        "N": 1175
+      },
+      "v4_SC": {
+        "H": 192,
+        "L": 128,
+        "N": 1015
+      },
+      "v4_SI": {
+        "H": 173,
+        "L": 115,
+        "N": 1047
+      },
+      "v4_UI": {
+        "A": 82,
+        "N": 1076,
+        "P": 177
+      },
+      "v4_VA": {
+        "H": 384,
+        "L": 182,
+        "N": 769
+      },
+      "v4_VC": {
+        "H": 482,
+        "L": 238,
+        "N": 615
+      },
+      "v4_VI": {
+        "H": 435,
+        "L": 235,
+        "N": 665
+      },
+      "v4_only": 748,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          72
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          47
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          35
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          34
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          33
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          32
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          31
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          30
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          29
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          26
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          24
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          21
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:L/SI:N/SA:N",
+          20
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          19
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          18
+        ]
+      ],
+      "withdrawn": 144,
+      "year": {
+        "2021": 264,
+        "2022": 723,
+        "2023": 499,
+        "2024": 652,
+        "2025": 682,
+        "2026": 2326
+      }
+    },
+    "Hex": {
+      "av_v3_else_v4": {
+        "A": 1,
+        "L": 16,
+        "N": 102
+      },
+      "cve_alias": 116,
+      "cvss_v3": 47,
+      "cvss_v4": 85,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          2
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-770",
+          22
+        ],
+        [
+          "CWE-400",
+          16
+        ],
+        [
+          "CWE-93",
+          8
+        ],
+        [
+          "CWE-79",
+          6
+        ],
+        [
+          "CWE-20",
+          5
+        ],
+        [
+          "CWE-295",
+          4
+        ],
+        [
+          "CWE-409",
+          4
+        ],
+        [
+          "CWE-863",
+          4
+        ],
+        [
+          "CWE-113",
+          3
+        ],
+        [
+          "CWE-347",
+          3
+        ],
+        [
+          "CWE-835",
+          3
+        ],
+        [
+          "CWE-116",
+          2
+        ],
+        [
+          "CWE-22",
+          2
+        ],
+        [
+          "CWE-346",
+          2
+        ],
+        [
+          "CWE-407",
+          2
+        ],
+        [
+          "CWE-444",
+          2
+        ],
+        [
+          "CWE-502",
+          2
+        ],
+        [
+          "CWE-601",
+          2
+        ],
+        [
+          "CWE-611",
+          2
+        ],
+        [
+          "CWE-613",
+          2
+        ],
+        [
+          "CWE-639",
+          2
+        ],
+        [
+          "CWE-918",
+          2
+        ],
+        [
+          "CWE-94",
+          2
+        ],
+        [
+          "CWE-115",
+          1
+        ],
+        [
+          "CWE-1188",
+          1
+        ],
+        [
+          "CWE-1284",
+          1
+        ],
+        [
+          "CWE-134",
+          1
+        ],
+        [
+          "CWE-178",
+          1
+        ],
+        [
+          "CWE-183",
+          1
+        ],
+        [
+          "CWE-269",
+          1
+        ]
+      ],
+      "distinct_packages": 57,
+      "fix_link": 109,
+      "group": {
+        "Access Control (CWE-1396)": 24,
+        "Comparison (CWE-1397)": 1,
+        "Component Interaction (CWE-1398)": 4,
+        "Concurrency (CWE-1401)": 1,
+        "Encryption (CWE-1402)": 3,
+        "Exposed Resource (CWE-1403)": 1,
+        "File Handling (CWE-1404)": 2,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 1,
+        "Improper Input Validation (CWE-1406)": 6,
+        "Improper Neutralization (CWE-1407)": 2,
+        "Injection (CWE-1409)": 21,
+        "Insufficient Control Flow Management (CWE-1410)": 5,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 3,
+        "Memory Safety (CWE-1399)": 3,
+        "No CWE": 4,
+        "Not a CWE-1400 weakness": 2,
+        "Protection Mechanism Failure (CWE-1413)": 1,
+        "Randomness (CWE-1414)": 1,
+        "Resource Control (CWE-1415)": 4,
+        "Resource Lifecycle Management (CWE-1416)": 47
+      },
+      "no_cvss": 3,
+      "no_cwe": 4,
+      "packages_top": [
+        [
+          "hackney",
+          13
+        ],
+        [
+          "bandit",
+          7
+        ],
+        [
+          "ash",
+          5
+        ],
+        [
+          "phoenix",
+          5
+        ],
+        [
+          "plug",
+          5
+        ],
+        [
+          "tesla",
+          5
+        ],
+        [
+          "cowlib",
+          4
+        ],
+        [
+          "grpc",
+          4
+        ],
+        [
+          "gun",
+          4
+        ],
+        [
+          "mint",
+          4
+        ],
+        [
+          "rabbit_common",
+          4
+        ],
+        [
+          "ash_authentication",
+          3
+        ],
+        [
+          "ewe",
+          3
+        ],
+        [
+          "mpp",
+          3
+        ],
+        [
+          "phoenix_storybook",
+          3
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 11,
+        "HIGH": 56,
+        "LOW": 14,
+        "MODERATE": 41
+      },
+      "total": 122,
+      "v3_A": {
+        "H": 18,
+        "L": 5,
+        "N": 24
+      },
+      "v3_AC": {
+        "H": 8,
+        "L": 39
+      },
+      "v3_AV": {
+        "A": 1,
+        "L": 4,
+        "N": 42
+      },
+      "v3_C": {
+        "H": 15,
+        "L": 9,
+        "N": 23
+      },
+      "v3_I": {
+        "H": 18,
+        "L": 15,
+        "N": 14
+      },
+      "v3_PR": {
+        "H": 3,
+        "L": 10,
+        "N": 34
+      },
+      "v3_S": {
+        "C": 9,
+        "U": 38
+      },
+      "v3_UI": {
+        "N": 39,
+        "R": 8
+      },
+      "v3_and_v4": 13,
+      "v3_only": 34,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          7
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          4
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          4
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          4
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          3
+        ],
+        [
+          "AV:A/AC:H/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          1
+        ],
+        [
+          "AV:L/AC:H/PR:H/UI:N/S:C/C:N/I:N/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:L/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:L",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:C/C:N/I:L/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          1
+        ]
+      ],
+      "v4_AC": {
+        "H": 1,
+        "L": 84
+      },
+      "v4_AT": {
+        "N": 35,
+        "P": 50
+      },
+      "v4_AV": {
+        "L": 13,
+        "N": 72
+      },
+      "v4_PR": {
+        "L": 9,
+        "N": 76
+      },
+      "v4_SA": {
+        "H": 1,
+        "L": 1,
+        "N": 83
+      },
+      "v4_SC": {
+        "H": 2,
+        "L": 5,
+        "N": 78
+      },
+      "v4_SI": {
+        "H": 3,
+        "L": 13,
+        "N": 69
+      },
+      "v4_UI": {
+        "A": 2,
+        "N": 76,
+        "P": 7
+      },
+      "v4_VA": {
+        "H": 43,
+        "L": 5,
+        "N": 37
+      },
+      "v4_VC": {
+        "H": 13,
+        "L": 9,
+        "N": 63
+      },
+      "v4_VI": {
+        "H": 16,
+        "L": 18,
+        "N": 51
+      },
+      "v4_only": 72,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          18
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          16
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:P/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:L/SI:L/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:L/SA:N",
+          2
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:N/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:N/UI:A/VC:N/VI:H/VA:N/SC:N/SI:H/SA:N",
+          1
+        ]
+      ],
+      "withdrawn": 2,
+      "year": {
+        "2022": 20,
+        "2023": 6,
+        "2024": 5,
+        "2025": 9,
+        "2026": 82
+      }
+    },
+    "Maven": {
+      "av_v3_else_v4": {
+        "A": 61,
+        "L": 417,
+        "N": 6298,
+        "P": 6
+      },
+      "av_v3_v4_differ": 11,
+      "cve_alias": 7063,
+      "cvss_v3": 6281,
+      "cvss_v4": 929,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          27
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-79",
+          973
+        ],
+        [
+          "CWE-502",
+          416
+        ],
+        [
+          "CWE-862",
+          390
+        ],
+        [
+          "CWE-352",
+          380
+        ],
+        [
+          "CWE-20",
+          369
+        ],
+        [
+          "CWE-22",
+          344
+        ],
+        [
+          "CWE-200",
+          337
+        ],
+        [
+          "CWE-611",
+          287
+        ],
+        [
+          "CWE-400",
+          285
+        ],
+        [
+          "CWE-522",
+          213
+        ],
+        [
+          "CWE-863",
+          199
+        ],
+        [
+          "CWE-94",
+          183
+        ],
+        [
+          "CWE-287",
+          170
+        ],
+        [
+          "CWE-918",
+          149
+        ],
+        [
+          "CWE-770",
+          142
+        ],
+        [
+          "CWE-89",
+          115
+        ],
+        [
+          "CWE-284",
+          112
+        ],
+        [
+          "CWE-295",
+          111
+        ],
+        [
+          "CWE-74",
+          105
+        ],
+        [
+          "CWE-601",
+          83
+        ],
+        [
+          "CWE-285",
+          80
+        ],
+        [
+          "CWE-256",
+          76
+        ],
+        [
+          "CWE-269",
+          75
+        ],
+        [
+          "CWE-312",
+          69
+        ],
+        [
+          "CWE-532",
+          66
+        ],
+        [
+          "CWE-787",
+          62
+        ],
+        [
+          "CWE-311",
+          60
+        ],
+        [
+          "CWE-668",
+          60
+        ],
+        [
+          "CWE-444",
+          58
+        ],
+        [
+          "CWE-693",
+          58
+        ]
+      ],
+      "distinct_packages": 3312,
+      "fix_link": 3772,
+      "group": {
+        "Access Control (CWE-1396)": 2193,
+        "Comparison (CWE-1397)": 25,
+        "Component Interaction (CWE-1398)": 63,
+        "Concurrency (CWE-1401)": 40,
+        "Encryption (CWE-1402)": 293,
+        "Exposed Resource (CWE-1403)": 151,
+        "File Handling (CWE-1404)": 387,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 33,
+        "Improper Input Validation (CWE-1406)": 388,
+        "Improper Neutralization (CWE-1407)": 84,
+        "Incorrect Calculation (CWE-1408)": 24,
+        "Injection (CWE-1409)": 1569,
+        "Insufficient Control Flow Management (CWE-1410)": 117,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 444,
+        "Memory Safety (CWE-1399)": 150,
+        "No CWE": 222,
+        "Not a CWE-1400 weakness": 27,
+        "Poor Coding Practices (CWE-1412)": 23,
+        "Protection Mechanism Failure (CWE-1413)": 80,
+        "Randomness (CWE-1414)": 36,
+        "Resource Control (CWE-1415)": 453,
+        "Resource Lifecycle Management (CWE-1416)": 630,
+        "Sensitive Information Exposure (CWE-1417)": 507,
+        "Violation of Secure Design Principles (CWE-1418)": 17
+      },
+      "no_cvss": 474,
+      "no_cwe": 222,
+      "packages_top": [
+        [
+          "org.jenkins-ci.main:jenkins-core",
+          257
+        ],
+        [
+          "org.apache.tomcat:tomcat",
+          169
+        ],
+        [
+          "com.liferay.portal:release.portal.bom",
+          159
+        ],
+        [
+          "com.liferay.portal:release.dxp.bom",
+          125
+        ],
+        [
+          "org.keycloak:keycloak-services",
+          124
+        ],
+        [
+          "com.fasterxml.jackson.core:jackson-databind",
+          87
+        ],
+        [
+          "org.apache.tomcat.embed:tomcat-embed-core",
+          83
+        ],
+        [
+          "org.apache.struts:struts2-core",
+          60
+        ],
+        [
+          "org.keycloak:keycloak-core",
+          58
+        ],
+        [
+          "org.xwiki.platform:xwiki-platform-oldcore",
+          46
+        ],
+        [
+          "org.apache.tomcat:tomcat-catalina",
+          44
+        ],
+        [
+          "io.undertow:undertow-core",
+          43
+        ],
+        [
+          "org.elasticsearch:elasticsearch",
+          41
+        ],
+        [
+          "net.mingsoft:ms-mcms",
+          39
+        ],
+        [
+          "com.thoughtworks.xstream:xstream",
+          38
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 962,
+        "HIGH": 2425,
+        "LOW": 418,
+        "MODERATE": 3451
+      },
+      "total": 7256,
+      "v3_A": {
+        "H": 2419,
+        "L": 384,
+        "N": 3478
+      },
+      "v3_AC": {
+        "H": 917,
+        "L": 5364
+      },
+      "v3_AV": {
+        "A": 55,
+        "L": 386,
+        "N": 5836,
+        "P": 4
+      },
+      "v3_C": {
+        "H": 3028,
+        "L": 1813,
+        "N": 1440
+      },
+      "v3_I": {
+        "H": 2474,
+        "L": 1549,
+        "N": 2258
+      },
+      "v3_PR": {
+        "H": 269,
+        "L": 2506,
+        "N": 3506
+      },
+      "v3_S": {
+        "C": 1105,
+        "U": 5176
+      },
+      "v3_UI": {
+        "N": 4729,
+        "R": 1552
+      },
+      "v3_and_v4": 428,
+      "v3_only": 5853,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          572
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          384
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          349
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          335
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          294
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          288
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          198
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          187
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          167
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          154
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+          152
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+          142
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          115
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          112
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          89
+        ]
+      ],
+      "v4_AC": {
+        "H": 68,
+        "L": 861
+      },
+      "v4_AT": {
+        "N": 730,
+        "P": 199
+      },
+      "v4_AV": {
+        "A": 10,
+        "L": 50,
+        "N": 867,
+        "P": 2
+      },
+      "v4_PR": {
+        "H": 83,
+        "L": 272,
+        "N": 574
+      },
+      "v4_SA": {
+        "H": 49,
+        "L": 31,
+        "N": 849
+      },
+      "v4_SC": {
+        "H": 83,
+        "L": 124,
+        "N": 722
+      },
+      "v4_SI": {
+        "H": 61,
+        "L": 139,
+        "N": 729
+      },
+      "v4_UI": {
+        "A": 109,
+        "N": 690,
+        "P": 130
+      },
+      "v4_VA": {
+        "H": 268,
+        "L": 132,
+        "N": 529
+      },
+      "v4_VC": {
+        "H": 320,
+        "L": 286,
+        "N": 323
+      },
+      "v4_VI": {
+        "H": 274,
+        "L": 230,
+        "N": 425
+      },
+      "v4_only": 501,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          64
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          48
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          37
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          35
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          23
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          23
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          20
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          18
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:A/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          17
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          14
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          14
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          13
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          13
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          13
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          12
+        ]
+      ],
+      "withdrawn": 118,
+      "year": {
+        "2017": 3,
+        "2018": 250,
+        "2019": 159,
+        "2020": 151,
+        "2021": 394,
+        "2022": 3002,
+        "2023": 951,
+        "2024": 565,
+        "2025": 711,
+        "2026": 1070
+      }
+    },
+    "NuGet": {
+      "av_v3_else_v4": {
+        "A": 11,
+        "L": 188,
+        "N": 995,
+        "P": 1
+      },
+      "av_v3_v4_differ": 5,
+      "cve_alias": 1090,
+      "cvss_v3": 1144,
+      "cvss_v4": 127,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          4
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-787",
+          212
+        ],
+        [
+          "CWE-79",
+          111
+        ],
+        [
+          "CWE-119",
+          73
+        ],
+        [
+          "CWE-400",
+          57
+        ],
+        [
+          "CWE-122",
+          46
+        ],
+        [
+          "CWE-22",
+          44
+        ],
+        [
+          "CWE-770",
+          44
+        ],
+        [
+          "CWE-200",
+          38
+        ],
+        [
+          "CWE-20",
+          37
+        ],
+        [
+          "CWE-125",
+          34
+        ],
+        [
+          "CWE-401",
+          30
+        ],
+        [
+          "CWE-502",
+          27
+        ],
+        [
+          "CWE-674",
+          26
+        ],
+        [
+          "CWE-416",
+          25
+        ],
+        [
+          "CWE-190",
+          23
+        ],
+        [
+          "CWE-407",
+          19
+        ],
+        [
+          "CWE-835",
+          19
+        ],
+        [
+          "CWE-94",
+          19
+        ],
+        [
+          "CWE-121",
+          15
+        ],
+        [
+          "CWE-863",
+          15
+        ],
+        [
+          "CWE-918",
+          14
+        ],
+        [
+          "CWE-116",
+          13
+        ],
+        [
+          "CWE-284",
+          13
+        ],
+        [
+          "CWE-295",
+          13
+        ],
+        [
+          "CWE-59",
+          12
+        ],
+        [
+          "CWE-789",
+          12
+        ],
+        [
+          "CWE-347",
+          10
+        ],
+        [
+          "CWE-362",
+          10
+        ],
+        [
+          "CWE-434",
+          10
+        ],
+        [
+          "CWE-290",
+          9
+        ]
+      ],
+      "distinct_packages": 704,
+      "fix_link": 607,
+      "group": {
+        "Access Control (CWE-1396)": 132,
+        "Comparison (CWE-1397)": 3,
+        "Component Interaction (CWE-1398)": 7,
+        "Concurrency (CWE-1401)": 18,
+        "Encryption (CWE-1402)": 25,
+        "Exposed Resource (CWE-1403)": 17,
+        "File Handling (CWE-1404)": 60,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 12,
+        "Improper Input Validation (CWE-1406)": 42,
+        "Improper Neutralization (CWE-1407)": 16,
+        "Incorrect Calculation (CWE-1408)": 38,
+        "Injection (CWE-1409)": 160,
+        "Insufficient Control Flow Management (CWE-1410)": 51,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 12,
+        "Memory Safety (CWE-1399)": 435,
+        "No CWE": 76,
+        "Not a CWE-1400 weakness": 4,
+        "Poor Coding Practices (CWE-1412)": 11,
+        "Protection Mechanism Failure (CWE-1413)": 6,
+        "Randomness (CWE-1414)": 7,
+        "Resource Control (CWE-1415)": 33,
+        "Resource Lifecycle Management (CWE-1416)": 167,
+        "Sensitive Information Exposure (CWE-1417)": 57,
+        "Violation of Secure Design Principles (CWE-1418)": 2
+      },
+      "no_cvss": 42,
+      "no_cwe": 76,
+      "packages_top": [
+        [
+          "Microsoft.ChakraCore",
+          247
+        ],
+        [
+          "Magick.NET-Q16-AnyCPU",
+          170
+        ],
+        [
+          "Magick.NET-Q16-HDRI-AnyCPU",
+          165
+        ],
+        [
+          "Magick.NET-Q8-AnyCPU",
+          165
+        ],
+        [
+          "Magick.NET-Q16-HDRI-x86",
+          164
+        ],
+        [
+          "Magick.NET-Q8-x86",
+          164
+        ],
+        [
+          "Magick.NET-Q16-x86",
+          163
+        ],
+        [
+          "Magick.NET-Q16-HDRI-OpenMP-arm64",
+          161
+        ],
+        [
+          "Magick.NET-Q16-HDRI-x64",
+          161
+        ],
+        [
+          "Magick.NET-Q16-OpenMP-arm64",
+          161
+        ],
+        [
+          "Magick.NET-Q16-OpenMP-x64",
+          161
+        ],
+        [
+          "Magick.NET-Q16-arm64",
+          161
+        ],
+        [
+          "Magick.NET-Q16-HDRI-arm64",
+          160
+        ],
+        [
+          "Magick.NET-Q8-OpenMP-arm64",
+          160
+        ],
+        [
+          "Magick.NET-Q8-arm64",
+          160
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 77,
+        "HIGH": 641,
+        "LOW": 82,
+        "MODERATE": 437
+      },
+      "total": 1237,
+      "v3_A": {
+        "H": 686,
+        "L": 135,
+        "N": 323
+      },
+      "v3_AC": {
+        "H": 423,
+        "L": 721
+      },
+      "v3_AV": {
+        "A": 11,
+        "L": 187,
+        "N": 945,
+        "P": 1
+      },
+      "v3_C": {
+        "H": 583,
+        "L": 163,
+        "N": 398
+      },
+      "v3_I": {
+        "H": 526,
+        "L": 141,
+        "N": 477
+      },
+      "v3_PR": {
+        "H": 39,
+        "L": 167,
+        "N": 938
+      },
+      "v3_S": {
+        "C": 125,
+        "U": 1019
+      },
+      "v3_UI": {
+        "N": 621,
+        "R": 523
+      },
+      "v3_and_v4": 76,
+      "v3_only": 1068,
+      "v3_vector": [
+        [
+          "AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          226
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          162
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          51
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          46
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          38
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          38
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          21
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          16
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          15
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          15
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          14
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+          13
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+          12
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          12
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          12
+        ]
+      ],
+      "v4_AC": {
+        "H": 21,
+        "L": 106
+      },
+      "v4_AT": {
+        "N": 90,
+        "P": 37
+      },
+      "v4_AV": {
+        "A": 3,
+        "L": 9,
+        "N": 115
+      },
+      "v4_PR": {
+        "L": 23,
+        "N": 104
+      },
+      "v4_SA": {
+        "H": 7,
+        "L": 7,
+        "N": 113
+      },
+      "v4_SC": {
+        "H": 13,
+        "L": 17,
+        "N": 97
+      },
+      "v4_SI": {
+        "H": 7,
+        "L": 17,
+        "N": 103
+      },
+      "v4_UI": {
+        "A": 11,
+        "N": 91,
+        "P": 25
+      },
+      "v4_VA": {
+        "H": 39,
+        "L": 25,
+        "N": 63
+      },
+      "v4_VC": {
+        "H": 33,
+        "L": 30,
+        "N": 64
+      },
+      "v4_VI": {
+        "H": 33,
+        "L": 27,
+        "N": 67
+      },
+      "v4_only": 51,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          11
+        ],
+        [
+          "AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          9
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          6
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          4
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          4
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          4
+        ],
+        [
+          "AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:H/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          2
+        ]
+      ],
+      "withdrawn": 57,
+      "year": {
+        "2017": 3,
+        "2018": 29,
+        "2019": 30,
+        "2020": 15,
+        "2021": 103,
+        "2022": 312,
+        "2023": 72,
+        "2024": 106,
+        "2025": 103,
+        "2026": 464
+      }
+    },
+    "Packagist": {
+      "av_v3_else_v4": {
+        "A": 11,
+        "L": 126,
+        "N": 5912,
+        "P": 5
+      },
+      "av_v3_v4_differ": 3,
+      "cve_alias": 5824,
+      "cvss_v3": 5328,
+      "cvss_v4": 1282,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          37
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-79",
+          2061
+        ],
+        [
+          "CWE-89",
+          367
+        ],
+        [
+          "CWE-200",
+          327
+        ],
+        [
+          "CWE-352",
+          299
+        ],
+        [
+          "CWE-94",
+          250
+        ],
+        [
+          "CWE-22",
+          237
+        ],
+        [
+          "CWE-20",
+          234
+        ],
+        [
+          "CWE-862",
+          209
+        ],
+        [
+          "CWE-863",
+          204
+        ],
+        [
+          "CWE-434",
+          190
+        ],
+        [
+          "CWE-284",
+          176
+        ],
+        [
+          "CWE-918",
+          153
+        ],
+        [
+          "CWE-639",
+          138
+        ],
+        [
+          "CWE-502",
+          126
+        ],
+        [
+          "CWE-287",
+          123
+        ],
+        [
+          "CWE-74",
+          112
+        ],
+        [
+          "CWE-285",
+          91
+        ],
+        [
+          "CWE-601",
+          91
+        ],
+        [
+          "CWE-78",
+          87
+        ],
+        [
+          "CWE-269",
+          70
+        ],
+        [
+          "CWE-400",
+          56
+        ],
+        [
+          "CWE-611",
+          55
+        ],
+        [
+          "CWE-770",
+          48
+        ],
+        [
+          "CWE-1336",
+          44
+        ],
+        [
+          "CWE-80",
+          44
+        ],
+        [
+          "CWE-384",
+          37
+        ],
+        [
+          "CWE-613",
+          37
+        ],
+        [
+          "CWE-77",
+          37
+        ],
+        [
+          "CWE-668",
+          34
+        ],
+        [
+          "CWE-209",
+          32
+        ]
+      ],
+      "distinct_packages": 1093,
+      "fix_link": 3774,
+      "group": {
+        "Access Control (CWE-1396)": 1448,
+        "Comparison (CWE-1397)": 10,
+        "Component Interaction (CWE-1398)": 28,
+        "Concurrency (CWE-1401)": 25,
+        "Encryption (CWE-1402)": 84,
+        "Exposed Resource (CWE-1403)": 92,
+        "File Handling (CWE-1404)": 254,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 10,
+        "Improper Input Validation (CWE-1406)": 251,
+        "Improper Neutralization (CWE-1407)": 49,
+        "Incorrect Calculation (CWE-1408)": 6,
+        "Injection (CWE-1409)": 2999,
+        "Insufficient Control Flow Management (CWE-1410)": 40,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 354,
+        "Memory Safety (CWE-1399)": 10,
+        "No CWE": 341,
+        "Not a CWE-1400 weakness": 37,
+        "Poor Coding Practices (CWE-1412)": 13,
+        "Protection Mechanism Failure (CWE-1413)": 37,
+        "Randomness (CWE-1414)": 39,
+        "Resource Control (CWE-1415)": 168,
+        "Resource Lifecycle Management (CWE-1416)": 412,
+        "Sensitive Information Exposure (CWE-1417)": 446,
+        "Violation of Secure Design Principles (CWE-1418)": 15
+      },
+      "no_cvss": 575,
+      "no_cwe": 341,
+      "packages_top": [
+        [
+          "moodle/moodle",
+          437
+        ],
+        [
+          "magento/community-edition",
+          362
+        ],
+        [
+          "typo3/cms",
+          189
+        ],
+        [
+          "magento/project-community-edition",
+          161
+        ],
+        [
+          "wwbn/avideo",
+          148
+        ],
+        [
+          "pimcore/pimcore",
+          145
+        ],
+        [
+          "craftcms/cms",
+          144
+        ],
+        [
+          "typo3/cms-core",
+          130
+        ],
+        [
+          "dolibarr/dolibarr",
+          127
+        ],
+        [
+          "concrete5/concrete5",
+          122
+        ],
+        [
+          "getgrav/grav",
+          122
+        ],
+        [
+          "thorsten/phpmyfaq",
+          120
+        ],
+        [
+          "drupal/core",
+          109
+        ],
+        [
+          "librenms/librenms",
+          108
+        ],
+        [
+          "phpmyadmin/phpmyadmin",
+          107
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 660,
+        "HIGH": 1916,
+        "LOW": 455,
+        "MODERATE": 3598
+      },
+      "total": 6629,
+      "v3_A": {
+        "H": 1512,
+        "L": 443,
+        "N": 3373
+      },
+      "v3_AC": {
+        "H": 551,
+        "L": 4777
+      },
+      "v3_AV": {
+        "A": 9,
+        "L": 115,
+        "N": 5199,
+        "P": 5
+      },
+      "v3_C": {
+        "H": 2185,
+        "L": 2225,
+        "N": 918
+      },
+      "v3_I": {
+        "H": 1953,
+        "L": 2250,
+        "N": 1125
+      },
+      "v3_PR": {
+        "H": 767,
+        "L": 1926,
+        "N": 2635
+      },
+      "v3_S": {
+        "C": 1842,
+        "U": 3486
+      },
+      "v3_UI": {
+        "N": 3158,
+        "R": 2170
+      },
+      "v3_and_v4": 556,
+      "v3_only": 4772,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          580
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          479
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          392
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          278
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          188
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          173
+        ],
+        [
+          "AV:N/AC:L/PR:H/UI:R/S:C/C:L/I:L/A:N",
+          170
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          136
+        ],
+        [
+          "AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+          131
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          117
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          116
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          101
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          87
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+          86
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          81
+        ]
+      ],
+      "v4_AC": {
+        "H": 73,
+        "L": 1209
+      },
+      "v4_AT": {
+        "N": 1048,
+        "P": 234
+      },
+      "v4_AV": {
+        "A": 4,
+        "L": 20,
+        "N": 1258
+      },
+      "v4_PR": {
+        "H": 220,
+        "L": 443,
+        "N": 619
+      },
+      "v4_SA": {
+        "H": 55,
+        "L": 32,
+        "N": 1195
+      },
+      "v4_SC": {
+        "H": 106,
+        "L": 235,
+        "N": 941
+      },
+      "v4_SI": {
+        "H": 91,
+        "L": 241,
+        "N": 950
+      },
+      "v4_UI": {
+        "A": 112,
+        "N": 892,
+        "P": 278
+      },
+      "v4_VA": {
+        "H": 301,
+        "L": 120,
+        "N": 861
+      },
+      "v4_VC": {
+        "H": 479,
+        "L": 287,
+        "N": 516
+      },
+      "v4_VI": {
+        "H": 418,
+        "L": 304,
+        "N": 560
+      },
+      "v4_only": 726,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          71
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          63
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          54
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          44
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          37
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          36
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          34
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          34
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          30
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          29
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          19
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          17
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:H/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          16
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          16
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          16
+        ]
+      ],
+      "withdrawn": 136,
+      "year": {
+        "2018": 3,
+        "2019": 52,
+        "2020": 116,
+        "2021": 376,
+        "2022": 2263,
+        "2023": 714,
+        "2024": 993,
+        "2025": 578,
+        "2026": 1534
+      }
+    },
+    "Pub": {
+      "av_v3_else_v4": {
+        "L": 3,
+        "N": 9
+      },
+      "cve_alias": 11,
+      "cvss_v3": 12,
+      "cvss_v4": 1,
+      "cwe_not_in_1400": [],
+      "cwe_top": [
+        [
+          "CWE-20",
+          2
+        ],
+        [
+          "CWE-295",
+          2
+        ],
+        [
+          "CWE-347",
+          2
+        ],
+        [
+          "CWE-74",
+          2
+        ],
+        [
+          "CWE-93",
+          2
+        ],
+        [
+          "CWE-200",
+          1
+        ],
+        [
+          "CWE-22",
+          1
+        ],
+        [
+          "CWE-331",
+          1
+        ],
+        [
+          "CWE-502",
+          1
+        ],
+        [
+          "CWE-88",
+          1
+        ],
+        [
+          "CWE-916",
+          1
+        ]
+      ],
+      "distinct_packages": 11,
+      "fix_link": 12,
+      "group": {
+        "Access Control (CWE-1396)": 2,
+        "Encryption (CWE-1402)": 3,
+        "File Handling (CWE-1404)": 1,
+        "Improper Input Validation (CWE-1406)": 2,
+        "Injection (CWE-1409)": 3,
+        "No CWE": 1,
+        "Randomness (CWE-1414)": 1,
+        "Resource Control (CWE-1415)": 1,
+        "Sensitive Information Exposure (CWE-1417)": 1
+      },
+      "no_cvss": 2,
+      "no_cwe": 1,
+      "packages_top": [
+        [
+          "archive",
+          2
+        ],
+        [
+          "dio",
+          2
+        ],
+        [
+          "personnummer",
+          2
+        ],
+        [
+          "agent_dart",
+          1
+        ],
+        [
+          "dio_http2_adapter",
+          1
+        ],
+        [
+          "http",
+          1
+        ],
+        [
+          "jose",
+          1
+        ],
+        [
+          "pubnub",
+          1
+        ],
+        [
+          "serverpod_auth_server",
+          1
+        ],
+        [
+          "serverpod_client",
+          1
+        ],
+        [
+          "shared_preferences_android",
+          1
+        ]
+      ],
+      "severity": {
+        "HIGH": 8,
+        "LOW": 3,
+        "MODERATE": 3
+      },
+      "total": 14,
+      "v3_A": {
+        "H": 2,
+        "L": 1,
+        "N": 9
+      },
+      "v3_AC": {
+        "H": 3,
+        "L": 9
+      },
+      "v3_AV": {
+        "L": 3,
+        "N": 9
+      },
+      "v3_C": {
+        "H": 7,
+        "L": 2,
+        "N": 3
+      },
+      "v3_I": {
+        "H": 4,
+        "L": 2,
+        "N": 6
+      },
+      "v3_PR": {
+        "H": 1,
+        "N": 11
+      },
+      "v3_S": {
+        "C": 1,
+        "U": 11
+      },
+      "v3_UI": {
+        "N": 9,
+        "R": 3
+      },
+      "v3_and_v4": 1,
+      "v3_only": 11,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          3
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          2
+        ],
+        [
+          "AV:L/AC:H/PR:H/UI:N/S:U/C:N/I:L/A:L",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          1
+        ]
+      ],
+      "v4_AC": {
+        "H": 1
+      },
+      "v4_AT": {
+        "N": 1
+      },
+      "v4_AV": {
+        "N": 1
+      },
+      "v4_PR": {
+        "N": 1
+      },
+      "v4_SA": {
+        "N": 1
+      },
+      "v4_SC": {
+        "N": 1
+      },
+      "v4_SI": {
+        "N": 1
+      },
+      "v4_UI": {
+        "P": 1
+      },
+      "v4_VA": {
+        "N": 1
+      },
+      "v4_VC": {
+        "H": 1
+      },
+      "v4_VI": {
+        "H": 1
+      },
+      "v4_only": 0,
+      "v4_vector": [
+        [
+          "AV:N/AC:H/AT:N/PR:N/UI:P/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ]
+      ],
+      "withdrawn": 2,
+      "year": {
+        "2022": 3,
+        "2023": 5,
+        "2024": 4,
+        "2026": 2
+      }
+    },
+    "PyPI": {
+      "av_v3_else_v4": {
+        "A": 90,
+        "L": 1071,
+        "N": 5474,
+        "P": 11
+      },
+      "av_v3_v4_differ": 106,
+      "cve_alias": 6339,
+      "cvss_v3": 5861,
+      "cvss_v4": 3236,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          40
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-22",
+          564
+        ],
+        [
+          "CWE-79",
+          520
+        ],
+        [
+          "CWE-400",
+          362
+        ],
+        [
+          "CWE-20",
+          328
+        ],
+        [
+          "CWE-200",
+          317
+        ],
+        [
+          "CWE-94",
+          285
+        ],
+        [
+          "CWE-918",
+          276
+        ],
+        [
+          "CWE-502",
+          268
+        ],
+        [
+          "CWE-770",
+          213
+        ],
+        [
+          "CWE-863",
+          170
+        ],
+        [
+          "CWE-78",
+          151
+        ],
+        [
+          "CWE-862",
+          149
+        ],
+        [
+          "CWE-787",
+          142
+        ],
+        [
+          "CWE-287",
+          133
+        ],
+        [
+          "CWE-125",
+          130
+        ],
+        [
+          "CWE-1333",
+          120
+        ],
+        [
+          "CWE-89",
+          115
+        ],
+        [
+          "CWE-601",
+          113
+        ],
+        [
+          "CWE-306",
+          110
+        ],
+        [
+          "CWE-284",
+          105
+        ],
+        [
+          "CWE-639",
+          101
+        ],
+        [
+          "CWE-476",
+          91
+        ],
+        [
+          "CWE-119",
+          90
+        ],
+        [
+          "CWE-74",
+          85
+        ],
+        [
+          "CWE-352",
+          83
+        ],
+        [
+          "CWE-59",
+          82
+        ],
+        [
+          "CWE-73",
+          79
+        ],
+        [
+          "CWE-77",
+          79
+        ],
+        [
+          "CWE-835",
+          74
+        ],
+        [
+          "CWE-617",
+          72
+        ]
+      ],
+      "distinct_packages": 1658,
+      "fix_link": 4783,
+      "group": {
+        "Access Control (CWE-1396)": 1536,
+        "Comparison (CWE-1397)": 34,
+        "Component Interaction (CWE-1398)": 64,
+        "Concurrency (CWE-1401)": 80,
+        "Encryption (CWE-1402)": 155,
+        "Exposed Resource (CWE-1403)": 201,
+        "File Handling (CWE-1404)": 674,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 49,
+        "Improper Input Validation (CWE-1406)": 354,
+        "Improper Neutralization (CWE-1407)": 93,
+        "Incorrect Calculation (CWE-1408)": 138,
+        "Injection (CWE-1409)": 1323,
+        "Insufficient Control Flow Management (CWE-1410)": 264,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 215,
+        "Memory Safety (CWE-1399)": 471,
+        "No CWE": 232,
+        "Not a CWE-1400 weakness": 40,
+        "Poor Coding Practices (CWE-1412)": 138,
+        "Protection Mechanism Failure (CWE-1413)": 106,
+        "Randomness (CWE-1414)": 32,
+        "Resource Control (CWE-1415)": 306,
+        "Resource Lifecycle Management (CWE-1416)": 920,
+        "Sensitive Information Exposure (CWE-1417)": 471,
+        "Violation of Secure Design Principles (CWE-1418)": 35
+      },
+      "no_cvss": 302,
+      "no_cwe": 232,
+      "packages_top": [
+        [
+          "tensorflow",
+          434
+        ],
+        [
+          "tensorflow-gpu",
+          427
+        ],
+        [
+          "tensorflow-cpu",
+          423
+        ],
+        [
+          "open-webui",
+          169
+        ],
+        [
+          "Django",
+          148
+        ],
+        [
+          "apache-airflow",
+          146
+        ],
+        [
+          "nltk",
+          121
+        ],
+        [
+          "Plone",
+          96
+        ],
+        [
+          "vllm",
+          96
+        ],
+        [
+          "mlflow",
+          87
+        ],
+        [
+          "picklescan",
+          87
+        ],
+        [
+          "pillow",
+          74
+        ],
+        [
+          "pypdf",
+          69
+        ],
+        [
+          "apache-superset",
+          68
+        ],
+        [
+          "praisonai",
+          68
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 848,
+        "HIGH": 2764,
+        "LOW": 582,
+        "MODERATE": 2754
+      },
+      "total": 6948,
+      "v3_A": {
+        "H": 2488,
+        "L": 830,
+        "N": 2543
+      },
+      "v3_AC": {
+        "H": 1060,
+        "L": 4801
+      },
+      "v3_AV": {
+        "A": 83,
+        "L": 951,
+        "N": 4817,
+        "P": 10
+      },
+      "v3_C": {
+        "H": 2711,
+        "L": 1259,
+        "N": 1891
+      },
+      "v3_I": {
+        "H": 2258,
+        "L": 1265,
+        "N": 2338
+      },
+      "v3_PR": {
+        "H": 250,
+        "L": 1942,
+        "N": 3669
+      },
+      "v3_S": {
+        "C": 1044,
+        "U": 4817
+      },
+      "v3_UI": {
+        "N": 4356,
+        "R": 1505
+      },
+      "v3_and_v4": 2451,
+      "v3_only": 3410,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          485
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          453
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          262
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          253
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          156
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          140
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          135
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          119
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          112
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          112
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          107
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          98
+        ],
+        [
+          "AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:L",
+          95
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          86
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          82
+        ]
+      ],
+      "v4_AC": {
+        "H": 148,
+        "L": 3088
+      },
+      "v4_AT": {
+        "N": 2567,
+        "P": 669
+      },
+      "v4_AV": {
+        "A": 33,
+        "L": 528,
+        "N": 2672,
+        "P": 3
+      },
+      "v4_PR": {
+        "H": 115,
+        "L": 1009,
+        "N": 2112
+      },
+      "v4_SA": {
+        "H": 103,
+        "L": 62,
+        "N": 3071
+      },
+      "v4_SC": {
+        "H": 187,
+        "L": 328,
+        "N": 2721
+      },
+      "v4_SI": {
+        "H": 153,
+        "L": 340,
+        "N": 2743
+      },
+      "v4_UI": {
+        "A": 187,
+        "N": 2402,
+        "P": 647
+      },
+      "v4_VA": {
+        "H": 1236,
+        "L": 529,
+        "N": 1471
+      },
+      "v4_VC": {
+        "H": 1274,
+        "L": 458,
+        "N": 1504
+      },
+      "v4_VI": {
+        "H": 1150,
+        "L": 496,
+        "N": 1590
+      },
+      "v4_only": 785,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          266
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          233
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          153
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          131
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          106
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          87
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          74
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          74
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          59
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          57
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          53
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          47
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          43
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          42
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          41
+        ]
+      ],
+      "withdrawn": 261,
+      "year": {
+        "2018": 113,
+        "2019": 112,
+        "2020": 142,
+        "2021": 525,
+        "2022": 1350,
+        "2023": 527,
+        "2024": 692,
+        "2025": 742,
+        "2026": 2745
+      }
+    },
+    "RubyGems": {
+      "av_v3_else_v4": {
+        "A": 1,
+        "L": 77,
+        "N": 865
+      },
+      "av_v3_v4_differ": 3,
+      "cve_alias": 1102,
+      "cvss_v3": 831,
+      "cvss_v4": 189,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          7
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-79",
+          211
+        ],
+        [
+          "CWE-400",
+          82
+        ],
+        [
+          "CWE-200",
+          66
+        ],
+        [
+          "CWE-20",
+          57
+        ],
+        [
+          "CWE-22",
+          55
+        ],
+        [
+          "CWE-94",
+          45
+        ],
+        [
+          "CWE-1333",
+          39
+        ],
+        [
+          "CWE-770",
+          36
+        ],
+        [
+          "CWE-352",
+          31
+        ],
+        [
+          "CWE-74",
+          28
+        ],
+        [
+          "CWE-78",
+          27
+        ],
+        [
+          "CWE-416",
+          26
+        ],
+        [
+          "CWE-89",
+          25
+        ],
+        [
+          "CWE-77",
+          24
+        ],
+        [
+          "CWE-284",
+          22
+        ],
+        [
+          "CWE-502",
+          19
+        ],
+        [
+          "CWE-287",
+          18
+        ],
+        [
+          "CWE-295",
+          18
+        ],
+        [
+          "CWE-918",
+          15
+        ],
+        [
+          "CWE-444",
+          14
+        ],
+        [
+          "CWE-347",
+          12
+        ],
+        [
+          "CWE-362",
+          11
+        ],
+        [
+          "CWE-436",
+          11
+        ],
+        [
+          "CWE-601",
+          11
+        ],
+        [
+          "CWE-639",
+          11
+        ],
+        [
+          "CWE-190",
+          10
+        ],
+        [
+          "CWE-59",
+          10
+        ],
+        [
+          "CWE-184",
+          9
+        ],
+        [
+          "CWE-787",
+          9
+        ],
+        [
+          "CWE-863",
+          9
+        ]
+      ],
+      "distinct_packages": 441,
+      "fix_link": 786,
+      "group": {
+        "Access Control (CWE-1396)": 159,
+        "Comparison (CWE-1397)": 5,
+        "Component Interaction (CWE-1398)": 27,
+        "Concurrency (CWE-1401)": 14,
+        "Encryption (CWE-1402)": 22,
+        "Exposed Resource (CWE-1403)": 18,
+        "File Handling (CWE-1404)": 69,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 8,
+        "Improper Input Validation (CWE-1406)": 61,
+        "Improper Neutralization (CWE-1407)": 20,
+        "Incorrect Calculation (CWE-1408)": 12,
+        "Injection (CWE-1409)": 378,
+        "Insufficient Control Flow Management (CWE-1410)": 25,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 44,
+        "Memory Safety (CWE-1399)": 69,
+        "No CWE": 98,
+        "Not a CWE-1400 weakness": 7,
+        "Poor Coding Practices (CWE-1412)": 12,
+        "Protection Mechanism Failure (CWE-1413)": 14,
+        "Randomness (CWE-1414)": 7,
+        "Resource Control (CWE-1415)": 31,
+        "Resource Lifecycle Management (CWE-1416)": 174,
+        "Sensitive Information Exposure (CWE-1417)": 78,
+        "Violation of Secure Design Principles (CWE-1418)": 6
+      },
+      "no_cvss": 271,
+      "no_cwe": 98,
+      "packages_top": [
+        [
+          "actionpack",
+          77
+        ],
+        [
+          "nokogiri",
+          68
+        ],
+        [
+          "rack",
+          55
+        ],
+        [
+          "activerecord",
+          26
+        ],
+        [
+          "rubygems-update",
+          25
+        ],
+        [
+          "puppet",
+          23
+        ],
+        [
+          "activesupport",
+          20
+        ],
+        [
+          "rails-html-sanitizer",
+          20
+        ],
+        [
+          "actionview",
+          19
+        ],
+        [
+          "activestorage",
+          19
+        ],
+        [
+          "loofah",
+          17
+        ],
+        [
+          "camaleon_cms",
+          16
+        ],
+        [
+          "publify_core",
+          15
+        ],
+        [
+          "passenger",
+          14
+        ],
+        [
+          "puma",
+          14
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 136,
+        "HIGH": 398,
+        "LOW": 106,
+        "MODERATE": 574
+      },
+      "total": 1214,
+      "v3_A": {
+        "H": 317,
+        "L": 66,
+        "N": 448
+      },
+      "v3_AC": {
+        "H": 149,
+        "L": 682
+      },
+      "v3_AV": {
+        "A": 1,
+        "L": 64,
+        "N": 766
+      },
+      "v3_C": {
+        "H": 355,
+        "L": 216,
+        "N": 260
+      },
+      "v3_I": {
+        "H": 311,
+        "L": 243,
+        "N": 277
+      },
+      "v3_PR": {
+        "H": 35,
+        "L": 182,
+        "N": 614
+      },
+      "v3_S": {
+        "C": 210,
+        "U": 621
+      },
+      "v3_UI": {
+        "N": 566,
+        "R": 265
+      },
+      "v3_and_v4": 77,
+      "v3_only": 754,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          91
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          86
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          81
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          43
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          33
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          19
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          19
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          18
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          17
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N",
+          16
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          14
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          13
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          12
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          12
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          10
+        ]
+      ],
+      "v4_AC": {
+        "H": 15,
+        "L": 174
+      },
+      "v4_AT": {
+        "N": 121,
+        "P": 68
+      },
+      "v4_AV": {
+        "A": 1,
+        "L": 20,
+        "N": 168
+      },
+      "v4_PR": {
+        "H": 6,
+        "L": 36,
+        "N": 147
+      },
+      "v4_SA": {
+        "H": 6,
+        "L": 10,
+        "N": 173
+      },
+      "v4_SC": {
+        "H": 19,
+        "L": 28,
+        "N": 142
+      },
+      "v4_SI": {
+        "H": 9,
+        "L": 31,
+        "N": 149
+      },
+      "v4_UI": {
+        "A": 16,
+        "N": 128,
+        "P": 45
+      },
+      "v4_VA": {
+        "H": 50,
+        "L": 45,
+        "N": 94
+      },
+      "v4_VC": {
+        "H": 48,
+        "L": 19,
+        "N": 122
+      },
+      "v4_VI": {
+        "H": 44,
+        "L": 23,
+        "N": 122
+      },
+      "v4_only": 112,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          25
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          8
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          7
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          7
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          7
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          6
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:L",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          4
+        ],
+        [
+          "AV:L/AC:L/AT:P/PR:N/UI:P/VC:N/VI:H/VA:L/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:A/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          3
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          3
+        ]
+      ],
+      "withdrawn": 70,
+      "year": {
+        "2017": 175,
+        "2018": 107,
+        "2019": 60,
+        "2020": 57,
+        "2021": 71,
+        "2022": 238,
+        "2023": 91,
+        "2024": 103,
+        "2025": 67,
+        "2026": 245
+      }
+    },
+    "SwiftURL": {
+      "av_v3_else_v4": {
+        "A": 1,
+        "L": 8,
+        "N": 50
+      },
+      "av_v3_v4_differ": 1,
+      "cve_alias": 56,
+      "cvss_v3": 49,
+      "cvss_v4": 14,
+      "cwe_not_in_1400": [],
+      "cwe_top": [
+        [
+          "CWE-190",
+          6
+        ],
+        [
+          "CWE-22",
+          5
+        ],
+        [
+          "CWE-400",
+          5
+        ],
+        [
+          "CWE-122",
+          3
+        ],
+        [
+          "CWE-20",
+          3
+        ],
+        [
+          "CWE-444",
+          3
+        ],
+        [
+          "CWE-74",
+          3
+        ],
+        [
+          "CWE-770",
+          3
+        ],
+        [
+          "CWE-79",
+          3
+        ],
+        [
+          "CWE-113",
+          2
+        ],
+        [
+          "CWE-116",
+          2
+        ],
+        [
+          "CWE-120",
+          2
+        ],
+        [
+          "CWE-125",
+          2
+        ],
+        [
+          "CWE-130",
+          2
+        ],
+        [
+          "CWE-241",
+          2
+        ],
+        [
+          "CWE-441",
+          2
+        ],
+        [
+          "CWE-617",
+          2
+        ],
+        [
+          "CWE-674",
+          2
+        ],
+        [
+          "CWE-787",
+          2
+        ],
+        [
+          "CWE-80",
+          2
+        ],
+        [
+          "CWE-93",
+          2
+        ],
+        [
+          "CWE-94",
+          2
+        ],
+        [
+          "CWE-1104",
+          1
+        ],
+        [
+          "CWE-121",
+          1
+        ],
+        [
+          "CWE-129",
+          1
+        ],
+        [
+          "CWE-200",
+          1
+        ],
+        [
+          "CWE-228",
+          1
+        ],
+        [
+          "CWE-231",
+          1
+        ],
+        [
+          "CWE-306",
+          1
+        ],
+        [
+          "CWE-327",
+          1
+        ]
+      ],
+      "distinct_packages": 33,
+      "fix_link": 45,
+      "group": {
+        "Access Control (CWE-1396)": 3,
+        "Component Interaction (CWE-1398)": 3,
+        "Encryption (CWE-1402)": 1,
+        "Exposed Resource (CWE-1403)": 1,
+        "File Handling (CWE-1404)": 5,
+        "Improper Input Validation (CWE-1406)": 3,
+        "Improper Neutralization (CWE-1407)": 8,
+        "Incorrect Calculation (CWE-1408)": 6,
+        "Injection (CWE-1409)": 10,
+        "Insufficient Control Flow Management (CWE-1410)": 5,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 1,
+        "Memory Safety (CWE-1399)": 10,
+        "No CWE": 3,
+        "Randomness (CWE-1414)": 1,
+        "Resource Control (CWE-1415)": 2,
+        "Resource Lifecycle Management (CWE-1416)": 9,
+        "Sensitive Information Exposure (CWE-1417)": 1
+      },
+      "no_cvss": 5,
+      "no_cwe": 3,
+      "packages_top": [
+        [
+          "github.com/apple/swift-nio-http2",
+          10
+        ],
+        [
+          "github.com/vapor/vapor",
+          7
+        ],
+        [
+          "github.com/pytorch/executorch",
+          6
+        ],
+        [
+          "github.com/apple/swift-nio",
+          5
+        ],
+        [
+          "github.com/grpc/grpc-swift",
+          4
+        ],
+        [
+          "github.com/sparkle-project/Sparkle",
+          3
+        ],
+        [
+          "github.com/vapor/leaf-kit",
+          3
+        ],
+        [
+          "github.com/apple/container",
+          2
+        ],
+        [
+          "github.com/apple/swift-nio-extras",
+          2
+        ],
+        [
+          "CocoaMQTT",
+          1
+        ],
+        [
+          "github.com/apple/containerization",
+          1
+        ],
+        [
+          "github.com/apple/swift-asn1",
+          1
+        ],
+        [
+          "github.com/apple/swift-corelibs-foundation",
+          1
+        ],
+        [
+          "github.com/apple/swift-nio-ssl",
+          1
+        ],
+        [
+          "github.com/awslabs/aws-sdk-swift",
+          1
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 8,
+        "HIGH": 27,
+        "LOW": 5,
+        "MODERATE": 24
+      },
+      "total": 64,
+      "v3_A": {
+        "H": 28,
+        "L": 6,
+        "N": 15
+      },
+      "v3_AC": {
+        "H": 7,
+        "L": 42
+      },
+      "v3_AV": {
+        "A": 1,
+        "L": 6,
+        "N": 42
+      },
+      "v3_C": {
+        "H": 17,
+        "L": 5,
+        "N": 27
+      },
+      "v3_I": {
+        "H": 17,
+        "L": 5,
+        "N": 27
+      },
+      "v3_PR": {
+        "H": 2,
+        "L": 4,
+        "N": 43
+      },
+      "v3_S": {
+        "C": 6,
+        "U": 43
+      },
+      "v3_UI": {
+        "N": 39,
+        "R": 10
+      },
+      "v3_and_v4": 4,
+      "v3_only": 45,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          15
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          7
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          4
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          2
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          2
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          2
+        ],
+        [
+          "AV:A/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:H/PR:L/UI:N/S:C/C:N/I:L/A:L",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:H/UI:R/S:U/C:H/I:N/A:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          1
+        ],
+        [
+          "AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:L/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:R/S:C/C:N/I:H/A:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          1
+        ]
+      ],
+      "v4_AC": {
+        "H": 2,
+        "L": 12
+      },
+      "v4_AT": {
+        "N": 9,
+        "P": 5
+      },
+      "v4_AV": {
+        "L": 2,
+        "N": 12
+      },
+      "v4_PR": {
+        "L": 2,
+        "N": 12
+      },
+      "v4_SA": {
+        "N": 14
+      },
+      "v4_SC": {
+        "L": 1,
+        "N": 13
+      },
+      "v4_SI": {
+        "H": 1,
+        "N": 13
+      },
+      "v4_UI": {
+        "N": 14
+      },
+      "v4_VA": {
+        "H": 3,
+        "L": 6,
+        "N": 5
+      },
+      "v4_VC": {
+        "H": 1,
+        "L": 6,
+        "N": 7
+      },
+      "v4_VI": {
+        "H": 4,
+        "L": 3,
+        "N": 7
+      },
+      "v4_only": 10,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          2
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:H/VA:L/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:L/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:H/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          1
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          1
+        ]
+      ],
+      "withdrawn": 3,
+      "year": {
+        "2022": 4,
+        "2023": 28,
+        "2024": 4,
+        "2025": 9,
+        "2026": 19
+      }
+    },
+    "crates.io": {
+      "av_v3_else_v4": {
+        "A": 9,
+        "L": 301,
+        "N": 1087,
+        "P": 5
+      },
+      "av_v3_v4_differ": 11,
+      "cve_alias": 1053,
+      "cvss_v3": 1107,
+      "cvss_v4": 430,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          1
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-362",
+          86
+        ],
+        [
+          "CWE-416",
+          72
+        ],
+        [
+          "CWE-770",
+          70
+        ],
+        [
+          "CWE-20",
+          66
+        ],
+        [
+          "CWE-400",
+          61
+        ],
+        [
+          "CWE-787",
+          60
+        ],
+        [
+          "CWE-22",
+          56
+        ],
+        [
+          "CWE-125",
+          54
+        ],
+        [
+          "CWE-119",
+          47
+        ],
+        [
+          "CWE-863",
+          44
+        ],
+        [
+          "CWE-908",
+          44
+        ],
+        [
+          "CWE-248",
+          40
+        ],
+        [
+          "CWE-190",
+          38
+        ],
+        [
+          "CWE-415",
+          37
+        ],
+        [
+          "CWE-200",
+          30
+        ],
+        [
+          "CWE-347",
+          28
+        ],
+        [
+          "CWE-77",
+          26
+        ],
+        [
+          "CWE-59",
+          25
+        ],
+        [
+          "CWE-367",
+          24
+        ],
+        [
+          "CWE-345",
+          23
+        ],
+        [
+          "CWE-843",
+          23
+        ],
+        [
+          "CWE-476",
+          22
+        ],
+        [
+          "CWE-674",
+          22
+        ],
+        [
+          "CWE-79",
+          22
+        ],
+        [
+          "CWE-754",
+          19
+        ],
+        [
+          "CWE-918",
+          19
+        ],
+        [
+          "CWE-835",
+          18
+        ],
+        [
+          "CWE-327",
+          17
+        ],
+        [
+          "CWE-617",
+          17
+        ],
+        [
+          "CWE-662",
+          16
+        ]
+      ],
+      "distinct_packages": 1279,
+      "fix_link": 916,
+      "group": {
+        "Access Control (CWE-1396)": 172,
+        "Comparison (CWE-1397)": 9,
+        "Component Interaction (CWE-1398)": 17,
+        "Concurrency (CWE-1401)": 114,
+        "Encryption (CWE-1402)": 63,
+        "Exposed Resource (CWE-1403)": 23,
+        "File Handling (CWE-1404)": 88,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 38,
+        "Improper Input Validation (CWE-1406)": 81,
+        "Improper Neutralization (CWE-1407)": 30,
+        "Incorrect Calculation (CWE-1408)": 65,
+        "Injection (CWE-1409)": 78,
+        "Insufficient Control Flow Management (CWE-1410)": 106,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 34,
+        "Memory Safety (CWE-1399)": 326,
+        "No CWE": 201,
+        "Not a CWE-1400 weakness": 1,
+        "Poor Coding Practices (CWE-1412)": 60,
+        "Protection Mechanism Failure (CWE-1413)": 11,
+        "Randomness (CWE-1414)": 11,
+        "Resource Control (CWE-1415)": 15,
+        "Resource Lifecycle Management (CWE-1416)": 257,
+        "Sensitive Information Exposure (CWE-1417)": 62,
+        "Violation of Secure Design Principles (CWE-1418)": 10
+      },
+      "no_cvss": 240,
+      "no_cwe": 201,
+      "packages_top": [
+        [
+          "surrealdb",
+          80
+        ],
+        [
+          "coreutils",
+          44
+        ],
+        [
+          "wasmtime",
+          43
+        ],
+        [
+          "deno",
+          38
+        ],
+        [
+          "russh",
+          28
+        ],
+        [
+          "zebrad",
+          27
+        ],
+        [
+          "openssl-src",
+          26
+        ],
+        [
+          "ckb",
+          22
+        ],
+        [
+          "openssl",
+          19
+        ],
+        [
+          "rusqlite",
+          16
+        ],
+        [
+          "apollo-router",
+          13
+        ],
+        [
+          "deepseek-tui",
+          13
+        ],
+        [
+          "rustfs",
+          13
+        ],
+        [
+          "codewhale-tui",
+          11
+        ],
+        [
+          "gix",
+          10
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 218,
+        "HIGH": 584,
+        "LOW": 203,
+        "MODERATE": 637
+      },
+      "total": 1642,
+      "v3_A": {
+        "H": 599,
+        "L": 161,
+        "N": 347
+      },
+      "v3_AC": {
+        "H": 285,
+        "L": 822
+      },
+      "v3_AV": {
+        "A": 9,
+        "L": 266,
+        "N": 828,
+        "P": 4
+      },
+      "v3_C": {
+        "H": 415,
+        "L": 145,
+        "N": 547
+      },
+      "v3_I": {
+        "H": 416,
+        "L": 152,
+        "N": 539
+      },
+      "v3_PR": {
+        "H": 48,
+        "L": 285,
+        "N": 774
+      },
+      "v3_S": {
+        "C": 116,
+        "U": 991
+      },
+      "v3_UI": {
+        "N": 969,
+        "R": 138
+      },
+      "v3_and_v4": 135,
+      "v3_only": 972,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          190
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          127
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          53
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          36
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          33
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          25
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          24
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          24
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          22
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          15
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          14
+        ],
+        [
+          "AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+          12
+        ],
+        [
+          "AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          11
+        ],
+        [
+          "AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:H",
+          10
+        ],
+        [
+          "AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          10
+        ]
+      ],
+      "v4_AC": {
+        "H": 54,
+        "L": 376
+      },
+      "v4_AT": {
+        "N": 301,
+        "P": 129
+      },
+      "v4_AV": {
+        "A": 1,
+        "L": 61,
+        "N": 367,
+        "P": 1
+      },
+      "v4_PR": {
+        "H": 20,
+        "L": 99,
+        "N": 311
+      },
+      "v4_SA": {
+        "H": 29,
+        "L": 15,
+        "N": 386
+      },
+      "v4_SC": {
+        "H": 26,
+        "L": 19,
+        "N": 385
+      },
+      "v4_SI": {
+        "H": 37,
+        "L": 16,
+        "N": 377
+      },
+      "v4_UI": {
+        "A": 23,
+        "N": 359,
+        "P": 48
+      },
+      "v4_VA": {
+        "H": 154,
+        "L": 95,
+        "N": 181
+      },
+      "v4_VC": {
+        "H": 85,
+        "L": 62,
+        "N": 283
+      },
+      "v4_VI": {
+        "H": 124,
+        "L": 95,
+        "N": 211
+      },
+      "v4_only": 295,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          45
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          27
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          26
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          15
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          10
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          8
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          8
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          7
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          6
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          6
+        ],
+        [
+          "AV:L/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          5
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          5
+        ]
+      ],
+      "withdrawn": 102,
+      "year": {
+        "2021": 331,
+        "2022": 235,
+        "2023": 130,
+        "2024": 182,
+        "2025": 196,
+        "2026": 568
+      }
+    },
+    "npm": {
+      "av_v3_else_v4": {
+        "A": 59,
+        "L": 546,
+        "N": 6822,
+        "P": 2
+      },
+      "av_v3_v4_differ": 49,
+      "cve_alias": 6465,
+      "cvss_v3": 6042,
+      "cvss_v4": 2497,
+      "cwe_not_in_1400": [
+        [
+          "CWE-613",
+          39
+        ]
+      ],
+      "cwe_top": [
+        [
+          "CWE-79",
+          970
+        ],
+        [
+          "CWE-22",
+          588
+        ],
+        [
+          "CWE-1321",
+          574
+        ],
+        [
+          "CWE-400",
+          445
+        ],
+        [
+          "CWE-506",
+          405
+        ],
+        [
+          "CWE-78",
+          348
+        ],
+        [
+          "CWE-863",
+          320
+        ],
+        [
+          "CWE-94",
+          319
+        ],
+        [
+          "CWE-918",
+          312
+        ],
+        [
+          "CWE-200",
+          306
+        ],
+        [
+          "CWE-20",
+          270
+        ],
+        [
+          "CWE-77",
+          223
+        ],
+        [
+          "CWE-1333",
+          215
+        ],
+        [
+          "CWE-862",
+          165
+        ],
+        [
+          "CWE-770",
+          160
+        ],
+        [
+          "CWE-311",
+          147
+        ],
+        [
+          "CWE-284",
+          129
+        ],
+        [
+          "CWE-89",
+          124
+        ],
+        [
+          "CWE-74",
+          122
+        ],
+        [
+          "CWE-287",
+          116
+        ],
+        [
+          "CWE-639",
+          114
+        ],
+        [
+          "CWE-601",
+          105
+        ],
+        [
+          "CWE-693",
+          98
+        ],
+        [
+          "CWE-915",
+          97
+        ],
+        [
+          "CWE-306",
+          87
+        ],
+        [
+          "CWE-269",
+          80
+        ],
+        [
+          "CWE-352",
+          78
+        ],
+        [
+          "CWE-248",
+          77
+        ],
+        [
+          "CWE-347",
+          76
+        ],
+        [
+          "CWE-285",
+          74
+        ]
+      ],
+      "distinct_packages": 3800,
+      "fix_link": 4863,
+      "group": {
+        "Access Control (CWE-1396)": 1647,
+        "Comparison (CWE-1397)": 65,
+        "Component Interaction (CWE-1398)": 83,
+        "Concurrency (CWE-1401)": 98,
+        "Encryption (CWE-1402)": 289,
+        "Exposed Resource (CWE-1403)": 228,
+        "File Handling (CWE-1404)": 669,
+        "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 69,
+        "Improper Input Validation (CWE-1406)": 307,
+        "Improper Neutralization (CWE-1407)": 131,
+        "Incorrect Calculation (CWE-1408)": 25,
+        "Injection (CWE-1409)": 2105,
+        "Insufficient Control Flow Management (CWE-1410)": 226,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 263,
+        "Memory Safety (CWE-1399)": 93,
+        "No CWE": 231,
+        "Not a CWE-1400 weakness": 39,
+        "Poor Coding Practices (CWE-1412)": 450,
+        "Protection Mechanism Failure (CWE-1413)": 189,
+        "Randomness (CWE-1414)": 30,
+        "Resource Control (CWE-1415)": 662,
+        "Resource Lifecycle Management (CWE-1416)": 1089,
+        "Sensitive Information Exposure (CWE-1417)": 451,
+        "Violation of Secure Design Principles (CWE-1418)": 42
+      },
+      "no_cvss": 750,
+      "no_cwe": 231,
+      "packages_top": [
+        [
+          "openclaw",
+          758
+        ],
+        [
+          "n8n",
+          174
+        ],
+        [
+          "flowise",
+          125
+        ],
+        [
+          "parse-server",
+          118
+        ],
+        [
+          "vm2",
+          108
+        ],
+        [
+          "next",
+          84
+        ],
+        [
+          "electron",
+          79
+        ],
+        [
+          "axios",
+          66
+        ],
+        [
+          "ghost",
+          63
+        ],
+        [
+          "directus",
+          61
+        ],
+        [
+          "hono",
+          61
+        ],
+        [
+          "undici",
+          55
+        ],
+        [
+          "nocodb",
+          54
+        ],
+        [
+          "@budibase/server",
+          44
+        ],
+        [
+          "node-forge",
+          36
+        ]
+      ],
+      "severity": {
+        "CRITICAL": 1478,
+        "HIGH": 3222,
+        "LOW": 541,
+        "MODERATE": 2938
+      },
+      "total": 8179,
+      "v3_A": {
+        "H": 2440,
+        "L": 767,
+        "N": 2835
+      },
+      "v3_AC": {
+        "H": 1147,
+        "L": 4895
+      },
+      "v3_AV": {
+        "A": 45,
+        "L": 437,
+        "N": 5559,
+        "P": 1
+      },
+      "v3_C": {
+        "H": 3058,
+        "L": 1462,
+        "N": 1522
+      },
+      "v3_I": {
+        "H": 2577,
+        "L": 1507,
+        "N": 1958
+      },
+      "v3_PR": {
+        "H": 223,
+        "L": 1365,
+        "N": 4454
+      },
+      "v3_S": {
+        "C": 1326,
+        "U": 4716
+      },
+      "v3_UI": {
+        "N": 4614,
+        "R": 1428
+      },
+      "v3_and_v4": 1110,
+      "v3_only": 4932,
+      "v3_vector": [
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          825
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          522
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+          354
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          336
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          144
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          123
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          122
+        ],
+        [
+          "AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          120
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          119
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+          102
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          81
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+          73
+        ],
+        [
+          "AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+          72
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          70
+        ],
+        [
+          "AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+          66
+        ]
+      ],
+      "v4_AC": {
+        "H": 291,
+        "L": 2206
+      },
+      "v4_AT": {
+        "N": 1649,
+        "P": 848
+      },
+      "v4_AV": {
+        "A": 24,
+        "L": 261,
+        "N": 2211,
+        "P": 1
+      },
+      "v4_PR": {
+        "H": 88,
+        "L": 801,
+        "N": 1608
+      },
+      "v4_SA": {
+        "H": 148,
+        "L": 88,
+        "N": 2261
+      },
+      "v4_SC": {
+        "H": 303,
+        "L": 294,
+        "N": 1900
+      },
+      "v4_SI": {
+        "H": 239,
+        "L": 312,
+        "N": 1946
+      },
+      "v4_UI": {
+        "A": 170,
+        "N": 1953,
+        "P": 374
+      },
+      "v4_VA": {
+        "H": 685,
+        "L": 350,
+        "N": 1462
+      },
+      "v4_VC": {
+        "H": 937,
+        "L": 537,
+        "N": 1023
+      },
+      "v4_VI": {
+        "H": 922,
+        "L": 607,
+        "N": 968
+      },
+      "v4_only": 1387,
+      "v4_vector": [
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          117
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          82
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+          62
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          54
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          47
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          44
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          40
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:N/SC:L/SI:L/SA:N",
+          35
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+          34
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          34
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          33
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          33
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+          29
+        ],
+        [
+          "AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+          27
+        ],
+        [
+          "AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N",
+          25
+        ]
+      ],
+      "withdrawn": 415,
+      "year": {
+        "2017": 50,
+        "2018": 305,
+        "2019": 364,
+        "2020": 934,
+        "2021": 597,
+        "2022": 668,
+        "2023": 400,
+        "2024": 435,
+        "2025": 631,
+        "2026": 3795
+      }
+    }
+  },
+  "snapshot": "a23194f33e16b330268e01b3e10d95d774e1f84a",
+  "snapshot_date": "2026-11-23",
+  "unique_advisories": 38021
+}

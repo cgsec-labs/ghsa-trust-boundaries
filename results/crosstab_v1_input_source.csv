@@ -1,0 +1,169 @@
+source,ecosystem,package_type,field_value,count
+ai,npm,library,caller code,12
+ai,npm,library,end-user via caller,40
+ai,npm,library,file or config,1
+ai,npm,library,network,4
+ai,npm,library,not boundary,5
+ai,npm,library,stored data,0
+ai,npm,library,unclear,1
+ai,npm,framework,caller code,1
+ai,npm,framework,end-user via caller,0
+ai,npm,framework,file or config,3
+ai,npm,framework,network,10
+ai,npm,framework,not boundary,2
+ai,npm,framework,stored data,0
+ai,npm,framework,unclear,0
+ai,npm,tool,caller code,0
+ai,npm,tool,end-user via caller,0
+ai,npm,tool,file or config,6
+ai,npm,tool,network,8
+ai,npm,tool,not boundary,1
+ai,npm,tool,stored data,0
+ai,npm,tool,unclear,0
+ai,PyPI,library,caller code,0
+ai,PyPI,library,end-user via caller,25
+ai,PyPI,library,file or config,16
+ai,PyPI,library,network,7
+ai,PyPI,library,not boundary,6
+ai,PyPI,library,stored data,1
+ai,PyPI,library,unclear,3
+ai,PyPI,framework,caller code,0
+ai,PyPI,framework,end-user via caller,2
+ai,PyPI,framework,file or config,1
+ai,PyPI,framework,network,15
+ai,PyPI,framework,not boundary,1
+ai,PyPI,framework,stored data,0
+ai,PyPI,framework,unclear,0
+ai,PyPI,tool,caller code,0
+ai,PyPI,tool,end-user via caller,0
+ai,PyPI,tool,file or config,6
+ai,PyPI,tool,network,5
+ai,PyPI,tool,not boundary,6
+ai,PyPI,tool,stored data,0
+ai,PyPI,tool,unclear,0
+ai,Maven,library,caller code,0
+ai,Maven,library,end-user via caller,27
+ai,Maven,library,file or config,10
+ai,Maven,library,network,9
+ai,Maven,library,not boundary,6
+ai,Maven,library,stored data,2
+ai,Maven,library,unclear,1
+ai,Maven,framework,caller code,1
+ai,Maven,framework,end-user via caller,2
+ai,Maven,framework,file or config,1
+ai,Maven,framework,network,35
+ai,Maven,framework,not boundary,0
+ai,Maven,framework,stored data,0
+ai,Maven,framework,unclear,0
+ai,Maven,tool,caller code,0
+ai,Maven,tool,end-user via caller,0
+ai,Maven,tool,file or config,0
+ai,Maven,tool,network,0
+ai,Maven,tool,not boundary,1
+ai,Maven,tool,stored data,0
+ai,Maven,tool,unclear,0
+ai,Go,library,caller code,0
+ai,Go,library,end-user via caller,17
+ai,Go,library,file or config,10
+ai,Go,library,network,13
+ai,Go,library,not boundary,9
+ai,Go,library,stored data,0
+ai,Go,library,unclear,0
+ai,Go,framework,caller code,0
+ai,Go,framework,end-user via caller,1
+ai,Go,framework,file or config,0
+ai,Go,framework,network,18
+ai,Go,framework,not boundary,2
+ai,Go,framework,stored data,0
+ai,Go,framework,unclear,0
+ai,Go,tool,caller code,0
+ai,Go,tool,end-user via caller,0
+ai,Go,tool,file or config,17
+ai,Go,tool,network,9
+ai,Go,tool,not boundary,1
+ai,Go,tool,stored data,0
+ai,Go,tool,unclear,0
+pilot,npm,library,caller code,0
+pilot,npm,library,end-user via caller,1
+pilot,npm,library,file or config,0
+pilot,npm,library,network,2
+pilot,npm,library,not boundary,0
+pilot,npm,library,stored data,0
+pilot,npm,library,unclear,1
+pilot,npm,framework,caller code,0
+pilot,npm,framework,end-user via caller,0
+pilot,npm,framework,file or config,0
+pilot,npm,framework,network,1
+pilot,npm,framework,not boundary,0
+pilot,npm,framework,stored data,0
+pilot,npm,framework,unclear,0
+pilot,npm,tool,caller code,0
+pilot,npm,tool,end-user via caller,0
+pilot,npm,tool,file or config,1
+pilot,npm,tool,network,0
+pilot,npm,tool,not boundary,0
+pilot,npm,tool,stored data,0
+pilot,npm,tool,unclear,0
+pilot,PyPI,library,caller code,0
+pilot,PyPI,library,end-user via caller,2
+pilot,PyPI,library,file or config,0
+pilot,PyPI,library,network,1
+pilot,PyPI,library,not boundary,0
+pilot,PyPI,library,stored data,0
+pilot,PyPI,library,unclear,0
+pilot,PyPI,framework,caller code,1
+pilot,PyPI,framework,end-user via caller,0
+pilot,PyPI,framework,file or config,0
+pilot,PyPI,framework,network,2
+pilot,PyPI,framework,not boundary,0
+pilot,PyPI,framework,stored data,0
+pilot,PyPI,framework,unclear,0
+pilot,PyPI,tool,caller code,0
+pilot,PyPI,tool,end-user via caller,0
+pilot,PyPI,tool,file or config,0
+pilot,PyPI,tool,network,0
+pilot,PyPI,tool,not boundary,0
+pilot,PyPI,tool,stored data,0
+pilot,PyPI,tool,unclear,0
+pilot,Maven,library,caller code,0
+pilot,Maven,library,end-user via caller,0
+pilot,Maven,library,file or config,0
+pilot,Maven,library,network,1
+pilot,Maven,library,not boundary,0
+pilot,Maven,library,stored data,0
+pilot,Maven,library,unclear,1
+pilot,Maven,framework,caller code,0
+pilot,Maven,framework,end-user via caller,0
+pilot,Maven,framework,file or config,0
+pilot,Maven,framework,network,3
+pilot,Maven,framework,not boundary,0
+pilot,Maven,framework,stored data,0
+pilot,Maven,framework,unclear,0
+pilot,Maven,tool,caller code,0
+pilot,Maven,tool,end-user via caller,0
+pilot,Maven,tool,file or config,0
+pilot,Maven,tool,network,0
+pilot,Maven,tool,not boundary,0
+pilot,Maven,tool,stored data,0
+pilot,Maven,tool,unclear,0
+pilot,Go,library,caller code,0
+pilot,Go,library,end-user via caller,1
+pilot,Go,library,file or config,1
+pilot,Go,library,network,0
+pilot,Go,library,not boundary,0
+pilot,Go,library,stored data,0
+pilot,Go,library,unclear,0
+pilot,Go,framework,caller code,0
+pilot,Go,framework,end-user via caller,0
+pilot,Go,framework,file or config,0
+pilot,Go,framework,network,0
+pilot,Go,framework,not boundary,0
+pilot,Go,framework,stored data,0
+pilot,Go,framework,unclear,0
+pilot,Go,tool,caller code,0
+pilot,Go,tool,end-user via caller,0
+pilot,Go,tool,file or config,0
+pilot,Go,tool,network,1
+pilot,Go,tool,not boundary,0
+pilot,Go,tool,stored data,0
+pilot,Go,tool,unclear,0

@@ -1,0 +1,27 @@
+{
+  "fix_has_test": {
+    "kappa": 0.852,
+    "raw": 0.929,
+    "rows": 70
+  },
+  "fix_type": {
+    "kappa": 0.626,
+    "raw": 0.767,
+    "rows": 73
+  },
+  "input_source": {
+    "kappa": 0.64,
+    "raw": 0.74,
+    "rows": 73
+  },
+  "package_type": {
+    "kappa": 0.908,
+    "raw": 0.933,
+    "rows": 120
+  },
+  "scope": {
+    "kappa": 0.965,
+    "raw": 0.983,
+    "rows": 120
+  }
+}

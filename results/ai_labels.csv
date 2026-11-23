@@ -1,0 +1,695 @@
+n,package_type,input_source,fix_type,fix_has_test,maintainer_pushback,fix_link_used,notes,labeled_by,rules_version
+9,tool,network,internal hardening,no,,,"Yeoman generator; the weakness is in the generated app template, which logs a user-supplied email from a public API. Fix stops logging the value.",Claude,1.1
+10,library,end-user via caller,internal hardening,no,,,Parsing date strings is moment's documented job. Unbounded regex quantifiers capped at 256.,Claude,1.1
+11,library,caller code,internal hardening,yes,,,Range strings usually come from developers or package metadata; the docs do not present them as untrusted input. Whitespace is collapsed before matching and a safe regex set is used. Contested call: ReDoS only matters if an app passes user-supplied ranges.,Claude,1.1
+12,framework,file or config,docs only,no,yes,,"Fix only adds a docs note: never replace controller or action files with untrusted code. The maintainer places the risk on the app, which counts as visible pushback.",Claude,1.1
+13,library,caller code,validation added,no,,,The pretty option is a developer setting; the advisory itself says the risk needs attacker control of compiler options. Fix rejects non-whitespace values and escapes the indent string.,Claude,1.1
+14,framework,network,validation added,yes,,,adapter-node now enforces BODY_SIZE_LIMIT on streamed bodies even without a valid content-length.,Claude,1.1
+15,framework,network,internal hardening,no,,https://github.com/angular/angular/pull/63562,"Race condition from a global platform injector shared across concurrent SSR requests. Fix passes a per-request bootstrap context; changed test file is a helper, not a race test. Rechecked under v1.2 tie-break: not boundary changed to network.",Claude,1.2
+16,library,end-user via caller,validation added,yes,,,qs.parse is meant for query strings from requests. Fixes a bypass of the existing prototype key check.,Claude,1.1
+17,library,end-user via caller,validation added,yes,,,"Satori renders caller-supplied JSX and style values into SVG, often user text for images. Fix escapes attribute and text output via buildXMLString and rejects invalid style properties.",Claude,1.1
+18,application,,,,,,Self-hosted video platform; client upload preview.,Claude,1.1
+19,plugin,,,,,,Backstage scaffolder plugin module.,Claude,1.1
+20,application,,,,,,Trigger.dev webapp.,Claude,1.1
+21,library,end-user via caller,validation added,no,,,Keys and messages from other parties are what OpenPGP.js processes. Unknown and GNU s2k types now throw instead of falling through.,Claude,1.1
+22,library,caller code,internal hardening,no,,,"The iface argument names a network interface and is set by the developer; the advisory says the attacker must control it. Fix commit was not fetchable, so the fix type could not be checked. Rechecked under v1.4: fix_type other to internal hardening (per the second blind review, the fix swaps exec for execFile).",Claude,1.4
+23,library,end-user via caller,feature removed,yes,,https://github.com/capricorn86/happy-dom/commit/819d15ba289495439eda8be360d92a614ce22405,"Happy DOM runs scripts in documents the caller loads. JavaScript evaluation is now off by default, and the server renderer adds --disallow-code-generation-from-strings.",Claude,1.1
+24,library,caller code,internal hardening,yes,,,Route patterns are written by the developer. The generated regex no longer backtracks; the added test checks the regex for '/:a-:b'.,Claude,1.1
+25,application,,,,,,"The advisory covers the Vrite CMS backend, not the SDK's own code.",Claude,1.1
+26,library,network,validation added,yes,,,Gossipsub messages come from peers. StrictSign now requires the message key to derive to the claimed from peer ID.,Claude,1.1
+27,library,end-user via caller,validation added,yes,,,"Mermaid renders diagram text that apps often take from users, and it ships a securityLevel setting for untrusted diagrams. The fix caps radar ticks; a spec test covers it.",Claude,1.1
+28,library,unclear,internal hardening,yes,,,Prototype pollution through object state keyed by className. Whether className comes from app code or server responses is not clear from the advisory. The state map now uses Object.create(null).,Claude,1.1
+29,tool,file or config,internal hardening,no,,https://github.com/gruntjs/grunt/pull/1743,grunt.file.copy followed a symlink at the destination. The fix unlinks a destination symlink instead of writing through it.,Claude,1.1
+30,library,caller code,validation added,no,,,"networkStats(iface) takes an interface name set by the developer. The library already sanitizes it, which suggests it expects bad values; under the current rule this is still caller code. The fix keeps the name to one path segment.",Claude,1.1
+31,library,end-user via caller,validation added,yes,,,"Recipient addresses often come from users. The address parser no longer joins atoms across a comment, and a recipient limit is added.",Claude,1.1
+32,plugin,,,,,,NocoBase application plugin.,Claude,1.1
+33,library,end-user via caller,internal hardening,yes,,,"Parsing untrusted XML is xmldom's job. Attribute de-duplication now uses an index, so the cost is linear.",Claude,1.1
+34,library,caller code,validation added,yes,,,"Property paths are usually written by developers, for example in yup schemas. The setter now ignores paths containing __proto__, constructor or prototype; test.js checks each.",Claude,1.1
+35,plugin,,,,,,Volto (Plone) add-on.,Claude,1.1
+36,library,not boundary,other,no,,,Protestware: the maintainer added an infinite loop on purpose. No input is involved. The linked fix only changes package.json.,Claude,1.1
+37,library,not boundary,internal hardening,yes,,,Enforcement logic bug: an empty allowedDomains list did not block network access. The fix applies network restriction whenever network config is present. Rechecked under v1.4: fix_type other to internal hardening (full diff: restriction now applied for an empty allowlist).,Claude,1.4
+38,library,end-user via caller,internal hardening,no,,,The HTML entity escaping helper is meant for display data. Arrays are now joined into a string before escaping. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+39,library,end-user via caller,internal hardening,yes,,,The clean-html sanitizer exists to clean untrusted editor content. It now removes HTML smuggled inside MathML or SVG. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+40,tool,not boundary,internal hardening,no,,,Build tool put all environment variables into published browser bundles. No attacker input; now only DEBUG and NODE_ENV are injected.,Claude,1.1
+41,tool,network,validation added,yes,,,Mockoon is a developer mock server. Request data in a templated filePath could escape the served directory; a real containment check replaces the prefix check.,Claude,1.1
+42,framework,network,other,yes,,,OPC UA server SDK. Authorization failed open when no RolePermissions were declared. The fix adds an opt-in deny policy and keeps allow as the default. Rechecked under v1.2 tie-break: not boundary changed to network.,Claude,1.2
+43,framework,network,feature removed,no,,,"Nuxt dev server exposed a component test route. The route now only exists in test mode, and the path is also checked against the project root.",Claude,1.1
+44,library,network,internal hardening,yes,,,The xDS route and RBAC matcher compares request paths against a configured regex. Wrapping the pattern in a group stops alternation from matching partially.,Claude,1.1
+46,library,end-user via caller,internal hardening,no,,,"Share paths and file names passed to client methods are data the library handles, and apps often take them from users. Contested call between end-user via caller and caller code. exec with string quoting replaced by execa with argument arrays.",Claude,1.1
+47,framework,network,internal hardening,yes,,,"Permission-check attribution bug: HID and USB checks from iframes were given the top frame's origin. Authorization logic, so not a boundary question. Rechecked under v1.2 tie-break: not boundary changed to network. Rechecked under v1.4: fix_type other to internal hardening (full diff: checks now use the requesting frame origin).",Claude,1.4
+48,tool,file or config,internal hardening,no,,,"The NSIS installer ran cmd without a full path, so the search path on the target machine decided what ran. Now uses the full System32 path.",Claude,1.1
+49,tool,file or config,internal hardening,yes,,,Code generator; servers[].url from the OpenAPI spec ended up unescaped in generated code. Specs are often third-party files. Values are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+50,library,end-user via caller,internal hardening,no,,,URL validation helper that apps use on URLs from many sources. ReDoS-prone regex rewritten.,Claude,1.1
+51,library,caller code,validation added,yes,,,Handlebars treats templates and pre-parsed ASTs as trusted developer input; the attack needs control of the template. The compiler now validates AST node values and checks decorators.,Claude,1.1
+52,library,end-user via caller,validation added,no,,,"MathJax renders TeX found in page content, often user comments. \unicode now requires a numeric argument, and MathML attribute values are quoted.",Claude,1.1
+53,library,end-user via caller,validation added,yes,,,"Running untrusted code is isolated-vm's purpose. Unsafe reference behavior now needs an explicit unsafeInherit option, and proxies and getters throw. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).",Claude,1.4
+54,framework,not boundary,internal hardening,yes,,,"Backstage backend logger missed secrets with surrounding whitespace, leaking GitLab tokens. Redaction strings are now trimmed.",Claude,1.1
+55,framework,network,validation added,yes,,,The /_image endpoint on the Cloudflare adapter accepted data: URLs. data: is no longer allowed unless matched by remote patterns.,Claude,1.1
+45,library,end-user via caller,internal hardening,yes,,,"Sanitizing untrusted HTML is the library's job. URI scheme checks now apply to action, formaction, data, poster, background and other URL attributes; tests added. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+56,library,end-user via caller,validation added,yes,,,Streaming large or untrusted JSON is the library's purpose; the new option is documented as a guard for untrusted input. Filters now throw past maxDepth (default 1024).,Claude,1.1
+57,library,end-user via caller,internal hardening,yes,,,Defuddle extracts content from web page HTML the caller passes in. Site extractor output is now escaped and sanitized. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+58,library,end-user via caller,internal hardening,no,,,"Prism highlights code shown on pages, often user-submitted snippets. Backtracking-prone grammar regexes rewritten.",Claude,1.1
+59,tool,network,internal hardening,yes,,,Locally run MCP server; tool-call arguments arrive from the AI client. execSync with command strings replaced by execFileSync with argument arrays.,Claude,1.1
+60,library,end-user via caller,validation added,yes,,,"Source maps are often third-party or uploaded data. Section offsets are now validated and capped, and large line gaps are built in one step.",Claude,1.1
+61,library,caller code,validation added,yes,,,setIn paths are usually chosen by the developer. __proto__ and constructor.prototype path segments now throw.,Claude,1.1
+62,library,not boundary,internal hardening,no,,,The Android code logged the encryption key. No attacker input; the log now says only whether encryption is on.,Claude,1.1
+63,tool,network,feature removed,no,,,"esbuild's dev server answered any origin through permissive CORS. The fix drops the wildcard CORS header; the server file was beyond the digest limit, so this rests on the advisory and changelog.",Claude,1.1
+64,framework,network,internal hardening,no,,,Express middleware reading the X-HTTP-Method-Override request header. The regex split is replaced with indexOf and trim.,Claude,1.1
+65,library,caller code,validation added,yes,,,Key paths are usually set by the developer. Prototype pollution guard and argument checks added; tests updated.,Claude,1.1
+66,plugin,,,,,,NocoBase application plugin.,Claude,1.1
+67,library,not boundary,internal hardening,yes,,,Database adapter race: concurrent requests could pass the rate-limit compare-and-swap on PostgreSQL. The guard is repeated on the UPDATE itself.,Claude,1.1
+68,library,end-user via caller,internal hardening,yes,,,vm2 exists to run untrusted guest code. Buffers handed to the sandbox no longer share Node's pooled backing memory.,Claude,1.1
+69,library,end-user via caller,feature removed,yes,,,Markdown to HTML; the docs claimed safe defaults but raw HTML was allowed. Sanitizing is now on by default.,Claude,1.1
+70,tool,network,internal hardening,yes,,,"Code generator; the GraphQL schema usually comes from a remote endpoint through introspection, sometimes from a file. Comment-closing sequences from the schema are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+71,tool,file or config,internal hardening,no,,,"Code analysis tool; globs from the analyzed repository could reach the parent of the project root. Dot-wildcard segments are now constrained; only fuzz targets were added, no test. Rechecked under v1.4: fix_type validation added to internal hardening (full diff: glob segments rewritten so dot wildcards cannot match ..).",Claude,1.4
+72,library,end-user via caller,validation added,yes,,,Tokens to verify usually come from requests. Array-valued iss claims must now all be allowed.,Claude,1.1
+73,library,end-user via caller,internal hardening,no,,,Form validation runs on user input. The URL regex was rewritten to avoid backtracking.,Claude,1.1
+74,tool,file or config,internal hardening,yes,,,CI tool; branch and ref names come from the CI environment and can be set by whoever opens a pull request. execSync strings replaced by execFileSync arrays.,Claude,1.1
+75,library,not boundary,feature removed,no,,,Protestware: audio and video played for Russian-language visitors. The behavior was removed.,Claude,1.1
+76,library,end-user via caller,internal hardening,no,,,Parsing date strings is Luxon's job. The RFC 2822 comment-stripping regex no longer matches nested parentheses quadratically.,Claude,1.1
+77,tool,network,feature removed,yes,,,Vite dev server; fetchModule over the WebSocket skipped the server.fs check. fetchModule is now disabled for the client environment and the check enforced elsewhere.,Claude,1.1
+78,plugin,,,,,,ApostropheCMS module.,Claude,1.1
+79,library,end-user via caller,internal hardening,yes,,,Untrusted sandbox code could crash the host through an unhandled host promise rejection. The bridge now marks host promises handled.,Claude,1.1
+80,library,end-user via caller,internal hardening,no,,,XML parsing; an unterminated stop-node body was rescanned repeatedly. Scans are now cached.,Claude,1.1
+81,library,end-user via caller,internal hardening,yes,,,"Recipient address parsing; a '>' inside a quoted local part ended the address early. The parser now tracks quotes, comments and literals. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+82,framework,file or config,feature removed,no,,,Directory listing rendered file names from disk without escaping. The directory middleware was removed from connect and moved to serve-index.,Claude,1.1
+83,library,end-user via caller,validation added,yes,,,"Verifying signed XML such as SAML responses from other parties. Only references from the re-parsed SignedInfo are trusted, and empty SignedInfo is rejected.",Claude,1.1
+84,library,end-user via caller,validation added,yes,,,Query builder; values bound as parameters come from end users. Escaping and identifier checks were tightened.,Claude,1.1
+85,framework,caller code,validation added,no,,,SSR renderer; the nonce comes from ssrContext set by the app. The nonce is now constrained before it goes into HTML attributes.,Claude,1.1
+86,library,end-user via caller,validation added,yes,,,"Fetching previews for user-supplied URLs is the job. IPv6 loopback, ULA, link-local and rebinding hostnames are now blocked, with a warning when DNS is not resolved.",Claude,1.1
+87,plugin,,,,,,Strapi admin plugin.,Claude,1.1
+88,library,caller code,internal hardening,yes,,,ReDoS in the raw-block lexer rule. Template source is author code per Handlebars docs. The greedy match became lazy.,Claude,1.1
+89,framework,file or config,validation added,no,,,"ASAR integrity bypass by placing a non-ASAR app folder on disk. With the fuse on, search paths now load only from an ASAR archive.",Claude,1.1
+90,framework,network,internal hardening,yes,,,Request path decoding differed between middleware matching and cache lookup. Decoding is now atomic and matching also tries the decoded path.,Claude,1.1
+91,library,end-user via caller,feature removed,no,,,"Vega specs and expressions are often from users, which is why the CSP interpreter exists. Passing a function where a scale name is expected is no longer allowed.",Claude,1.1
+92,library,end-user via caller,internal hardening,yes,,,Solid SSR renderer; String.replace treated $ patterns in rendered data. Output is now escaped and spliced with slice. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+93,library,end-user via caller,validation added,yes,,,Prototype pollution through an array path segment that skipped the __proto__ check. Keys are now coerced to strings first.,Claude,1.1
+94,library,end-user via caller,internal hardening,no,,,Old React server render put the root ID into an attribute unescaped. It is now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+95,library,caller code,internal hardening,yes,,,"Datepicker *Text options are developer config, but the maintainers fixed it anyway. Option text now goes in with .text() instead of HTML. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+96,framework,network,internal hardening,yes,,,"X-Forwarded-For behind ALB; the first entry is client-controlled. The adapter now takes the last entry, which ALB appends.",Claude,1.1
+97,library,network,internal hardening,yes,,,A redirect from the remote server to another origin kept Authorization and Cookie. Header names are now matched case-insensitively when stripping.,Claude,1.1
+98,library,end-user via caller,internal hardening,yes,,,Editor content from users; noscript content was entity-decoded on serialize. That filter was removed and noncontent regexes must match fully. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+99,library,end-user via caller,internal hardening,yes,,,Brace patterns can come from users through glob libraries. A nesting depth limit was added; past it the rest is kept literal. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+100,tool,network,feature removed,no,,,Code generator; the SQL injection is in the generated reactive repository code. findAllBy with Criteria was removed from the templates.,Claude,1.1
+101,library,end-user via caller,validation added,yes,,,populate() match can carry query input from end users. The $where check now also covers nested and non-array match objects.,Claude,1.1
+102,tool,file or config,internal hardening,no,,,styleIncludePaths comes from the project config. execSync with a shell string became execFileSync with args.,Claude,1.1
+103,library,file or config,validation added,no,,,Pollution through option paths in parsed .proto definitions. setProperty now refuses __proto__.,Claude,1.1
+104,framework,not boundary,internal hardening,no,,,"Plugin results were written to the Android log. Logging now goes through a configurable level, default ERROR.",Claude,1.1
+105,library,network,validation added,no,,,A crafted remote repository could write outside the work tree. Index and tree entries with ../ are rejected.,Claude,1.1
+106,library,end-user via caller,internal hardening,,,https://github.com/babel/babel/pull/17173,Only affects code that passes untrusted strings as the replacement in .replace on named-group regexes. Helper regex fixed per the advisory; diff not fetchable here so the test field is left blank.,Claude,1.1
+107,tool,network,validation added,,,https://github.com/parcel-bundler/parcel/pull/1794,"Dev server HMR websocket accepted any origin, so a web page could read source. Origin check added per the advisory; the PR head is a merge with master so the diff is too noisy to read and the test field is left blank.",Claude,1.1
+108,library,end-user via caller,internal hardening,yes,,,"Parsing JWTs from requests. Reserved header keys moved off the prototype, and parse no longer fills defaults.",Claude,1.1
+109,framework,network,internal hardening,yes,,,Rate limit keyed per IPv6 address. IPs are now normalized and grouped by a configurable subnet.,Claude,1.1
+110,library,caller code,internal hardening,no,,,"Generic Perforce wrapper; run(command, args) is the caller's command line. exec with a string became spawn with args.",Claude,1.1
+111,library,end-user via caller,internal hardening,no,,,"Clone takes a repository URL, often from app data. An option-looking URL could inject git flags. -- now separates options from the URL.",Claude,1.1
+139,application,,,,,,Cobbler provisioning server.,Claude,1.1
+140,plugin,,,,,,Airflow provider package.,Claude,1.1
+141,tool,file or config,internal hardening,yes,,,Another local user could pre-create the fixed /tmp build dir. pip now uses a random temp build directory.,Claude,1.1
+142,library,end-user via caller,validation added,yes,,,Parsing TAXII messages from remote peers. Content parsing no longer treats strings as URLs or file paths. Rechecked under v1.3: fix_type validation added to internal hardening. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).,Claude,1.4
+143,library,unclear,validation added,,,,"crop_and_resize boxes values; TF treats model code as trusted, so whether op arguments are untrusted is not clear. Bounds check per the advisory; diff not fetchable so the test field is blank.",Claude,1.1
+144,library,file or config,internal hardening,no,,,Parsing untrusted Mach-O binaries is the job. Null check and ownership fix in the fat binary C API. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+145,application,,,,,,Vibe-Trading app server.,Claude,1.1
+146,framework,network,validation added,yes,,,XMPP stanza parsing from remote peers. Per-stanza byte and element count limits added.,Claude,1.1
+147,framework,network,validation added,yes,,,Component server let any attribute of a block be called by name over HTTP. Only functions marked _is_server_fn are callable now.,Claude,1.1
+148,framework,network,internal hardening,yes,,,Basic Auth check in the websockets server compared passwords with ==. Now hmac.compare_digest.,Claude,1.1
+149,library,file or config,validation added,yes,,,Decoding untrusted TIFF images is the job. Row size and bits-per-pixel checks added before unpacking tiles. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+150,library,end-user via caller,feature removed,no,,,"LlamaIndex pack, a library on top of llama-index, not an app plugin. The agent ran LLM-written SQL from user questions. Fix was dropping the package to a stale branch, per the advisory.",Claude,1.1
+151,library,network,validation added,yes,,,A cloned repo's submodule path could go through a symlink and write outside. Symlinks in the checkout path are now rejected.,Claude,1.1
+152,library,network,validation added,yes,,,Web fetch tool converts fetched pages to Markdown. A conversion cost budget now rejects deeply nested HTML.,Claude,1.1
+153,library,unclear,validation added,no,,,"Op argument crash; like TensorFlow, unclear whether op inputs are meant to be untrusted. Type and shape checks added.",Claude,1.1
+154,framework,file or config,validation added,yes,,,"Workflow include imported an included recipe's tools.py without the autoload opt-in. The opt-in is now enforced, with other audit fixes.",Claude,1.1
+155,application,,,,,,Apache Superset.,Claude,1.1
+156,library,file or config,validation added,yes,,,Parsing untrusted PDFs; a Prev trailer loop hung the parser. Seen offsets are now tracked. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+157,framework,end-user via caller,validation added,yes,,,URLValidator and IP validators run on user form data. IPv4 octets with leading zeros are now rejected.,Claude,1.1
+158,library,network,validation added,yes,,,web_crawl checked only the first URL; a redirect from the remote server could reach internal hosts. Redirect targets are now checked too.,Claude,1.1
+159,application,,,,,,Calibre-Web.,Claude,1.1
+160,tool,not boundary,internal hardening,yes,,,"Compiler codegen bug: bytestring compare used dirty bytes. Comparison codegen fixed, so not an input-handling issue in the tool itself.",Claude,1.1
+161,library,file or config,internal hardening,yes,,,"JSONReader ingests documents, often user-supplied. Deeply nested JSON exhausted recursion; traversal reworked. Rechecked under v1.3: input_source end-user via caller to file or config.",Claude,1.3
+162,application,,,,,,OpenStack Neutron.,Claude,1.1
+163,library,end-user via caller,internal hardening,yes,,,Parsing SQL strings; the string-literal regexes had overlapping alternatives. Regex fixed.,Claude,1.1
+164,application,,,,,,Modoboa mail admin.,Claude,1.1
+165,application,,,,,,changedetection.io.,Claude,1.1
+166,library,not boundary,internal hardening,yes,,,Telemetry leaked content into exception events with include_content=False. Only the exception type is recorded now.,Claude,1.1
+167,application,,,,,,xiaomusic.,Claude,1.1
+168,tool,not boundary,other,no,,,"Password passed on the command line shows in the process list. Fix adds --password-file, --password-fd and an env var; the CLI flag itself is still there.",Claude,1.1
+169,library,end-user via caller,internal hardening,no,,,URLs passed to requests can come from users. The netrc host lookup now uses the parsed hostname instead of splitting netloc.,Claude,1.1
+170,tool,file or config,validation added,yes,,,Scanning untrusted pickle files is the job. More modules and functions added to the blocklist.,Claude,1.1
+171,library,end-user via caller,internal hardening,yes,,,ORM filter values come from end users. MySQL contains and like filters now escape values. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+172,application,,,,,,Plone CMS component.,Claude,1.1
+173,library,not boundary,internal hardening,yes,,,Local race between creating a key file and chmod. The file is now created with 0600 directly.,Claude,1.1
+174,framework,end-user via caller,validation added,yes,,,"redirect() and header values often carry user data. CR, LF and NUL in header names and values are now rejected.",Claude,1.1
+175,application,,,,,,Red Discord bot.,Claude,1.1
+176,application,,,,,,copyparty file server.,Claude,1.1
+177,application,,,,,,Sentry.,Claude,1.1
+178,framework,network,validation added,yes,,,"Package tag is library, but the bug is in the OpenAI-compatible API server. cache_salt from a request is now validated.",Claude,1.1
+179,library,end-user via caller,validation added,no,,,Verifying signatures on incoming transactions. The missing finalize_keccak step was added so the check cannot be spoofed.,Claude,1.1
+180,library,end-user via caller,feature removed,no,,,JSONalyze runs LLM-written SQL on user JSON in a temp SQLite DB. The fix commit mostly moves the module; what changed for the injection is not clear from the diff. Rechecked under v1.4: fix_type other to feature removed (full diff: the module now raises a deprecation error on use).,Claude,1.4
+181,application,,,,,,pretix ticketing.,Claude,1.1
+182,library,file or config,internal hardening,yes,,,On Windows a git.exe in the current or repo directory ran instead of the real one. CWD is now skipped when resolving the program.,Claude,1.1
+183,application,,,,,,changedetection.io.,Claude,1.1
+184,library,end-user via caller,validation added,yes,,,"Converting text from users; truncated UTF-8 read past the end. Remaining length is now checked. Tests are in ConversionTest.cpp, which the test detector missed.",Claude,1.1
+185,tool,not boundary,internal hardening,no,,,Splunk and Sumologic callbacks logged task args including no_log secrets. Args are now dropped before sending.,Claude,1.1
+186,application,,,,,,OpenStack Ceilometer.,Claude,1.1
+187,framework,network,validation added,yes,,,Tool schemas in chat completion requests could crash the engine. The JSON schema is now validated into a grammar up front.,Claude,1.1
+188,library,end-user via caller,feature removed,yes,,,"LangChain integration library. Image inputs can come from users; a local file path was read and sent. Local paths are no longer accepted, only URLs and data URIs.",Claude,1.1
+189,application,,,,,,Jupyter Notebook server.,Claude,1.1
+190,framework,network,validation added,yes,,,Multipart parts from requests had no header size or count limit. max_field_size and max_headers are now enforced.,Claude,1.1
+191,library,end-user via caller,validation added,yes,,,SAML responses posted to the ACS endpoint were accepted without checking the request ID. InResponseTo and errors are now checked. Rechecked under v1.2 tie-break: network changed to end-user via caller.,Claude,1.2
+192,library,unclear,validation added,no,,,Same Paddle fix commit as row 153. Op argument shape checks added.,Claude,1.1
+193,framework,network,validation added,yes,,,"Telnet subnegotiation from a remote peer was buffered without limit. Capped at 4096 bytes, then the connection is dropped.",Claude,1.1
+194,library,network,validation added,yes,,,HTTP client; a server's gzip or deflate body was decompressed without limit. A size cap was added.,Claude,1.1
+195,tool,file or config,validation added,yes,,,Creating an env into a destination with symlinked subdirectories wrote outside it. Directories must now resolve inside the destination.,Claude,1.1
+196,tool,network,validation added,yes,,,Downloaded wheels went straight into the reusable cache before verification. Downloads now go to a temp dir and are verified first. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).,Claude,1.4
+197,library,end-user via caller,feature removed,no,,,Rendering user HTML fetches its URLs; a redirect could skip the SSRF check. The default fetcher no longer follows redirects.,Claude,1.1
+198,application,,,,,,Khoj.,Claude,1.1
+199,application,,,,,,Roundup issue tracker.,Claude,1.1
+200,tool,not boundary,internal hardening,yes,,,PowerShell scriptblock logging on Windows targets captured module args. The payload is now split from the wrapper so it is not logged.,Claude,1.1
+201,library,network,internal hardening,yes,,,"Flask extension, so a library. CORS path matching used unquote_plus, so + matched differently from routing. Now unquote.",Claude,1.1
+202,library,end-user via caller,validation added,yes,,,Local executor runs LLM-written code; it could reach forbidden modules through returned objects. Results are now checked against allowed imports.,Claude,1.1
+203,library,file or config,validation added,yes,,,Parsing untrusted PDFs; get_value recursed without limit. Default max nesting set to 900. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+204,application,,,,,,Jupyter Notebook and JupyterHub.,Claude,1.1
+205,library,end-user via caller,feature removed,yes,,,Agent requests tools fetch URLs chosen by the LLM. They are now off unless allow_dangerous_requests is set.,Claude,1.1
+206,framework,network,validation added,,,,"HTTP server; header whitespace handling allowed smuggling, follow-up to an earlier fix. Stricter header checks per the advisory; diff not fetchable so the test field is blank.",Claude,1.1
+207,library,end-user via caller,,,,,"Running untrusted JS with disable_pyimport() is the documented use. Diff not fetchable and the advisory does not describe the fix, so fix_type and test are blank.",Claude,1.1
+208,application,,,,,,Apache IoTDB database.,Claude,1.1
+209,library,end-user via caller,internal hardening,yes,,,PorterStemmer runs on arbitrary tokens. Quadratic loops on long runs of y and in corpus readers were reworked.,Claude,1.1
+210,library,end-user via caller,internal hardening,,,,Decoding ASN.1 from other parties; fragment joining was quadratic. Per the advisory; diff not fetchable so the test field is blank.,Claude,1.1
+211,tool,network,internal hardening,no,,,Crawler validating links scraped from pages. The ReDoS-prone validators URL regex was replaced.,Claude,1.1
+212,plugin,,,,,,Jupyter server extension.,Claude,1.1
+213,application,,,,,,Tryton ERP server.,Claude,1.1
+214,framework,network,validation added,yes,,,Request paths with UNC or drive-relative forms made the server reach out on Windows. Shared unsafe-path checks now reject them.,Claude,1.1
+215,library,file or config,validation added,no,,,"Reading project files that may come from users. Zip extraction path check now compares canonical paths, not string prefixes. Rechecked under v1.3: input_source end-user via caller to file or config.",Claude,1.3
+216,library,file or config,other,no,,,Bundled libwebp had CVE-2023-4863. Fix is a bundled dependency update. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+217,library,file or config,validation added,yes,,,Reading untrusted PDFs; outline traversal had no bound. Max entries and depth added. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+218,plugin,,,,,,MkDocs plugin.,Claude,1.1
+219,library,end-user via caller,validation added,yes,,,Verifying signed SAML from other parties; signature wrapping. Documents are now schema-validated before signature checks. Rechecked under v1.2 tie-break: network changed to end-user via caller.,Claude,1.2
+220,library,not boundary,internal hardening,yes,,,Local cluster workers listened on all interfaces. The host setting is now passed to workers. Rechecked under v1.3: input_source network to not boundary.,Claude,1.3
+221,application,,,,,,MoinMoin wiki.,Claude,1.1
+222,tool,file or config,validation added,yes,,,Scanning untrusted pickle files is the job. More idlelib and stdlib callables added to the blocklist.,Claude,1.1
+223,library,file or config,validation added,yes,,,Loading model files from others. Lambda and torch wrapper deserialization now fail closed when safe_mode is unset.,Claude,1.1
+224,application,,,,,,Apache StreamPipes.,Claude,1.1
+225,library,end-user via caller,validation added,no,,,Parsing tokens from requests; split ran before the size guard. Total size is now checked first.,Claude,1.1
+226,tool,file or config,internal hardening,yes,,,Linting Compose files from pull requests; their text could become CI workflow commands. Output is now bracketed with stop-commands tokens.,Claude,1.1
+227,library,file or config,validation added,yes,,,Another local user could create the lock protocol dir first. Ownership and real-directory checks added.,Claude,1.1
+228,application,,,,,,BinderHub.,Claude,1.1
+229,library,file or config,validation added,yes,,,Decoding untrusted JPEGs with draft scaling overflowed the scanline buffer. Output size is now checked against the buffer. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+230,library,file or config,feature removed,yes,,,Loading Arrow IPC or Parquet files from others ran pickle for PyExtensionType. Auto-loading is now off by default.,Claude,1.1
+231,application,,,,,,pygeoapi server.,Claude,1.1
+232,application,,,,,,Infrahub server.,Claude,1.1
+233,library,end-user via caller,internal hardening,yes,,,Optical flow on small input images read out of bounds. Patch size and scales are now picked from the image width.,Claude,1.1
+234,library,file or config,validation added,yes,,,Loading HDF5 model files from others; virtual datasets could read local files. Groups and datasets now go through safe accessors. Rechecked under v1.3: fix_type validation added to internal hardening. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).,Claude,1.4
+235,framework,network,validation added,yes,,,WebSocket clients could open unlimited subscriptions. A per-connection limit of 100 was added.,Claude,1.1
+236,library,stored data,internal hardening,no,,,A lower-privileged DB user could create objects that shadow built-in functions. Driver queries now schema-qualify everything with pg_catalog.,Claude,1.1
+237,tool,network,internal hardening,no,,,parsl-visualize web UI run by the operator. workflow_id from the URL went into SQL; now bound as a parameter. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+238,application,,,,,,Wooey.,Claude,1.1
+239,library,end-user via caller,validation added,yes,,,"Downloads from URLs that may come from users; with a proxy, the SSRF pin did not apply. Proxied fetches are refused unless the operator opts in.",Claude,1.1
+240,library,end-user via caller,validation added,yes,,,Decoding BER from other parties; long OID arcs used unbounded memory. A continuation octet limit was added.,Claude,1.1
+241,library,end-user via caller,validation added,yes,,,Running untrusted code safely is the job; stack frame attributes allowed escape. Inspect attributes are now blocked.,Claude,1.1
+242,application,,,,,,wger.,Claude,1.1
+243,application,,,,,,Apache Airflow core.,Claude,1.1
+244,library,network,validation added,no,,,Verifying SNS messages posted to the app's endpoint. The signing cert URL now must match the AWS SNS host pattern.,Claude,1.1
+245,framework,network,validation added,yes,,,"SMTP server accepted bare LF as end of data, which allowed smuggling. Only CRLF is accepted now.",Claude,1.1
+246,application,,,,,,OpenStack Heat.,Claude,1.1
+247,tool,not boundary,validation added,yes,,,Compiler evaluated some arguments in the wrong order. It now refuses to compile risky overlapping expressions.,Claude,1.1
+248,application,,,,,,pretix.,Claude,1.1
+249,application,,,,,,Lemur.,Claude,1.1
+250,library,end-user via caller,internal hardening,no,,,Rendering user Markdown; directive class and width options went into HTML raw. They are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+251,application,,,,,,OpenStack Mistral.,Claude,1.1
+252,tool,network,internal hardening,yes,,,package_index parses HTML pages from package indexes. The rel attribute regex had unbounded whitespace; now bounded.,Claude,1.1
+253,application,,,,,,Roundup issue tracker.,Claude,1.1
+254,library,end-user via caller,feature removed,yes,,,Sandbox for untrusted code; try/except* hit a CPython type confusion. ExceptionGroup and try/except* are no longer allowed.,Claude,1.1
+255,application,,,,,,DIRAC grid services.,Claude,1.1
+256,library,not boundary,internal hardening,yes,,,Cipher key derivation had low entropy. Key handling was strengthened in a crypto module rework.,Claude,1.1
+257,library,file or config,validation added,no,,,Parsing untrusted Mach-O binaries; thread command state was read past its size. Size checks added. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+258,application,,,,,,Cabot.,Claude,1.1
+259,framework,network,validation added,yes,,,Reusable Django app with its own accept view; returnTo from the request was not checked. Only safe local redirects are allowed now.,Claude,1.1
+260,library,network,validation added,yes,,,SSO login opened a URL returned by the server through the browser launcher. The URL is now validated first.,Claude,1.1
+531,application,,,,,,Red Discord bot.,Claude,1.1
+532,application,,,,,,OneFuzz service; fix commit has no files.,Claude,1.1
+533,library,end-user via caller,internal hardening,yes,,,Rendering user Markdown; predictable toc_N heading IDs could clash with IDs in the content. Auto IDs are now made unique.,Claude,1.1
+534,framework,network,internal hardening,yes,,,Zope app server error page put the error message in HTML raw. It is now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+535,library,not boundary,other,no,,,Source builds pulled a vulnerable setuptools. Fix is a build dependency change.,Claude,1.1
+536,library,not boundary,internal hardening,yes,,,Secret values were passed as CLI args and leaked in CalledProcessError. They now go through temp files.,Claude,1.1
+537,tool,not boundary,other,no,,,"Password on the command line was visible. A password file option and env var were added and the flag deprecated, not removed.",Claude,1.1
+538,tool,file or config,validation added,yes,,,MCP server command from the CLI or agent config ran without checks. CLI commands now must be on an allowlist; the SDK class is left open on purpose since developers control it.,Claude,1.1
+539,tool,network,feature removed,yes,,,Notebook data viewer that serves a web UI; URL uploads allowed SSRF when hosted publicly. Web uploads are now off by default.,Claude,1.1
+540,framework,network,validation added,yes,,,Websocket session restore did not check the session's owner. It now must match the connecting user.,Claude,1.1
+771,framework,not boundary,feature removed,no,,,"The bug is in the project's own CI workflow, not in shipped code; a fork PR's branch name was echoed in a workflow run. The echo step was removed.",Claude,1.1
+772,library,file or config,internal hardening,no,,,Crowdsourcing task config loaded with yaml.load. Now yaml.safe_load.,Claude,1.1
+773,framework,network,validation added,yes,,,Malformed multipart POST bodies sent the server parser into a loop. Part headers are now checked on the right object.,Claude,1.1
+269,application,,,,,,Central Dogma server.,Claude,1.1
+270,application,,,,,,Apache Hive.,Claude,1.1
+271,application,,,,,,Apache JSPWiki.,Claude,1.1
+272,library,end-user via caller,docs only,no,,,Milvus delete filter built from document IDs without escaping. The linked commit only adds threat-detection docs; the code fix is not in this link.,Claude,1.1
+273,library,file or config,validation added,yes,,,Rendering untrusted SVG; image elements fetched external URLs. External resource loading is now checked first. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+274,plugin,,,,,,Apache NiFi extension bundle.,Claude,1.1
+275,plugin,,,,,,Jenkins plugin.,Claude,1.1
+276,framework,network,validation added,yes,,,"Package tag is library, but this is the HTTP connector. Chunk extensions are now parsed strictly, which stops smuggling.",Claude,1.1
+277,plugin,,,,,,Jenkins plugin.,Claude,1.1
+278,library,file or config,,no,,,"Processing untrusted PDFs; out-of-bounds read in ARCFOUR encryption. The linked commit only adds a bug report file, so fix_type is blank. Rechecked under v1.3: input_source end-user via caller to file or config.",Claude,1.3
+279,application,,,,,,Openfire XMPP server.,Claude,1.1
+280,framework,end-user via caller,internal hardening,,,,Validator processor on message bodies from routes; XSD parsing allowed XXE. Per the advisory; diff not fetchable so the test field is blank. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+281,framework,network,validation added,yes,,,Tomcat's header number parsing overflowed on long values. An overflow limit was added.,Claude,1.1
+282,application,,,,,,Appsmith server.,Claude,1.1
+283,library,end-user via caller,feature removed,no,,,Rendering wiki content in XHTML syntax could create raw HTML blocks. The xdom+xml syntax dependency was removed.,Claude,1.1
+284,application,,,,,,OpenAM federation component.,Claude,1.1
+285,application,,,,,,Elasticsearch security plugin; diff not fetchable.,Claude,1.1
+286,application,,,,,,GeoServer and GeoWebCache.,Claude,1.1
+287,framework,caller code,docs only,no,,,Authorization rules could be misconfigured with multiple servlets. The linked change updates a sample config to use MvcRequestMatcher; the risk is in how the app writes its rules.,Claude,1.1
+288,application,,,,,,Ant Media Server.,Claude,1.1
+289,plugin,,,,,,Jenkins plugin.,Claude,1.1
+290,plugin,,,,,,Jenkins plugin.,Claude,1.1
+291,library,end-user via caller,validation added,yes,,https://github.com/HubSpot/jinjava/commit/66df351e7e8ad71ca04dcacb4b65782af820b8b1,"The sandbox exists so templates from users can be rendered safely, and JavaType deserialization escaped it. The first fix link points to the advisory JSON itself. Rechecked under v1.4: the merged fix 66df351 (in jinjava-2.8.1) blocks access to restricted classes by returning null, same as the blocklist fixes, and adds tests. Fix link taken from the live advisory page, not snapshot 3d08969.",Claude,1.4
+292,plugin,,,,,,Jenkins plugin.,Claude,1.1
+293,framework,network,internal hardening,no,,https://github.com/richfaces/richfaces/commit/807bc411fba070f78c5193cc03d54ab8aa39c36d,"Push filter took request input without validation. The first fix link only changes whitespace on one line. Rechecked under v1.4: the advisory's other link, merged commit 807bc41, moves Meteor.build() after the existing session check, so malformed requests are rejected before allocating. No test. Set after the round 2 blind review, so not an independent rating for agreement.",Claude,1.4
+294,library,end-user via caller,internal hardening,no,,,Decrypting OAEP ciphertexts from others; error behavior differed on bad input. Short data now takes the same path as other bad data.,Claude,1.1
+295,library,end-user via caller,,,,,"@SafeHtml exists to check untrusted HTML, and it let XSS through. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+296,framework,network,internal hardening,no,,,Error from an app-configured custom Jakarta Authentication provider was not treated as failure. Tomcat now returns 500. Rechecked under v1.2 tie-break: caller code changed to network.,Claude,1.2
+297,library,end-user via caller,internal hardening,yes,,,Property paths come from request sort and query params. The path cache is now a bounded LRU.,Claude,1.1
+298,library,end-user via caller,internal hardening,yes,,,Parsing untrusted HTML; an unterminated processing instruction looped until memory ran out. EOF now ends the scan.,Claude,1.1
+299,application,,,,,,Apache Zeppelin interpreter.,Claude,1.1
+300,application,,,,,,Liferay Portal.,Claude,1.1
+301,application,,,,,,Apicurio Registry.,Claude,1.1
+302,framework,network,validation added,yes,,,Camel component; WebSocket query params became exchange headers that drive routing. External headers now pass through the header filter strategy.,Claude,1.1
+303,framework,network,validation added,yes,,,HTTP/3 reserved frames were buffered up to the max payload size. Limits and checks added across codecs.,Claude,1.1
+304,application,,,,,,Apache DolphinScheduler.,Claude,1.1
+305,application,,,,,,MCMS.,Claude,1.1
+306,plugin,,,,,,Jenkins plugin.,Claude,1.1
+307,plugin,,,,,,Jenkins plugin.,Claude,1.1
+308,library,file or config,internal hardening,no,,,XML utility parsing documents given to it. Secure processing is now enabled on the parser factory. Rechecked under v1.3: fix_type validation added to internal hardening; input_source end-user via caller to file or config.,Claude,1.3
+309,library,stored data,internal hardening,no,,,A read-only user could craft an encrypted secret in the shared store. The fix updates the AWS encryption SDK and checks the encryption context.,Claude,1.1
+310,plugin,,,,,,Jenkins plugin.,Claude,1.1
+311,plugin,,,,,,Gradle plugin.,Claude,1.1
+312,library,end-user via caller,internal hardening,no,,,Reading RDF/XML from clients; the TransformerFactory allowed XXE. Secure settings added. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+313,library,file or config,internal hardening,no,,,More XML parsing paths in CoreNLP now use a safe DocumentBuilderFactory. Rechecked under v1.3: fix_type validation added to internal hardening; input_source end-user via caller to file or config.,Claude,1.3
+314,application,,,,,,HAPI FHIR testpage overlay web app.,Claude,1.1
+315,application,,,,,,Apache Geronimo admin console.,Claude,1.1
+316,framework,network,validation added,yes,,,Same commit as row 302. Iggy message headers now pass through the header filter strategy.,Claude,1.1
+317,framework,network,internal hardening,yes,,,"Multipart uploads left temp files behind on some paths, filling the disk. Cleanup was fixed.",Claude,1.1
+318,plugin,,,,,,Jenkins plugin.,Claude,1.1
+319,application,,,,,,OpenNMS.,Claude,1.1
+320,plugin,,,,,,Jenkins plugin.,Claude,1.1
+321,framework,network,internal hardening,,,,OAuth2 Hawk and JOSE MAC checks compared without constant time. Per the advisory; diff not fetchable so the test field is blank.,Claude,1.1
+322,library,file or config,other,no,,,"JMSAppender needs an attacker who can write the log4j config. Log4j 1.x is end of life; the linked commit is the Log4j 2 JNDI fix, not a 1.x fix.",Claude,1.1
+323,framework,end-user via caller,validation added,no,,,"Apps parse externally provided URLs with UriComponentsBuilder and then check the host. Userinfo and host patterns tightened, and HTTP URLs without a host rejected.",Claude,1.1
+324,plugin,,,,,,Jenkins plugin.,Claude,1.1
+325,application,,,,,,Liferay Portal.,Claude,1.1
+326,framework,network,validation added,yes,,,HTTP URI parsing accepted invalid authority forms. Stricter parsing plus a userinfo compliance violation added.,Claude,1.1
+327,framework,network,validation added,no,,,HTTP/2 writes waited forever when a client exhausted the connection window. Waits now use the write timeout. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).,Claude,1.4
+328,application,,,,,,XWiki user profile UI.,Claude,1.1
+329,library,end-user via caller,internal hardening,yes,,,The XSS protection API validates content from users; getValidXML used an insecure SAX parser. Parser hardened against XXE. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+330,library,end-user via caller,validation added,no,,,JSON with default typing from untrusted sources. More gadget classes added to the blocklist.,Claude,1.1
+331,application,,,,,,Shopizer.,Claude,1.1
+332,application,,,,,,ActiveMQ Artemis broker.,Claude,1.1
+333,library,end-user via caller,validation added,yes,,,Deserializing a crafted PyFunction ran code. Code object fields are now validated.,Claude,1.1
+334,library,end-user via caller,feature removed,yes,,,"The advisory is about templates built from user input; include could read local files. The default loader no longer has FileLoader, and FileLoader now needs a prefix. Fix diff read from the PR against its base.",Claude,1.1
+335,plugin,,,,,,Jenkins plugin.,Claude,1.1
+336,application,,,,,,XWiki Invitation application.,Claude,1.1
+337,application,,,,,,Apicurio Registry.,Claude,1.1
+338,application,,,,,,Liferay Portal.,Claude,1.1
+339,application,,,,,,Hadoop YARN ResourceManager.,Claude,1.1
+340,library,end-user via caller,internal hardening,yes,,,Verifying signed XML from other parties in streaming mode could be bypassed. Each sub-chain now gets its own cloned document context. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+341,library,end-user via caller,internal hardening,yes,,,"Vector store metadata filters can carry user values. Special characters are now escaped in Elasticsearch, OpenSearch and GemFire queries. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+342,framework,network,validation added,no,,,"KDC accepted PA-DATA of an unregistered type as passing pre-auth. verify now returns a result, and failure is enforced.",Claude,1.1
+343,application,,,,,,Valtimo.,Claude,1.1
+344,application,,,,,,Apollo config service.,Claude,1.1
+345,application,,,,,,ActiveMQ web console.,Claude,1.1
+346,application,,,,,,H2O-3 server.,Claude,1.1
+347,library,file or config,validation added,yes,,,Config file processing could instantiate classes on the classpath through appender references. Undeclared appenders are now skipped.,Claude,1.1
+348,library,file or config,validation added,yes,,,Conditional config expressions could use new to run code. The new operator is now rejected in conditions.,Claude,1.1
+349,application,,,,,,Apache Jackrabbit webapp.,Claude,1.1
+350,application,,,,,,Shopizer.,Claude,1.1
+351,plugin,,,,,,Jenkins plugin.,Claude,1.1
+352,library,end-user via caller,internal hardening,no,,,"LDAP cert store builds queries from certificate subject names, which other parties control. Filter values are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+353,framework,network,internal hardening,yes,,,Requests with OPTIONS and Access-Control-Request-Method were treated as preflight without an Origin. Preflight now needs Origin too.,Claude,1.1
+354,application,,,,,,Liferay Portal.,Claude,1.1
+355,library,network,internal hardening,yes,,,TLS client connections to a broker skipped hostname verification. It is now on by default for clients. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+356,application,,,,,,XWiki required-rights module.,Claude,1.1
+357,plugin,,,,,,Jenkins plugin.,Claude,1.1
+358,framework,network,validation added,yes,,,HTTP/2 and HTTP/3 requests could carry a Host header that differs from :authority. The mismatch is now rejected.,Claude,1.1
+359,plugin,,,,,,Jenkins plugin.,Claude,1.1
+360,framework,network,validation added,yes,,,"Multipart normal form fields had no size limit, and collections could auto-grow without bound. Limits added.",Claude,1.1
+361,application,,,,,,Openfire.,Claude,1.1
+362,application,,,,,,DataEase.,Claude,1.1
+363,library,network,validation added,yes,,,"Hostname verifier could accept a cert for the wrong domain. The linked commit is a big release change; verification per the advisory, with HostnameVerifierTest updated.",Claude,1.1
+364,framework,network,validation added,yes,,,The ack extension queued messages without limit for bad clients. A queue limit was added.,Claude,1.1
+365,framework,network,internal hardening,,,,Atom JAX-RS providers parsed request bodies with XXE allowed. Per the advisory; diff not fetchable so the test field is blank. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+366,framework,network,validation added,yes,,,Embeddable MQTT broker; Will messages were published without the ACL write check. The check is now applied.,Claude,1.1
+367,plugin,,,,,,Jenkins plugin.,Claude,1.1
+368,framework,network,validation added,yes,,,Static content services decoded %2F inside segments after the traversal check. Decoded segments with separators are now rejected.,Claude,1.1
+369,library,end-user via caller,validation added,no,,,Polymorphic JSON from untrusted sources. More gadget classes added to the blocklist.,Claude,1.1
+370,plugin,,,,,,Jenkins plugin.,Claude,1.1
+371,plugin,,,,,,Jenkins plugin.,Claude,1.1
+372,framework,network,validation added,yes,,,The client could ask DataCommunicator for any number of rows. Capped at 500.,Claude,1.1
+373,plugin,,,,,,Jenkins Git Client plugin.,Claude,1.1
+374,plugin,,,,,,Neo4j APOC procedures plugin.,Claude,1.1
+375,library,not boundary,internal hardening,no,,,Temp files for large streams were created world-readable on Unix. Now Files.createTempFile with owner-only permissions.,Claude,1.1
+376,application,,,,,,WSO2 Registry.,Claude,1.1
+377,plugin,,,,,,Jenkins plugin.,Claude,1.1
+378,library,network,validation added,yes,,https://github.com/http4k/http4k/commit/725f1b96978dd433348e2b149c1e72b9f5147c90,"Digest auth verify did not bind to the request URI, so a captured header could be replayed elsewhere. The first fix link is the advisory JSON. Rechecked under v1.4: the advisory's other link, commit 725f1b9 in 6.50.0.0, makes verify reject credentials whose uri does not match the request URL, with a replay test. The same commit also carries an unrelated pug4j path fix, which is not counted as a mixed change.",Claude,1.4
+379,plugin,,,,,,Jenkins plugin.,Claude,1.1
+380,library,not boundary,internal hardening,yes,,,"Quarkus extension, so a library. Per-client sensitive element settings were ignored and secrets were logged. Client and service settings now apply.",Claude,1.1
+381,framework,network,,,,,"Hessian protocol over HTTP deserialized request bodies. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+382,library,end-user via caller,validation added,yes,,,Path parameters often hold user values; dot segments could change the request path. Traversal is now rejected after replacement.,Claude,1.1
+383,application,,,,,,Robocode game.,Claude,1.1
+384,application,,,,,,"Package tag is library, but this is the InLong manager app's user request model.",Claude,1.1
+385,plugin,,,,,,Jenkins plugin.,Claude,1.1
+386,application,,,,,,XWiki tree macro.,Claude,1.1
+387,library,end-user via caller,feature removed,yes,,,"Logged strings often hold user data, and lookups in them reached JNDI. Message lookups were removed and JNDI is off by default.",Claude,1.1
+388,library,end-user via caller,internal hardening,yes,,,User strings in Redis filter expressions were not escaped. TAG and TEXT values are now escaped separately. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+389,application,,,,,,XWiki notifications admin page.,Claude,1.1
+390,plugin,,,,,,Jenkins plugin.,Claude,1.1
+541,plugin,,,,,,Jenkins plugin.,Claude,1.1
+542,application,,,,,,OpenAPI Generator online service.,Claude,1.1
+543,application,,,,,,Infinispan server REST endpoints.,Claude,1.1
+544,framework,network,internal hardening,no,,,WebSocket PONG frames from clients leaked buffers. The buffer is now freed.,Claude,1.1
+545,framework,network,validation added,,,,"RPC deserialization of untrusted data. The fix commit touches many config files and the actual change is not clear from the diff, so fix_type and test are blank. Rechecked under v1.4: fix_type blank to validation added (full diff: a Hessian2 deny list was added).",Claude,1.4
+546,application,,,,,,ActiveMQ broker; diff not fetchable.,Claude,1.1
+547,application,,,,,,MITREid Connect server webapp.,Claude,1.1
+548,plugin,,,,,,Jenkins plugin.,Claude,1.1
+549,plugin,,,,,,Jenkins plugin.,Claude,1.1
+550,framework,network,internal hardening,yes,,,"Route match cache grew per request path, which allowed hash flooding. The cache is now bounded.",Claude,1.1
+551,plugin,,,,,,Jenkins plugin.,Claude,1.1
+552,library,end-user via caller,internal hardening,yes,,,Spring session repository; the old session ID stayed valid after a change. The original ID is now deleted.,Claude,1.1
+553,plugin,,,,,,Jenkins plugin.,Claude,1.1
+554,library,network,internal hardening,no,,,TLS server RSA decryption behaved differently for bad premaster secrets. Wrong-length results now take the same path.,Claude,1.1
+555,library,stored data,validation added,yes,,,Persisted state machine contexts were deserialized with Kryo without class registration. Required class registration is now enforced.,Claude,1.1
+556,plugin,,,,,,Jenkins Pipeline Groovy plugin.,Claude,1.1
+557,application,,,,,,Hive service and Spark Thrift server.,Claude,1.1
+558,library,not boundary,internal hardening,yes,,,Temp dirs were created readable by other local users. Now created with owner-only permissions.,Claude,1.1
+559,application,,,,,,Apache Rave portal.,Claude,1.1
+560,library,not boundary,internal hardening,yes,,,Generated member config did not mask some passwords. Masking was added for LDAP and other auth settings.,Claude,1.1
+561,application,,,,,,Infinispan server REST endpoints.,Claude,1.1
+562,framework,network,other,yes,,,"Advisory is an authorization bypass in Spring Framework 5.0.5 with Spring Security. The linked commit adds an accessDeniedHandler option to ServerHttpSecurity, which does not clearly match the advisory.",Claude,1.1
+563,library,file or config,validation added,no,,,Expanding archives that may come from others. Entries outside the target directory are now rejected. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+564,application,,,,,,NL Portal backend; diff not fetchable.,Claude,1.1
+565,framework,network,other,yes,,,"Vert.x changed how duplicated contexts work, so request data could leak between contexts. Fix is a dependency update with context handling changes. Rechecked under v1.2 tie-break: not boundary changed to network.",Claude,1.2
+566,library,end-user via caller,,,,,"Decompressing malformed Snappy or LZ4 data could leak old buffer contents. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+567,framework,network,validation added,yes,,,"X.509 auth gave a full token without account status checks. Locked, disabled and expired accounts are now checked.",Claude,1.1
+568,plugin,,,,,,Jenkins Pipeline Input Step plugin.,Claude,1.1
+569,plugin,,,,,,Jenkins plugin.,Claude,1.1
+570,library,end-user via caller,validation added,no,,,Unmarshalling messages from clients; circular references used unbounded memory. A max nesting depth was added.,Claude,1.1
+571,framework,network,validation added,yes,,,ID token aud check was skipped when the issuer matched. The or in the condition is now an and.,Claude,1.1
+572,library,file or config,validation added,yes,,,Unpacking archives that may come from others. Entries outside the target dir are now rejected. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+573,library,end-user via caller,validation added,no,,,Expression engine wrapper for expressions that may come from users. Risky methods are now blocked and an allowlist is supported.,Claude,1.1
+574,plugin,,,,,,Jenkins plugin.,Claude,1.1
+575,plugin,,,,,,Jenkins plugin.,Claude,1.1
+576,plugin,,,,,,Jenkins plugin.,Claude,1.1
+577,plugin,,,,,,Jenkins plugin.,Claude,1.1
+578,application,,,,,,Nacos.,Claude,1.1
+579,library,end-user via caller,validation added,no,,,"Verifying signatures from others; forged signatures passed. The linked commit is the Python sibling library, which adds signature range checks.",Claude,1.1
+580,library,network,internal hardening,yes,,,QUIC connection IDs from peers went into a predictable hash table. Now hashed with SipHash.,Claude,1.1
+581,library,network,internal hardening,no,,,"Native pointer for pooled direct buffers was derived wrongly, giving out-of-bounds access. Pointer handling fixed.",Claude,1.1
+582,framework,network,internal hardening,yes,,https://github.com/eclipse-vertx/vert.x/commit/5b67f5d17788b2483d277c760f3f8154f9b2fed0,"Static handler cache could be poisoned to deny access to files. The first fix link is a 106-file merge. Rechecked under v1.4: the advisory's other links, commit 5b67f5d in 5.0.7 and its backport d007e7b in 4.5.24, fix dot-segment removal per RFC 3986 5.2.4 rule C, so crafted paths normalize correctly instead of being rejected. Both add tests.",Claude,1.4
+583,application,,,,,,Apache Accumulo shell.,Claude,1.1
+584,library,not boundary,internal hardening,no,,,"Consumer and producer settings were logged at debug, including credentials. Only allowlisted properties are logged now.",Claude,1.1
+585,plugin,,,,,,Jenkins plugin.,Claude,1.1
+586,application,,,,,,Liferay Portal.,Claude,1.1
+587,application,,,,,,XWiki Live Data macro.,Claude,1.1
+588,application,,,,,,Jenkins core and Stapler.,Claude,1.1
+589,plugin,,,,,,Jenkins plugin.,Claude,1.1
+590,application,,,,,,Silverpeas.,Claude,1.1
+591,plugin,,,,,,Jenkins plugin.,Claude,1.1
+592,library,not boundary,other,no,,,A user-supplied CA was added to the system trust store instead of being used alone. Fix is a CRT dependency update. Rechecked under v1.3: input_source file or config to not boundary.,Claude,1.3
+593,plugin,,,,,,Jenkins JUnit plugin.,Claude,1.1
+594,tool,not boundary,other,no,,,Archetype that generates projects pinned a vulnerable log4j. Fix bumps the version in the template.,Claude,1.1
+595,application,,,,,,XWiki UI extensions.,Claude,1.1
+596,application,,,,,,Robocode game.,Claude,1.1
+597,application,,,,,,Keycloak server.,Claude,1.1
+598,library,network,validation added,no,,,Copying files from a pod; a crafted tar from the container could write outside the target dir. Copy now checks entry paths.,Claude,1.1
+599,application,,,,,,ActiveMQ broker.,Claude,1.1
+600,framework,network,internal hardening,yes,,,"Static handler removed dots before decoding, so encoded traversal got through. It now decodes first, then normalizes.",Claude,1.1
+601,plugin,,,,,,Jenkins plugin.,Claude,1.1
+602,application,,,,,,XWiki VFS Tree macro.,Claude,1.1
+603,plugin,,,,,,Jenkins Subversion plugin.,Claude,1.1
+604,library,end-user via caller,internal hardening,yes,,,HTML cleaner restricted mode only escaped script and style. A real element and attribute sanitizer was added. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+605,application,,,,,,"Package tag is library, but this is the InLong manager app's sink model.",Claude,1.1
+606,plugin,,,,,,Jenkins plugin.,Claude,1.1
+607,library,network,validation added,no,,,Bundled RubyGems did not verify gem signatures correctly. Updated to the fixed RubyGems release.,Claude,1.1
+608,application,,,,,,GeoServer.,Claude,1.1
+609,framework,network,internal hardening,yes,,,The default /services listing page reflected request input. Output is now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+610,plugin,,,,,,Jenkins plugin.,Claude,1.1
+611,application,,,,,,Apache SeaTunnel engine.,Claude,1.1
+612,framework,network,internal hardening,yes,,,"On Cloud Foundry, wildcard matching exposed actuator endpoints that should be protected. Matching now uses the full endpoint list.",Claude,1.1
+613,plugin,,,,,,Jenkins plugin.,Claude,1.1
+614,application,,,,,,MITREid Connect server.,Claude,1.1
+615,library,network,internal hardening,no,,,"With some LDAP servers, StartTLS auth succeeded without a real bind. The context now reconnects to force the bind.",Claude,1.1
+616,plugin,,,,,,openHAB add-on.,Claude,1.1
+617,framework,file or config,validation added,yes,,,File ending config values went into shell commands. They are now limited to safe characters.,Claude,1.1
+618,plugin,,,,,,Jenkins plugin.,Claude,1.1
+619,application,,,,,,Keycloak server.,Claude,1.1
+620,application,,,,,,"Package tag is library, but the bug is in the ActiveMQ admin web console config.",Claude,1.1
+781,framework,network,internal hardening,no,,,"Epoll transport missed a RST on half-closed connections, so they stayed open. The empty-ops case is now handled.",Claude,1.1
+782,framework,network,internal hardening,yes,,,XML payload converters and WS adapters parse messages from outside with XXE allowed. Factories are now hardened. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+783,application,,,,,,XWiki icon themes.,Claude,1.1
+784,application,,,,,,Keycloak LDAP federation admin endpoint.,Claude,1.1
+785,framework,network,validation added,no,,,Crafted TLS packets could crash the native SSLEngine. Packet length checks added.,Claude,1.1
+786,library,unclear,,,,,"DoS in spring-core 5.0.x before 5.0.6; the advisory does not say which input. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+787,plugin,,,,,,Jenkins plugin.,Claude,1.1
+788,application,,,,,,Apache Syncope core; diff not fetchable.,Claude,1.1
+789,library,file or config,internal hardening,no,,,Reading project files from others; GanttProject and Phoenix readers allowed XXE. Unmarshalling now uses a secure parser. Rechecked under v1.3: fix_type validation added to internal hardening; input_source end-user via caller to file or config.,Claude,1.3
+790,application,,,,,,Liferay Portal.,Claude,1.1
+791,library,end-user via caller,internal hardening,yes,,,"Async JSON parsing rescanned a long token on every chunk, which was quadratic. Rescan position is now tracked.",Claude,1.1
+792,library,end-user via caller,internal hardening,yes,,,HTML sanitizer allowed bad characters in data- attribute names. The pattern now follows the HTML standard. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+399,application,,,,,,The Things Stack LoRaWAN server.,Claude,1.1
+400,library,file or config,validation added,yes,,,Reading metadata from untrusted images; small EXIF payloads declared huge structures. Tag count and size limits added. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+401,application,,,,,,gin-vue-admin.,Claude,1.1
+402,tool,file or config,validation added,yes,,,Workflow templates from others could pull in file: protocol templates without the opt-in. The gate now applies to workflow loads.,Claude,1.1
+403,application,,,,,,Dex identity server.,Claude,1.1
+404,tool,file or config,internal hardening,no,,,Theme name lookup stripped separators before Unicode normalization. Normalization now runs first.,Claude,1.1
+405,tool,file or config,feature removed,yes,,,Content files with media type text/html were rendered as raw HTML. That content type is now disallowed by default.,Claude,1.1
+406,application,,,,,,CHAOS remote admin tool server.,Claude,1.1
+407,tool,not boundary,internal hardening,no,,,"The generated clustermesh etcd config mounted data at the wrong path, which dropped user auth. The mount path was fixed.",Claude,1.1
+408,application,,,,,,zot registry.,Claude,1.1
+409,application,,,,,,snapd.,Claude,1.1
+410,application,,,,,,DevGuard.,Claude,1.1
+411,application,,,,,,Gophish.,Claude,1.1
+412,framework,network,internal hardening,no,,,SIP stack; building a response to a request with no To header dereferenced nil. Nil case handled.,Claude,1.1
+413,application,,,,,,OpenList.,Claude,1.1
+414,application,,,,,,Bytebase.,Claude,1.1
+415,application,,,,,,MinIO server.,Claude,1.1
+416,library,end-user via caller,validation added,yes,,,SAML SP library decoding responses posted by browsers. A max decompressed size was added. Rechecked under v1.2 tie-break: network changed to end-user via caller.,Claude,1.2
+417,application,,,,,,Babylon finality provider daemon.,Claude,1.1
+418,library,end-user via caller,internal hardening,yes,,,Rendering user Markdown; link and image URLs went out unescaped. They are now URL-escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+419,tool,file or config,internal hardening,yes,,,Built-in render templates left some Markdown attributes unescaped. They are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+420,application,,,,,,File Browser.,Claude,1.1
+421,application,,,,,,Kubeflow Pipelines API server.,Claude,1.1
+422,framework,network,validation added,yes,,,HTTP handler serving Swagger UI accepted PUT and served the uploaded file back. Only GET is handled now.,Claude,1.1
+423,application,,,,,,imgproxy server.,Claude,1.1
+424,tool,file or config,internal hardening,yes,,,"File names went into PowerShell commands on an SFTP server, and smart quotes were not escaped. PowerShell quote characters are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+425,tool,file or config,validation added,yes,,,Charts from others with a dot-segment name collapsed the output directory. Names . and .. are now rejected.,Claude,1.1
+426,library,network,internal hardening,yes,,,Script validation for transactions from peers did not match Bitcoin Core's FindAndDelete. Behavior aligned with Core.,Claude,1.1
+427,application,,,,,,free5GC NEF.,Claude,1.1
+428,library,not boundary,internal hardening,yes,,,Custom credentials objects were logged with the config. Only the endpoint is logged now.,Claude,1.1
+429,library,network,validation added,yes,,,"Downloads from remote sources allowed protocol switching, endless redirects and symlink copies. Limits and a symlink switch added.",Claude,1.1
+430,application,,,,,,Smokescreen egress proxy.,Claude,1.1
+431,application,,,,,,Telepresence traffic manager.,Claude,1.1
+432,application,,,,,,OpenShift Cluster Logging Operator.,Claude,1.1
+433,library,not boundary,internal hardening,yes,,,Groth16 commitments to private witnesses broke zero knowledge. Commitments are now randomized.,Claude,1.1
+434,application,,,,,,goshs file server.,Claude,1.1
+435,application,,,,,,Envoy Gateway.,Claude,1.1
+436,application,,,,,,Podman.,Claude,1.1
+437,tool,file or config,validation added,yes,,,Module names from others' configs could write outside the module dir during init. Names must now be valid identifiers.,Claude,1.1
+438,application,,,,,,Open Cluster Management.,Claude,1.1
+439,library,network,validation added,no,,,EVM module accepted replayed transactions with old nonces. The nonce must now match exactly.,Claude,1.1
+440,framework,network,validation added,no,,,WebSocket transport allocated from the frame length before checking it. A max frame size now applies.,Claude,1.1
+441,library,not boundary,internal hardening,yes,,,The encrypted flag for CodeBuild S3 logs was passed inverted. The boolean is now negated correctly. Rechecked under v1.3: input_source caller code to not boundary.,Claude,1.3
+442,application,,,,,,Apache Traffic Control.,Claude,1.1
+443,library,end-user via caller,validation added,yes,,,Spreadsheet column names can come from users; long names overflowed int64 with no error. Overflow is now rejected.,Claude,1.1
+444,library,end-user via caller,internal hardening,yes,,,WAF engine fed requests by the host server; URIs starting with // were parsed as a host. Now ParseRequestURI.,Claude,1.1
+445,framework,network,validation added,yes,,,Vesting module transactions could send funds to blocked addresses. The blocked address check was added.,Claude,1.1
+446,application,,,,,,traQ.,Claude,1.1
+447,plugin,,,,,,Mattermost Calls plugin.,Claude,1.1
+448,application,,,,,,sshproxy.,Claude,1.1
+449,tool,network,validation added,yes,,,"Dev tool's HUD served its CSRF token to any page, so another site could open the WebSocket. Origin and token checks tightened.",Claude,1.1
+450,application,,,,,,nebula-mesh.,Claude,1.1
+451,application,,,,,,flagd.,Claude,1.1
+452,library,network,,,,,"Consensus rules for BIP 68 and 112 did not match Bitcoin Core for transactions from peers. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+453,library,end-user via caller,validation added,yes,,,OAuth library comparing a requested redirect URL with registered ones ignored case. Comparison is now exact.,Claude,1.1
+454,library,network,validation added,yes,,,File store writing artifacts pulled from registries; symlinks could escape the working dir. Symlink escape check added.,Claude,1.1
+455,application,,,,,,Elastic Beats.,Claude,1.1
+456,application,,,,,,Rancher Steve API.,Claude,1.1
+457,library,end-user via caller,validation added,yes,,,Decoding captured packets; one sFlow record length drove a huge allocation. Length is now bounded by the remaining data.,Claude,1.1
+458,tool,network,internal hardening,no,,,The --listen HTTP server built request bodies by repeated string concatenation. Now uses a buffer.,Claude,1.1
+459,library,end-user via caller,validation added,yes,,,Deserializing ECDSA and EdDSA signatures from others skipped range checks. Values are now range checked.,Claude,1.1
+460,application,,,,,,Docker classic builder.,Claude,1.1
+461,application,,,,,,Klever blockchain node.,Claude,1.1
+462,application,,,,,,OctoRPKI validator.,Claude,1.1
+463,application,,,,,,Knative GitLab event source.,Claude,1.1
+464,application,,,,,,RatPanel.,Claude,1.1
+465,library,network,validation added,yes,,,Bind message decoding had a wrong bounds check. The size check now covers the full parameter. Rechecked under v1.4: input_source end-user via caller to network (the package decodes messages it reads itself).,Claude,1.4
+466,application,,,,,,MCP Toolbox server.,Claude,1.1
+467,library,file or config,validation added,yes,,,Reading spreadsheets from others; streaming GetRows skipped the row bound. The bound now applies there too. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+468,application,,,,,,Casdoor.,Claude,1.1
+469,tool,network,validation added,yes,,,Remote file names could escape the local backend directory through the encoder. Path checks added.,Claude,1.1
+470,library,not boundary,internal hardening,no,,,The Chrome 120 fingerprint was missing its padding extension. Added back.,Claude,1.1
+471,application,,,,,,free5GC PCF.,Claude,1.1
+472,application,,,,,,vouch-proxy.,Claude,1.1
+473,library,network,validation added,yes,,,Client SDK verifying proofs from the immudb server; a malicious server could pass a falsified proof. Linear proof checks were added.,Claude,1.1
+474,application,,,,,,goshs.,Claude,1.1
+475,application,,,,,,esm.sh service.,Claude,1.1
+476,application,,,,,,Oxia.,Claude,1.1
+477,library,file or config,validation added,yes,,,Extracting CPIO payloads from RPMs made by others. Paths with dot segments are now cleaned and confined. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+478,application,,,,,,SeaweedFS.,Claude,1.1
+479,library,network,validation added,yes,,,Parsing BGP messages from peers; an SRv6 attribute length was not checked. Length check added.,Claude,1.1
+480,application,,,,,,Gotify.,Claude,1.1
+481,library,not boundary,internal hardening,yes,,,Request URLs with basic auth were written to logs. URLs are now redacted.,Claude,1.1
+482,library,not boundary,internal hardening,no,,,"RemoteAddr and LocalAddr called themselves, looping forever. They now call the wrapped connection.",Claude,1.1
+483,application,,,,,,Aiven Operator.,Claude,1.1
+484,application,,,,,,ZITADEL.,Claude,1.1
+485,application,,,,,,Metricbeat.,Claude,1.1
+486,application,,,,,,Syncthing.,Claude,1.1
+487,application,,,,,,Kubernetes csi-proxy.,Claude,1.1
+488,library,file or config,internal hardening,yes,,,Loading OpenAPI specs; a self-referential additionalProperties ref hit a nil pointer. Nil case handled.,Claude,1.1
+489,framework,network,internal hardening,yes,,,Static file handler could be made to redirect to another site. File serving was reworked onto fs.FS.,Claude,1.1
+490,application,,,,,,Gitea.,Claude,1.1
+491,application,,,,,,File Browser.,Claude,1.1
+492,application,,,,,,etcd.,Claude,1.1
+493,tool,network,internal hardening,yes,,,Scanner; data from the scanned target's responses could be evaluated as DSL and read env vars. Response data is now treated as literal.,Claude,1.1
+494,application,,,,,,Arc.,Claude,1.1
+495,application,,,,,,Casdoor.,Claude,1.1
+496,application,,,,,,containerd.,Claude,1.1
+497,framework,not boundary,internal hardening,yes,,,"File cache named files by MD5 of the key, so keys could collide. Now SHA-256.",Claude,1.1
+498,application,,,,,,Mattermost.,Claude,1.1
+499,application,,,,,,Sigstore Timestamp Authority.,Claude,1.1
+500,tool,file or config,validation added,yes,,,Build config inputs went into a shell in the patch pipeline. Inputs are now validated and quoted.,Claude,1.1
+501,library,end-user via caller,validation added,yes,,,Decoding YAML from others; alias chains used unbounded work. An alias expansion limit was added.,Claude,1.1
+502,application,,,,,,SiYuan.,Claude,1.1
+503,application,,,,,,New API.,Claude,1.1
+504,application,,,,,,Gitea.,Claude,1.1
+505,application,,,,,,ZITADEL.,Claude,1.1
+506,application,,,,,,Envoy AI Gateway.,Claude,1.1
+507,plugin,,,,,,Mattermost Boards plugin.,Claude,1.1
+508,application,,,,,,Kuma.,Claude,1.1
+509,tool,network,other,no,,,Fetching modules from crafted git URLs could read local files. Fix is a dependency update.,Claude,1.1
+510,application,,,,,,Prometheus web UI.,Claude,1.1
+511,application,,,,,,Ech0.,Claude,1.1
+512,library,end-user via caller,internal hardening,yes,,,Verifying proof-of-work challenges sent back by clients; fields could be spliced. A delimiter now binds the fields. The linked fix is the Elixir sibling library. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+513,application,,,,,,gorest API starter.,Claude,1.1
+514,tool,network,internal hardening,yes,,,"Attestation checks built a regex from the expected repo URL, so other repos could match. The URL is now regex-escaped. Rechecked under v1.3: fix_type validation added to internal hardening.",Claude,1.3
+515,application,,,,,,SFTPGo.,Claude,1.1
+516,application,,,,,,SingularityCE.,Claude,1.1
+517,application,,,,,,yopass.,Claude,1.1
+518,application,,,,,,teler IDS dashboard.,Claude,1.1
+519,framework,network,internal hardening,yes,,,Static handler on Windows allowed backslash traversal. Paths are now cleaned for the OS separator. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+520,application,,,,,,Ech0.,Claude,1.1
+621,application,,,,,,nebula-mesh.,Claude,1.1
+622,application,,,,,,Miniflux.,Claude,1.1
+623,application,,,,,,KubeVirt; diff not fetchable.,Claude,1.1
+624,application,,,,,,Tinyauth.,Claude,1.1
+625,library,not boundary,internal hardening,yes,,,Log BatchProcessor busy-spun when the export buffer was full. Batching was reworked.,Claude,1.1
+626,library,end-user via caller,validation added,yes,,,Parsing JWKs from others; crafted RSA keys cost excess CPU. RSA key sizes are now bounded.,Claude,1.1
+627,library,file or config,validation added,yes,,,Compiling a crafted policy crashed the AST compiler. The Call case is now handled. Rechecked under v1.4: fix_type internal hardening to validation added (full diff: shadowing now returns a compile error).,Claude,1.4
+628,tool,file or config,internal hardening,no,,,On Windows the CLI could run a program from the current directory. Now uses execabs.,Claude,1.1
+629,application,,,,,,openvpn-auth-oauth2.,Claude,1.1
+630,application,,,,,,OpenChoreo API.,Claude,1.1
+631,application,,,,,,nginx ignition.,Claude,1.1
+632,tool,file or config,validation added,yes,,,Crafted Chart.yaml with a symlinked Chart.lock could write files. Lstat now rejects the symlink.,Claude,1.1
+633,framework,network,internal hardening,yes,,,BGP UPDATE from peers with a bad NEXT_HOP attribute was not handled. Validation errors now treated correctly. Rechecked under v1.4: fix_type validation added to internal hardening (full diff: validation skipped once parsing flagged an error).,Claude,1.4
+634,application,,,,,,listmonk.,Claude,1.1
+635,framework,network,validation added,yes,,,"HTTP/2 control frames from peers could fill the control buffer. A throttle limit was added, plus an RBAC fix.",Claude,1.1
+636,application,,,,,,MinIO.,Claude,1.1
+637,framework,network,validation added,yes,,,IBC channel query logic for unreceived packets was wrong for ordered channels. Query logic fixed. Rechecked under v1.4: fix_type internal hardening to validation added (full diff shows a new check that rejects or aborts).,Claude,1.4
+638,application,,,,,,Pomerium.,Claude,1.1
+639,library,file or config,docs only,no,,,"Extracting archives from others allowed zip slip. The linked fix only changes the README, which marks the project deprecated. Rechecked under v1.3: input_source end-user via caller to file or config.",Claude,1.3
+640,application,,,,,,OpenShift API server.,Claude,1.1
+641,application,,,,,,Argo Workflows server.,Claude,1.1
+642,application,,,,,,Syncthing.,Claude,1.1
+643,application,,,,,,Volcano scheduler.,Claude,1.1
+644,plugin,,,,,,Terraform provider.,Claude,1.1
+645,application,,,,,,Kata runtime.,Claude,1.1
+646,tool,network,,no,,,"Server mode ran commands built from HTTP request input. The diff changes how server mode starts, but the fix is not clear from it, so fix_type is blank.",Claude,1.1
+647,application,,,,,,Meshery; diff not fetchable.,Claude,1.1
+648,library,end-user via caller,validation added,yes,,,"Signature verification in circuits did not check the scalar range, so signatures were malleable. Range assertions added.",Claude,1.1
+649,application,,,,,,Argo Workflows controller.,Claude,1.1
+650,library,file or config,validation added,no,,,Extracting archives from others could write outside the target. Path confinement added per the advisory. Rechecked under v1.3: input_source end-user via caller to file or config.,Claude,1.3
+651,application,,,,,,ginadmin.,Claude,1.1
+652,application,,,,,,rwtxt.,Claude,1.1
+653,application,,,,,,Minder.,Claude,1.1
+654,framework,end-user via caller,internal hardening,yes,,,FileAttachment put the app-supplied file name into Content-Disposition unescaped. Quotes and backslashes are now escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+655,application,,,,,,Navidrome.,Claude,1.1
+656,application,,,,,,Calico; diff not fetchable.,Claude,1.1
+657,application,,,,,,OAuth2 Proxy.,Claude,1.1
+658,application,,,,,,Navidrome.,Claude,1.1
+659,library,end-user via caller,internal hardening,yes,,,Decoding UTF-16 text from others could loop forever on short input. The short input case is now handled.,Claude,1.1
+660,application,,,,,,Contour.,Claude,1.1
+661,library,end-user via caller,,,,,"SAML SP library; an invalid assertion from the browser post caused a nil dereference. Diff not fetchable, so fix_type and test are blank. Rechecked under v1.2 tie-break: network changed to end-user via caller.",Claude,1.2
+662,tool,file or config,validation added,yes,,,Workspace path from config could escape the allowed root. The path is now resolved and confined.,Claude,1.1
+663,library,file or config,other,no,,,Pipeline variable substitution could expose secrets through non-sensitive fields. Fix is a dependency update of the Vela server module.,Claude,1.1
+664,framework,network,internal hardening,yes,,,Origin check for bindings used a wildcard regex that matched suffixes. Patterns are now anchored and escaped. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+665,framework,network,,,,,"Pre-commit votes from peers with bad extension data caused a panic. The linked commit is mostly CI and build changes, so fix_type and test are blank.",Claude,1.1
+666,application,,,,,,Istio.,Claude,1.1
+667,tool,file or config,internal hardening,yes,,,Scanner leaked file handles on error paths while scanning files. Defers moved before the early returns.,Claude,1.1
+668,framework,not boundary,internal hardening,yes,,,Printing a context with gRPC metadata could log auth tokens. Sensitive values are now redacted.,Claude,1.1
+669,application,,,,,,MANTRA chain.,Claude,1.1
+670,application,,,,,,Klever node.,Claude,1.1
+671,application,,,,,,free5GC SMF.,Claude,1.1
+672,application,,,,,,Algernon web server.,Claude,1.1
+673,application,,,,,,SingularityCE.,Claude,1.1
+674,application,,,,,,OpenList.,Claude,1.1
+675,tool,file or config,validation added,yes,,,Querying JSON and XML files; deep nesting overflowed the stack. A max depth was added.,Claude,1.1
+676,application,,,,,,Apache Traffic Control.,Claude,1.1
+677,library,file or config,internal hardening,yes,,,Layout artifact rules treated negation differently from in-toto-python. Matching now follows the shared behavior.,Claude,1.1
+678,application,,,,,,CoreDNS.,Claude,1.1
+679,library,network,validation added,yes,,,"Legacy TUF client cached targets from the repository under their names, which could hold ../. Paths are now confined.",Claude,1.1
+680,application,,,,,,FileBrowser Quantum.,Claude,1.1
+681,application,,,,,,Contrast.,Claude,1.1
+682,framework,network,validation added,yes,,,CSRF middleware accepted a token from storage without matching it to the request. Tokens must now match.,Claude,1.1
+683,library,end-user via caller,validation added,no,,,ECDH with public keys from others did not check the point is on the curve. The check was added.,Claude,1.1
+684,plugin,,,,,,Mattermost Boards plugin.,Claude,1.1
+685,tool,file or config,validation added,yes,,,Build config license-path could read files outside the workspace. The path is now confined.,Claude,1.1
+686,plugin,,,,,,Terraform provider.,Claude,1.1
+687,application,,,,,,NetBird.,Claude,1.1
+688,application,,,,,,pineconesim demo app in the Pinecone repo.,Claude,1.1
+689,application,,,,,,pgEdge RAG server.,Claude,1.1
+690,application,,,,,,Antrea.,Claude,1.1
+691,application,,,,,,MARIN3R operator.,Claude,1.1
+692,framework,network,internal hardening,yes,,,"BodyParser on form data from requests; a huge numeric slice index crashed it. Index is now bounded. Rechecked under v1.4: fix_type validation added to internal hardening (crash guard (recover returns an error), v1.4 rule).",Claude,1.4
+693,application,,,,,,1Panel.,Claude,1.1
+694,application,,,,,,Grafana synthetic monitoring agent.,Claude,1.1
+695,application,,,,,,chasquid mail server.,Claude,1.1
+696,library,network,validation added,no,,,Client downloading images from simplestreams servers did not check the combined fingerprint. The fingerprint is now verified.,Claude,1.1
+697,application,,,,,,Nuclio dashboard.,Claude,1.1
+698,library,file or config,internal hardening,no,,,"Package tag is tool (runc), but the fix is in go-selinux. Writes to procfs label files could be redirected by container content. Writes now go through safe procfs handles.",Claude,1.1
+699,application,,,,,,ADSys.,Claude,1.1
+700,framework,network,internal hardening,yes,,,x/group errors in EndBlocker halted the chain. Errors are now emitted as events instead.,Claude,1.1
+701,tool,file or config,,,,,"AppArmor restriction bypass through a malicious image mounting over /proc. Diff not fetchable, so fix_type and test are blank.",Claude,1.1
+702,application,,,,,,esm.sh service.,Claude,1.1
+703,tool,network,validation added,yes,,,Extracting downloaded tool archives followed symlinks planted in the archive. Symlink escapes are now rejected.,Claude,1.1
+704,library,end-user via caller,internal hardening,yes,,,Kyber decapsulation of forged ciphertexts had a division timing leak. Division replaced with constant-time math.,Claude,1.1
+705,library,end-user via caller,validation added,yes,,,Decoding form values from requests into slices allowed huge sparse indexes. A max index limit was added.,Claude,1.1
+706,application,,,,,,flagd.,Claude,1.1
+707,application,,,,,,Pomerium.,Claude,1.1
+708,application,,,,,,eKuiper.,Claude,1.1
+709,application,,,,,,SeaweedFS.,Claude,1.1
+710,application,,,,,,Heketi.,Claude,1.1
+711,application,,,,,,SFTPGo.,Claude,1.1
+712,library,not boundary,internal hardening,yes,,,An OS error while writing the CRL cache failed the whole signature verification. Cache write errors are now non-fatal.,Claude,1.1
+713,library,end-user via caller,validation added,yes,,,Query or bind messages over 4 GB from large user values overflowed the size field and allowed injection. Message sizes are now checked.,Claude,1.1
+714,application,,,,,,free5GC NEF.,Claude,1.1
+715,application,,,,,,Soft Serve.,Claude,1.1
+716,framework,network,internal hardening,no,,,sendMail in the logs module skipped TLS certificate checks. TLS handling fixed.,Claude,1.1
+717,library,network,validation added,no,,,Wantlists from peers could hold huge CIDs that stayed in memory. A max hash length and wantlist limits were added.,Claude,1.1
+718,application,,,,,,Gardener.,Claude,1.1
+719,application,,,,,,TinyIce; diff not fetchable.,Claude,1.1
+720,application,,,,,,Volcano; diff not fetchable.,Claude,1.1
+721,tool,network,validation added,no,,,verify-attestation with --type passed if any attestation existed. Only attestations of the requested type are checked now.,Claude,1.1
+722,application,,,,,,authentik.,Claude,1.1
+723,tool,file or config,validation added,yes,,,Converting local images with a cyclic dependency chain looped forever. Cycles are now detected.,Claude,1.1
+724,application,,,,,,Flux controllers.,Claude,1.1
+725,application,,,,,,Arcane.,Claude,1.1
+726,application,,,,,,linkdave.,Claude,1.1
+727,framework,network,validation added,yes,,,Admission webhooks read request bodies without a size limit. Bodies are now capped.,Claude,1.1
+728,application,,,,,,Stud42.,Claude,1.1
+729,framework,network,validation added,yes,,,HTTP/3 QPACK headers from peers expanded beyond the header size limit. The limit now applies to decoded size.,Claude,1.1
+730,application,,,,,,CasaOS Gateway.,Claude,1.1
+731,library,network,validation added,no,,,zstd decompression of gRPC messages from peers had no size limit. A max decoded size was added.,Claude,1.1
+732,application,,,,,,Sliver C2 server.,Claude,1.1
+733,application,,,,,,ageLANServer.,Claude,1.1
+734,application,,,,,,OpenTelemetry Operator.,Claude,1.1
+735,library,not boundary,feature removed,yes,,,Build metadata baked into plugin binaries included the repo URL with credentials. Credentials are now stripped. Rechecked under v1.4: fix_type internal hardening to feature removed (full diff: build metadata fields removed).,Claude,1.4
+736,framework,network,validation added,yes,,,Block proposers could include signatures for the wrong block in commits. Commit signatures are now validated.,Claude,1.1
+737,application,,,,,,Bytom node.,Claude,1.1
+738,application,,,,,,free5GC PCF.,Claude,1.1
+739,library,network,internal hardening,yes,,,A malicious AMQP server's body size header drove a huge allocation. The buffer now grows with data received. Rechecked under v1.3: fix_type validation added to internal hardening.,Claude,1.3
+740,tool,file or config,validation added,yes,,,An ssh URL from repo config with a leading dash was passed to ssh as an option. The host is now checked and separated.,Claude,1.1
