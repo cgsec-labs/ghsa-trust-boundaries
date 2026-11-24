@@ -7,8 +7,6 @@ authors:
     family-names: Bedekar
     affiliation: cgsec-labs
 repository-code: "https://github.com/cgsec-labs/ghsa-trust-boundaries"
-license:
-  - MIT
-  - CC-BY-4.0
-version: 0.1.0
+license: CC-BY-4.0
+version: 0.1.1
 date-released: 2026-11-24
