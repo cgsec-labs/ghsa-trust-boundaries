@@ -126,7 +126,7 @@ Fixed before the review starts. It checks the two fields whose rules changed in 
 
 - Rows: 10 per ecosystem, 40 in total, drawn with a fixed seed by `scripts/draw_blind_review_r2.py` from rows the AI labeler put in scope. Rows from the first review, pilot rows and row 99 are excluded. package_type and fix_has_test are not relabeled; they passed the first review and their rules did not change.
 - Fields: `input_source` and `fix_type`, using only this codebook at v1.3.
-- The reviewer does not look at the AI labels for these rows, which are now in `results/ai_labels.csv` and the sheet. A row the reviewer thinks is out of scope is marked so in notes and left out of the comparison.
+- The reviewer does not look at the AI labels for these rows, which are now in `results/ai_labels.csv`. A row the reviewer thinks is out of scope is marked so in notes and left out of the comparison.
 - Measure and pass mark: Cohen's kappa per field, raw agreement alongside, pass at 0.6. A field below it gets a rule fix and another round on fresh rows.
 
 Result, labeled blind by the project author against the AI labels under rules v1.3:

@@ -26,7 +26,7 @@ The archive or tree itself, including every entry name, path and link inside it.
 
 - Problems that need an attacker to choose the target directory.
 
-[Optional] Adapted from the security model starter, version [X], [link].
+[Optional] Adapted from the security model starter, version 0.1.1, https://doi.org/10.5281/zenodo.24498888.
 ```
 
 ## Basis

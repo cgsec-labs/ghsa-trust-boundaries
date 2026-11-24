@@ -35,7 +35,7 @@ Content [project] fetches from the network, such as [package indexes, git URLs, 
 
 - Problems that need an attacker to change code you wrote that calls [project].
 
-[Optional] Adapted from the security model starter, version [X], [link].
+[Optional] Adapted from the security model starter, version 0.1.1, https://doi.org/10.5281/zenodo.24498888.
 ```
 
 ## Basis

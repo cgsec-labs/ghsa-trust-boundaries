@@ -33,7 +33,7 @@ Values you pass to our helpers, such as [validators, URL builders or redirect an
 - Problems that need an attacker to change your application code or configuration.
 - Problems caused by authorization rules or settings your application wrote incorrectly.
 
-[Optional] Adapted from the security model starter, version [X], [link].
+[Optional] Adapted from the security model starter, version 0.1.1, https://doi.org/10.5281/zenodo.24498888.
 ```
 
 ## Basis

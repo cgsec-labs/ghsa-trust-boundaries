@@ -2,6 +2,8 @@
 
 Status: draft for comment.
 
+Feedback is welcome on https://github.com/ossf/wg-vulnerability-disclosures/issues/199.
+
 These are short security model sections that a maintainer can copy into SECURITY.md. Each one says what the project treats as untrusted, what it treats as the caller's responsibility, and what it does not consider a vulnerability. There is one starter per type, and each is built from the labeled advisory data in `results/`. The plan and the decisions behind them are in `draft-outline.md`.
 
 - `starters/library.md`

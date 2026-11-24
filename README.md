@@ -6,6 +6,8 @@ This repo studies that question using GitHub-reviewed security advisories. For e
 
 The goal is practical. The labeled data feeds short, evidence-based starter text that library maintainers can drop into the security model section of their SECURITY.md, organized by type: [library](docs/security-model/starters/library.md), [framework](docs/security-model/starters/framework.md), [tool](docs/security-model/starters/tool.md), [parser and decoder library](docs/security-model/starters/parser-decoder.md) and [archive and file-tree extractor library](docs/security-model/starters/archive-extractor.md). The limits shared by all five are in [docs/security-model/README.md](docs/security-model/README.md).
 
+Feedback is welcome on https://github.com/ossf/wg-vulnerability-disclosures/issues/199.
+
 ## Status
 
 Baseline counts across all ecosystems are refreshed weekly. The labeling sample (snapshot `3d08969`, 805 rows across npm, PyPI, Maven and Go) is drawn and labeled: 380 in-scope rows by an AI labeler, checked in two blind human reviews (see [docs/labeling-criteria.md](docs/labeling-criteria.md)). The overview tables below move with each weekly refresh; the sample does not.

@@ -33,7 +33,7 @@ If [project] reads formats that can carry code, such as pickled objects or YAML 
 - Problems that only happen after you turn off a safe default or raise a limit.
 - Problems that need an attacker to control your options or the file path.
 
-[Optional] Adapted from the security model starter, version [X], [link].
+[Optional] Adapted from the security model starter, version 0.1.1, https://doi.org/10.5281/zenodo.24498888.
 ```
 
 ## Basis

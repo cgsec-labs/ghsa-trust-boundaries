@@ -40,7 +40,7 @@ Later, not started: a library_role field (what the library does with the input, 
 
 ## Where it goes
 
-Here first, then proposed to the OpenSSF Best Practices WG through the collaboration guide work and issue #1163.
+Proposed to the OpenSSF Vulnerability Disclosures WG in https://github.com/ossf/wg-vulnerability-disclosures/issues/199.
 
 ## Open decisions
 
