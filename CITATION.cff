@@ -10,3 +10,11 @@ repository-code: "https://github.com/cgsec-labs/ghsa-trust-boundaries"
 license: CC-BY-4.0
 version: 0.1.1
 date-released: 2026-11-24
+doi: 10.5281/zenodo.24498888
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24498889
+    description: v0.1.1
+  - type: doi
+    value: 10.5281/zenodo.24498888
+    description: all versions
