@@ -46,6 +46,6 @@ Here first, then proposed to the OpenSSF Best Practices WG through the collabora
 
 1. Decided 2026-11-23: separate short templates, one per type, so each is ready to copy.
 2. Decided 2026-11-23: two more types, parser and decoder (18 rows) and archive and file-tree extractor (11 rows, across file and network input). Model and data loaders get a short note inside the parser type.
-3. Wording for each starter. First drafts done 2026-11-23, wording not settled.
+3. Wording for each starter. Wording pass done 2026-11-23, draft for comment.
 4. Decided 2026-11-23: one optional attribution line, no data. Evidence stays on the page that hosts the starters.
 5. Decided 2026-11-23: one shared limits section in `docs/security-model/README.md`, the page that hosts the starters. Each starter keeps only its type-specific limits.
