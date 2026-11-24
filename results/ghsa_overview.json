@@ -451,13 +451,13 @@
       "av_v3_else_v4": {
         "A": 113,
         "L": 434,
-        "N": 4417,
+        "N": 4418,
         "P": 15
       },
       "av_v3_v4_differ": 32,
-      "cve_alias": 4553,
+      "cve_alias": 4554,
       "cvss_v3": 4231,
-      "cvss_v4": 1335,
+      "cvss_v4": 1336,
       "cwe_not_in_1400": [
         [
           "CWE-613",
@@ -558,6 +558,10 @@
           72
         ],
         [
+          "CWE-345",
+          63
+        ],
+        [
           "CWE-352",
           63
         ],
@@ -570,12 +574,8 @@
           63
         ],
         [
-          "CWE-345",
-          62
-        ],
-        [
           "CWE-347",
-          60
+          61
         ],
         [
           "CWE-732",
@@ -591,13 +591,13 @@
         ]
       ],
       "distinct_packages": 1532,
-      "fix_link": 3385,
+      "fix_link": 3386,
       "group": {
         "Access Control (CWE-1396)": 1957,
         "Comparison (CWE-1397)": 21,
         "Component Interaction (CWE-1398)": 42,
         "Concurrency (CWE-1401)": 96,
-        "Encryption (CWE-1402)": 165,
+        "Encryption (CWE-1402)": 166,
         "Exposed Resource (CWE-1403)": 127,
         "File Handling (CWE-1404)": 464,
         "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 79,
@@ -606,7 +606,7 @@
         "Incorrect Calculation (CWE-1408)": 67,
         "Injection (CWE-1409)": 618,
         "Insufficient Control Flow Management (CWE-1410)": 111,
-        "Insufficient Verification of Data Authenticity (CWE-1411)": 181,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 182,
         "Memory Safety (CWE-1399)": 183,
         "No CWE": 164,
         "Not a CWE-1400 weakness": 46,
@@ -684,11 +684,11 @@
       ],
       "severity": {
         "CRITICAL": 584,
-        "HIGH": 1923,
+        "HIGH": 1924,
         "LOW": 388,
         "MODERATE": 2251
       },
-      "total": 5146,
+      "total": 5147,
       "v3_A": {
         "H": 1536,
         "L": 521,
@@ -793,59 +793,59 @@
       ],
       "v4_AC": {
         "H": 125,
-        "L": 1210
+        "L": 1211
       },
       "v4_AT": {
-        "N": 1030,
+        "N": 1031,
         "P": 305
       },
       "v4_AV": {
         "A": 18,
         "L": 99,
-        "N": 1216,
+        "N": 1217,
         "P": 2
       },
       "v4_PR": {
         "H": 121,
-        "L": 459,
+        "L": 460,
         "N": 755
       },
       "v4_SA": {
         "H": 113,
         "L": 47,
-        "N": 1175
+        "N": 1176
       },
       "v4_SC": {
         "H": 192,
         "L": 128,
-        "N": 1015
+        "N": 1016
       },
       "v4_SI": {
         "H": 173,
         "L": 115,
-        "N": 1047
+        "N": 1048
       },
       "v4_UI": {
         "A": 82,
-        "N": 1076,
+        "N": 1077,
         "P": 177
       },
       "v4_VA": {
         "H": 384,
         "L": 182,
-        "N": 769
+        "N": 770
       },
       "v4_VC": {
         "H": 482,
         "L": 238,
-        "N": 615
+        "N": 616
       },
       "v4_VI": {
-        "H": 435,
+        "H": 436,
         "L": 235,
         "N": 665
       },
-      "v4_only": 748,
+      "v4_only": 749,
       "v4_vector": [
         [
           "AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
@@ -915,7 +915,7 @@
         "2023": 499,
         "2024": 652,
         "2025": 682,
-        "2026": 2326
+        "2026": 2327
       }
     },
     "Hex": {
@@ -1378,13 +1378,13 @@
       "av_v3_else_v4": {
         "A": 61,
         "L": 417,
-        "N": 6298,
+        "N": 6301,
         "P": 6
       },
       "av_v3_v4_differ": 11,
-      "cve_alias": 7063,
-      "cvss_v3": 6281,
-      "cvss_v4": 929,
+      "cve_alias": 7066,
+      "cvss_v3": 6282,
+      "cvss_v4": 931,
       "cwe_not_in_1400": [
         [
           "CWE-613",
@@ -1514,7 +1514,7 @@
         ]
       ],
       "distinct_packages": 3312,
-      "fix_link": 3772,
+      "fix_link": 3775,
       "group": {
         "Access Control (CWE-1396)": 2193,
         "Comparison (CWE-1397)": 25,
@@ -1529,7 +1529,7 @@
         "Incorrect Calculation (CWE-1408)": 24,
         "Injection (CWE-1409)": 1569,
         "Insufficient Control Flow Management (CWE-1410)": 117,
-        "Insufficient Verification of Data Authenticity (CWE-1411)": 444,
+        "Insufficient Verification of Data Authenticity (CWE-1411)": 446,
         "Memory Safety (CWE-1399)": 150,
         "No CWE": 222,
         "Not a CWE-1400 weakness": 27,
@@ -1537,7 +1537,7 @@
         "Protection Mechanism Failure (CWE-1413)": 80,
         "Randomness (CWE-1414)": 36,
         "Resource Control (CWE-1415)": 453,
-        "Resource Lifecycle Management (CWE-1416)": 630,
+        "Resource Lifecycle Management (CWE-1416)": 633,
         "Sensitive Information Exposure (CWE-1417)": 507,
         "Violation of Secure Design Principles (CWE-1418)": 17
       },
@@ -1607,51 +1607,51 @@
       ],
       "severity": {
         "CRITICAL": 962,
-        "HIGH": 2425,
+        "HIGH": 2428,
         "LOW": 418,
         "MODERATE": 3451
       },
-      "total": 7256,
+      "total": 7259,
       "v3_A": {
-        "H": 2419,
+        "H": 2420,
         "L": 384,
         "N": 3478
       },
       "v3_AC": {
         "H": 917,
-        "L": 5364
+        "L": 5365
       },
       "v3_AV": {
         "A": 55,
         "L": 386,
-        "N": 5836,
+        "N": 5837,
         "P": 4
       },
       "v3_C": {
         "H": 3028,
         "L": 1813,
-        "N": 1440
+        "N": 1441
       },
       "v3_I": {
         "H": 2474,
         "L": 1549,
-        "N": 2258
+        "N": 2259
       },
       "v3_PR": {
         "H": 269,
         "L": 2506,
-        "N": 3506
+        "N": 3507
       },
       "v3_S": {
         "C": 1105,
-        "U": 5176
+        "U": 5177
       },
       "v3_UI": {
-        "N": 4729,
+        "N": 4730,
         "R": 1552
       },
       "v3_and_v4": 428,
-      "v3_only": 5853,
+      "v3_only": 5854,
       "v3_vector": [
         [
           "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -1659,7 +1659,7 @@
         ],
         [
           "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-          384
+          385
         ],
         [
           "AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
@@ -1715,60 +1715,60 @@
         ]
       ],
       "v4_AC": {
-        "H": 68,
+        "H": 70,
         "L": 861
       },
       "v4_AT": {
         "N": 730,
-        "P": 199
+        "P": 201
       },
       "v4_AV": {
         "A": 10,
         "L": 50,
-        "N": 867,
+        "N": 869,
         "P": 2
       },
       "v4_PR": {
         "H": 83,
         "L": 272,
-        "N": 574
+        "N": 576
       },
       "v4_SA": {
         "H": 49,
         "L": 31,
-        "N": 849
+        "N": 851
       },
       "v4_SC": {
         "H": 83,
         "L": 124,
-        "N": 722
+        "N": 724
       },
       "v4_SI": {
-        "H": 61,
+        "H": 63,
         "L": 139,
         "N": 729
       },
       "v4_UI": {
         "A": 109,
         "N": 690,
-        "P": 130
+        "P": 132
       },
       "v4_VA": {
         "H": 268,
         "L": 132,
-        "N": 529
+        "N": 531
       },
       "v4_VC": {
-        "H": 320,
+        "H": 322,
         "L": 286,
         "N": 323
       },
       "v4_VI": {
-        "H": 274,
+        "H": 276,
         "L": 230,
         "N": 425
       },
-      "v4_only": 501,
+      "v4_only": 503,
       "v4_vector": [
         [
           "AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
@@ -1842,7 +1842,7 @@
         "2023": 951,
         "2024": 565,
         "2025": 711,
-        "2026": 1070
+        "2026": 1073
       }
     },
     "NuGet": {
@@ -2318,12 +2318,12 @@
       "av_v3_else_v4": {
         "A": 11,
         "L": 126,
-        "N": 5912,
+        "N": 5913,
         "P": 5
       },
       "av_v3_v4_differ": 3,
-      "cve_alias": 5824,
-      "cvss_v3": 5328,
+      "cve_alias": 5825,
+      "cvss_v3": 5329,
       "cvss_v4": 1282,
       "cwe_not_in_1400": [
         [
@@ -2406,7 +2406,7 @@
         ],
         [
           "CWE-78",
-          87
+          88
         ],
         [
           "CWE-269",
@@ -2454,7 +2454,7 @@
         ]
       ],
       "distinct_packages": 1093,
-      "fix_link": 3774,
+      "fix_link": 3775,
       "group": {
         "Access Control (CWE-1396)": 1448,
         "Comparison (CWE-1397)": 10,
@@ -2467,7 +2467,7 @@
         "Improper Input Validation (CWE-1406)": 251,
         "Improper Neutralization (CWE-1407)": 49,
         "Incorrect Calculation (CWE-1408)": 6,
-        "Injection (CWE-1409)": 2999,
+        "Injection (CWE-1409)": 3000,
         "Insufficient Control Flow Management (CWE-1410)": 40,
         "Insufficient Verification of Data Authenticity (CWE-1411)": 354,
         "Memory Safety (CWE-1399)": 10,
@@ -2502,7 +2502,7 @@
         ],
         [
           "wwbn/avideo",
-          148
+          149
         ],
         [
           "pimcore/pimcore",
@@ -2547,51 +2547,51 @@
       ],
       "severity": {
         "CRITICAL": 660,
-        "HIGH": 1916,
+        "HIGH": 1917,
         "LOW": 455,
         "MODERATE": 3598
       },
-      "total": 6629,
+      "total": 6630,
       "v3_A": {
-        "H": 1512,
+        "H": 1513,
         "L": 443,
         "N": 3373
       },
       "v3_AC": {
-        "H": 551,
+        "H": 552,
         "L": 4777
       },
       "v3_AV": {
         "A": 9,
         "L": 115,
-        "N": 5199,
+        "N": 5200,
         "P": 5
       },
       "v3_C": {
-        "H": 2185,
+        "H": 2186,
         "L": 2225,
         "N": 918
       },
       "v3_I": {
-        "H": 1953,
+        "H": 1954,
         "L": 2250,
         "N": 1125
       },
       "v3_PR": {
         "H": 767,
         "L": 1926,
-        "N": 2635
+        "N": 2636
       },
       "v3_S": {
         "C": 1842,
-        "U": 3486
+        "U": 3487
       },
       "v3_UI": {
-        "N": 3158,
+        "N": 3159,
         "R": 2170
       },
       "v3_and_v4": 556,
-      "v3_only": 4772,
+      "v3_only": 4773,
       "v3_vector": [
         [
           "AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
@@ -2780,7 +2780,7 @@
         "2023": 714,
         "2024": 993,
         "2025": 578,
-        "2026": 1534
+        "2026": 1535
       }
     },
     "Pub": {
@@ -3502,11 +3502,11 @@
       "av_v3_else_v4": {
         "A": 1,
         "L": 77,
-        "N": 865
+        "N": 866
       },
       "av_v3_v4_differ": 3,
-      "cve_alias": 1102,
-      "cvss_v3": 831,
+      "cve_alias": 1103,
+      "cvss_v3": 832,
       "cvss_v4": 189,
       "cwe_not_in_1400": [
         [
@@ -3636,8 +3636,8 @@
           9
         ]
       ],
-      "distinct_packages": 441,
-      "fix_link": 786,
+      "distinct_packages": 442,
+      "fix_link": 787,
       "group": {
         "Access Control (CWE-1396)": 159,
         "Comparison (CWE-1397)": 5,
@@ -3661,7 +3661,7 @@
         "Randomness (CWE-1414)": 7,
         "Resource Control (CWE-1415)": 31,
         "Resource Lifecycle Management (CWE-1416)": 174,
-        "Sensitive Information Exposure (CWE-1417)": 78,
+        "Sensitive Information Exposure (CWE-1417)": 79,
         "Violation of Secure Design Principles (CWE-1418)": 6
       },
       "no_cvss": 271,
@@ -3732,48 +3732,48 @@
         "CRITICAL": 136,
         "HIGH": 398,
         "LOW": 106,
-        "MODERATE": 574
+        "MODERATE": 575
       },
-      "total": 1214,
+      "total": 1215,
       "v3_A": {
         "H": 317,
         "L": 66,
-        "N": 448
+        "N": 449
       },
       "v3_AC": {
-        "H": 149,
+        "H": 150,
         "L": 682
       },
       "v3_AV": {
         "A": 1,
         "L": 64,
-        "N": 766
+        "N": 767
       },
       "v3_C": {
-        "H": 355,
+        "H": 356,
         "L": 216,
         "N": 260
       },
       "v3_I": {
         "H": 311,
         "L": 243,
-        "N": 277
+        "N": 278
       },
       "v3_PR": {
         "H": 35,
         "L": 182,
-        "N": 614
+        "N": 615
       },
       "v3_S": {
         "C": 210,
-        "U": 621
+        "U": 622
       },
       "v3_UI": {
-        "N": 566,
+        "N": 567,
         "R": 265
       },
       "v3_and_v4": 77,
-      "v3_only": 754,
+      "v3_only": 755,
       "v3_vector": [
         [
           "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -3963,7 +3963,7 @@
         "2023": 91,
         "2024": 103,
         "2025": 67,
-        "2026": 245
+        "2026": 246
       }
     },
     "SwiftURL": {
@@ -4872,12 +4872,12 @@
       "av_v3_else_v4": {
         "A": 59,
         "L": 546,
-        "N": 6822,
+        "N": 6825,
         "P": 2
       },
       "av_v3_v4_differ": 49,
-      "cve_alias": 6465,
-      "cvss_v3": 6042,
+      "cve_alias": 6468,
+      "cvss_v3": 6045,
       "cvss_v4": 2497,
       "cwe_not_in_1400": [
         [
@@ -4896,11 +4896,11 @@
         ],
         [
           "CWE-1321",
-          574
+          575
         ],
         [
           "CWE-400",
-          445
+          446
         ],
         [
           "CWE-506",
@@ -4964,7 +4964,7 @@
         ],
         [
           "CWE-287",
-          116
+          117
         ],
         [
           "CWE-639",
@@ -5008,9 +5008,9 @@
         ]
       ],
       "distinct_packages": 3800,
-      "fix_link": 4863,
+      "fix_link": 4866,
       "group": {
-        "Access Control (CWE-1396)": 1647,
+        "Access Control (CWE-1396)": 1648,
         "Comparison (CWE-1397)": 65,
         "Component Interaction (CWE-1398)": 83,
         "Concurrency (CWE-1401)": 98,
@@ -5018,20 +5018,20 @@
         "Exposed Resource (CWE-1403)": 228,
         "File Handling (CWE-1404)": 669,
         "Improper Check or Handling of Exceptional Conditions (CWE-1405)": 69,
-        "Improper Input Validation (CWE-1406)": 307,
+        "Improper Input Validation (CWE-1406)": 308,
         "Improper Neutralization (CWE-1407)": 131,
         "Incorrect Calculation (CWE-1408)": 25,
         "Injection (CWE-1409)": 2105,
         "Insufficient Control Flow Management (CWE-1410)": 226,
         "Insufficient Verification of Data Authenticity (CWE-1411)": 263,
-        "Memory Safety (CWE-1399)": 93,
+        "Memory Safety (CWE-1399)": 94,
         "No CWE": 231,
         "Not a CWE-1400 weakness": 39,
         "Poor Coding Practices (CWE-1412)": 450,
         "Protection Mechanism Failure (CWE-1413)": 189,
         "Randomness (CWE-1414)": 30,
-        "Resource Control (CWE-1415)": 662,
-        "Resource Lifecycle Management (CWE-1416)": 1089,
+        "Resource Control (CWE-1415)": 663,
+        "Resource Lifecycle Management (CWE-1416)": 1091,
         "Sensitive Information Exposure (CWE-1417)": 451,
         "Violation of Secure Design Principles (CWE-1418)": 42
       },
@@ -5100,56 +5100,56 @@
         ]
       ],
       "severity": {
-        "CRITICAL": 1478,
+        "CRITICAL": 1479,
         "HIGH": 3222,
         "LOW": 541,
-        "MODERATE": 2938
+        "MODERATE": 2940
       },
-      "total": 8179,
+      "total": 8182,
       "v3_A": {
-        "H": 2440,
-        "L": 767,
+        "H": 2442,
+        "L": 768,
         "N": 2835
       },
       "v3_AC": {
-        "H": 1147,
-        "L": 4895
+        "H": 1148,
+        "L": 4897
       },
       "v3_AV": {
         "A": 45,
         "L": 437,
-        "N": 5559,
+        "N": 5562,
         "P": 1
       },
       "v3_C": {
-        "H": 3058,
+        "H": 3059,
         "L": 1462,
-        "N": 1522
+        "N": 1524
       },
       "v3_I": {
-        "H": 2577,
-        "L": 1507,
-        "N": 1958
+        "H": 2578,
+        "L": 1508,
+        "N": 1959
       },
       "v3_PR": {
         "H": 223,
-        "L": 1365,
-        "N": 4454
+        "L": 1366,
+        "N": 4456
       },
       "v3_S": {
         "C": 1326,
-        "U": 4716
+        "U": 4719
       },
       "v3_UI": {
-        "N": 4614,
-        "R": 1428
+        "N": 4616,
+        "R": 1429
       },
       "v3_and_v4": 1110,
-      "v3_only": 4932,
+      "v3_only": 4935,
       "v3_vector": [
         [
           "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-          825
+          826
         ],
         [
           "AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -5336,11 +5336,11 @@
         "2023": 400,
         "2024": 435,
         "2025": 631,
-        "2026": 3795
+        "2026": 3798
       }
     }
   },
-  "snapshot": "a23194f33e16b330268e01b3e10d95d774e1f84a",
-  "snapshot_date": "2026-11-23",
-  "unique_advisories": 38021
+  "snapshot": "98c0a2c011297d26f20a03c9d22bb3023da125ab",
+  "snapshot_date": "2026-11-24",
+  "unique_advisories": 38030
 }

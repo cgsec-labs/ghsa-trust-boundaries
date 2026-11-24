@@ -21,20 +21,20 @@ The labeled sample covers accepted GitHub-reviewed advisories only. Withdrawn ad
 <!-- overview:start -->
 ## Overview across all ecosystems
 
-Advisory snapshot `a23194f33e16b330268e01b3e10d95d774e1f84a` (2026-11-23), CWE 5.0 (2026-10-28). Refreshed weekly by a GitHub Action.
+Advisory snapshot `98c0a2c011297d26f20a03c9d22bb3023da125ab` (2026-11-24), CWE 5.0 (2026-10-28). Refreshed weekly by a GitHub Action.
 
-38021 unique GitHub-reviewed advisories. One advisory can cover more than one ecosystem, so the rows add up to more than that. Each breakdown page covers MITRE CWE-1400 categories, top CWEs, CVSS v3 and v4 metrics, the most common full vectors, severity, years and the packages with the most advisories.
+38030 unique GitHub-reviewed advisories. One advisory can cover more than one ecosystem, so the rows add up to more than that. Each breakdown page covers MITRE CWE-1400 categories, top CWEs, CVSS v3 and v4 metrics, the most common full vectors, severity, years and the packages with the most advisories.
 
 | Ecosystem | Advisories | Largest CWE-1400 category | Details |
 |---|---|---|---|
-| npm | 8179 | Injection (CWE-1409) | [breakdown](docs/ecosystems/npm.md) |
-| Maven | 7256 | Access Control (CWE-1396) | [breakdown](docs/ecosystems/maven.md) |
+| npm | 8182 | Injection (CWE-1409) | [breakdown](docs/ecosystems/npm.md) |
+| Maven | 7259 | Access Control (CWE-1396) | [breakdown](docs/ecosystems/maven.md) |
 | PyPI | 6948 | Access Control (CWE-1396) | [breakdown](docs/ecosystems/pypi.md) |
-| Packagist | 6629 | Injection (CWE-1409) | [breakdown](docs/ecosystems/packagist.md) |
-| Go | 5146 | Access Control (CWE-1396) | [breakdown](docs/ecosystems/go.md) |
+| Packagist | 6630 | Injection (CWE-1409) | [breakdown](docs/ecosystems/packagist.md) |
+| Go | 5147 | Access Control (CWE-1396) | [breakdown](docs/ecosystems/go.md) |
 | crates.io | 1642 | Memory Safety (CWE-1399) | [breakdown](docs/ecosystems/crates-io.md) |
 | NuGet | 1237 | Memory Safety (CWE-1399) | [breakdown](docs/ecosystems/nuget.md) |
-| RubyGems | 1214 | Injection (CWE-1409) | [breakdown](docs/ecosystems/rubygems.md) |
+| RubyGems | 1215 | Injection (CWE-1409) | [breakdown](docs/ecosystems/rubygems.md) |
 | Hex | 122 | Resource Lifecycle Management (CWE-1416) | [breakdown](docs/ecosystems/hex.md) |
 | GitHub Actions | 64 | Injection (CWE-1409) | [breakdown](docs/ecosystems/github-actions.md) |
 | SwiftURL | 64 | Injection (CWE-1409) | [breakdown](docs/ecosystems/swifturl.md) |
