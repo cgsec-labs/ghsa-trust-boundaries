@@ -81,3 +81,5 @@ python3 -I scripts/ghsa_overview.py data/advisory-database/advisories/github-rev
 ## License
 
 The code in `scripts/` and `.github/workflows/` is under the MIT License (`LICENSE`). The data in `results/`, the text in `docs/` and this README are under CC-BY-4.0 (`LICENSE-DATA`). The advisory data comes from [github/advisory-database](https://github.com/github/advisory-database), which is under CC-BY-4.0.
+
+To cite the data or the starter texts, use [CITATION.cff](CITATION.cff).
